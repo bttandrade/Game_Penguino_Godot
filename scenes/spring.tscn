@@ -1,0 +1,92 @@
+[gd_scene format=4 uid="uid://dyubmp70bmwbf"]
+
+[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://tilesets/terrain.tres" id="1_61klm"]
+[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://tilesets/decoration.tres" id="2_01pfy"]
+[ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://entities/player.tscn" id="2_6vrsj"]
+[ext_resource type="Texture2D" uid="uid://c5q4a3svwrlfo" path="res://sprites/tiles_spring/Background parts/1 - Foreground_scenery.png" id="3_f6w1c"]
+[ext_resource type="Texture2D" uid="uid://bkhqhxtl3qtn1" path="res://sprites/tiles_spring/Background parts/2 - Hills.png" id="4_l7nqg"]
+[ext_resource type="Texture2D" uid="uid://dfeop5kpefprg" path="res://sprites/tiles_spring/Background parts/3 - Cloud_cover_1.png" id="5_yqx6w"]
+[ext_resource type="Texture2D" uid="uid://bybdcaxlanrx" path="res://sprites/tiles_spring/Background parts/4 - Cloud_cover_2.png" id="6_01pfy"]
+[ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://sprites/tiles_spring/Background parts/5 - Sky_color.png" id="7_teosb"]
+[ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://entities/camera.tscn" id="8_yqx6w"]
+[ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://entities/level_end.tscn" id="10_teosb"]
+[ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://entities/skeleton.tscn" id="11_58nyd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
+normal = Vector2(1, 0)
+distance = -1.0
+
+[node name="Spring" type="Node2D" unique_id=1071220804]
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=1165921524]
+tile_map_data = PackedByteArray("AAAAAAsAAAACAAMAAAABAAsAAAACAAMAAAACAAsAAAACAAMAAAADAAsAAAACAAMAAAAEAAsAAAACAAMAAAAFAAsAAAACAAMAAAAGAAsAAAACAAMAAAAHAAsAAAACAAMAAAAIAAsAAAACAAMAAAAJAAsAAAACAAMAAAAKAAsAAAACAAMAAAALAAsAAAACAAMAAAAMAAsAAAACAAMAAAANAAsAAAACAAMAAAAOAAsAAAACAAMAAAAPAAsAAAACAAMAAAAQAAsAAAACAAMAAAARAAsAAAACAAMAAAASAAsAAAACAAMAAAATAAsAAAACAAMAAAAUAAsAAAACAAMAAAAVAAsAAAACAAMAAAAWAAsAAAACAAMAAAAXAAsAAAACAAMAAAAYAAsAAAACAAMAAAAZAAsAAAACAAMAAAAaAAsAAAACAAMAAAAbAAsAAAACAAMAAAAcAAsAAAACAAMAAAAAAAwAAAAEAAQAAAABAAwAAAAEAAQAAAACAAwAAAAEAAQAAAADAAwAAAAEAAQAAAAEAAwAAAAEAAQAAAAFAAwAAAAEAAQAAAAGAAwAAAAEAAQAAAAHAAwAAAAEAAQAAAAIAAwAAAAEAAQAAAAJAAwAAAAEAAQAAAAKAAwAAAAEAAQAAAALAAwAAAAEAAQAAAAMAAwAAAAEAAQAAAANAAwAAAAEAAQAAAAOAAwAAAAEAAQAAAAPAAwAAAAEAAQAAAAQAAwAAAAEAAQAAAARAAwAAAAEAAQAAAASAAwAAAAEAAQAAAATAAwAAAAEAAQAAAAUAAwAAAAEAAQAAAAVAAwAAAAEAAQAAAAWAAwAAAAEAAQAAAAXAAwAAAAEAAQAAAAYAAwAAAAEAAQAAAAZAAwAAAAEAAQAAAAaAAwAAAAEAAQAAAAbAAwAAAAEAAQAAAAcAAwAAAAEAAQAAAAKAAgAAAAJAAMAAAALAAgAAAAKAAMAAAAMAAgAAAANAAMAAAANAAUAAAAJAAMAAAAOAAUAAAAKAAMAAAAPAAUAAAANAAMAAAAKAAIAAAAJAAMAAAALAAIAAAAKAAMAAAAMAAIAAAANAAMAAAASAAkAAAAEAAEAAAARAAkAAAADAAEAAAATAAkAAAAEAAEAAAAcAAoAAAAEAAIAAAAUAAcAAAAEAAEAAAAVAAcAAAAEAAEAAAAWAAcAAAAEAAEAAAAXAAcAAAAEAAEAAAAYAAcAAAAEAAEAAAAZAAcAAAAEAAEAAAAaAAcAAAAEAAEAAAAbAAcAAAAEAAEAAAAcAAcAAAAFAAEAAAATAAcAAAADAAEAAAATAAgAAAADAAIAAAAcAAgAAAAFAAIAAAAUAAkAAAAEAAEAAAAVAAkAAAAEAAEAAAAWAAkAAAAEAAEAAAAXAAkAAAAEAAEAAAAYAAkAAAAEAAEAAAAZAAkAAAAEAAEAAAAaAAkAAAAEAAEAAAAbAAkAAAAEAAEAAAAcAAkAAAAEAAEAAAATAAoAAAAEAAIAAAASAAoAAAAEAAIAAAAUAAoAAAAEAAIAAAAVAAoAAAAEAAIAAAAWAAoAAAAEAAIAAAAXAAoAAAAEAAIAAAAYAAoAAAAEAAIAAAAZAAoAAAAEAAIAAAAaAAoAAAAEAAIAAAAbAAoAAAAEAAIAAAAVAAgAAAAEAAIAAAAUAAgAAAAEAAIAAAAWAAgAAAAEAAIAAAAXAAgAAAAEAAIAAAAYAAgAAAAEAAIAAAAZAAgAAAAEAAIAAAAaAAgAAAAEAAIAAAAbAAgAAAAEAAIAAAAdAAsAAAACAAMAAAAeAAsAAAACAAMAAAAfAAsAAAACAAMAAAAgAAsAAAACAAMAAAAhAAsAAAACAAMAAAAiAAsAAAACAAMAAAAjAAsAAAACAAMAAAAkAAsAAAACAAMAAAAlAAsAAAACAAMAAAAmAAsAAAAHAAMAAAAdAAkAAAAEAAEAAAAeAAkAAAAFAAEAAAARAAoAAAADAAIAAAAdAAoAAAAEAAIAAAAeAAoAAAAFAAIAAAAdAAwAAAAEAAQAAAAeAAwAAAAEAAQAAAAfAAwAAAAEAAQAAAAgAAwAAAAEAAQAAAAhAAwAAAAEAAQAAAAiAAwAAAAEAAQAAAAjAAwAAAAEAAQAAAAkAAwAAAAEAAQAAAAlAAwAAAAEAAQAAAAmAAwAAAAFAAUAAAD//wsAAAACAAMAAAD+/wsAAAACAAMAAAD9/wsAAAACAAMAAAD8/wsAAAACAAMAAAD7/wsAAAACAAMAAAD//wwAAAAEAAQAAAD+/wwAAAAEAAQAAAD9/wwAAAAEAAQAAAD8/wwAAAAEAAQAAAD7/wwAAAAEAAQAAAA=")
+tile_set = ExtResource("1_61klm")
+
+[node name="Decoration" type="TileMapLayer" parent="." unique_id=1215601790]
+tile_map_data = PackedByteArray("AAAkAAoAAAADAAUAAAAGAAkAAAABAAEAAAAOAAkAAAAFAAEAAAAUAAUAAAABAAEAAAAaAAkAAAAJAAEAAAAHAAoAAAABAAUAAAAMAAEAAAABAAUAAAAUAAgAAAABAAUAAAAXAAYAAAABAAUAAAAYAAYAAAABAAUAAAAcAAoAAAABAAUAAAA=")
+tile_set = ExtResource("2_01pfy")
+
+[node name="Player" parent="." unique_id=976081242 instance=ExtResource("2_6vrsj")]
+position = Vector2(49, 162)
+
+[node name="Parallax" type="Node2D" parent="." unique_id=185106661]
+z_index = -10
+
+[node name="5" type="Parallax2D" parent="Parallax" unique_id=682132265]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(288, 208)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/5" unique_id=1977616333]
+texture = ExtResource("7_teosb")
+centered = false
+
+[node name="4" type="Parallax2D" parent="Parallax" unique_id=763285853]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/4" unique_id=1363470958]
+texture = ExtResource("6_01pfy")
+centered = false
+
+[node name="3" type="Parallax2D" parent="Parallax" unique_id=34135793]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/3" unique_id=560363728]
+texture = ExtResource("5_yqx6w")
+centered = false
+
+[node name="2" type="Parallax2D" parent="Parallax" unique_id=1150946671]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/2" unique_id=128423065]
+texture = ExtResource("4_l7nqg")
+centered = false
+
+[node name="1" type="Parallax2D" parent="Parallax" unique_id=893283016]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/1" unique_id=1760146763]
+texture = ExtResource("3_f6w1c")
+centered = false
+
+[node name="Camera2D" parent="." unique_id=2033492168 instance=ExtResource("8_yqx6w")]
+
+[node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("10_teosb")]
+position = Vector2(604, 165)
+next_level = "summer"
+
+[node name="Skeleton" parent="." unique_id=925847205 instance=ExtResource("11_58nyd")]
+position = Vector2(126, 154)
+
+[node name="StageLimit" type="StaticBody2D" parent="." unique_id=1245937780]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StageLimit" unique_id=1917195831]
+position = Vector2(2, 0)
+shape = SubResource("WorldBoundaryShape2D_58nyd")
+
+[node name="Skeleton2" parent="." unique_id=1272070052 instance=ExtResource("11_58nyd")]
+position = Vector2(405, 93)
