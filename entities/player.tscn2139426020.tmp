@@ -244,16 +244,7 @@ radius = 6.0
 height = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nm46"]
-size = Vector2(2, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x08pd"]
-size = Vector2(2, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dchgp"]
-size = Vector2(8, 3)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdgjc"]
-size = Vector2(10, 2)
+size = Vector2(12, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=976081242 groups=["Player"]]
 z_index = 1
@@ -263,71 +254,32 @@ script = ExtResource("1_b0kkn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=964873476]
 position = Vector2(0, 0.2)
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"duck"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=51162149]
-visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_x08pd")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=2027735680]
+visible = false
+collision_layer = 2
+collision_mask = 52
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1060715457]
+shape = SubResource("RectangleShape2D_6nm46")
+debug_color = Color(0.9993934, 0, 0.12844995, 0.41960785)
 
 [node name="ReloadTimer" type="Timer" parent="." unique_id=1676095527]
 one_shot = true
 
 [node name="LeftWallDetector" type="RayCast2D" parent="." unique_id=483422272]
 target_position = Vector2(-7, 0)
-collision_mask = 5
 
 [node name="RightWallDetector" type="RayCast2D" parent="." unique_id=417649668]
 target_position = Vector2(7, 0)
-collision_mask = 5
 
-[node name="HitBoxes" type="Node2D" parent="." unique_id=710404979]
-
-[node name="RightSide" type="Area2D" parent="HitBoxes" unique_id=2027735680]
-collision_layer = 2
-collision_mask = 52
-
-[node name="RightSideHit" type="CollisionShape2D" parent="HitBoxes/RightSide" unique_id=1060715457]
-position = Vector2(-5, 0.5)
-shape = SubResource("RectangleShape2D_6nm46")
-debug_color = Color(0.9993934, 0, 0.12844995, 0.41960785)
-
-[node name="LeftSide" type="Area2D" parent="HitBoxes" unique_id=285743694]
-collision_layer = 2
-collision_mask = 52
-
-[node name="LeftSideHit" type="CollisionShape2D" parent="HitBoxes/LeftSide" unique_id=1901193722]
-position = Vector2(5, 0.5)
-shape = SubResource("RectangleShape2D_x08pd")
-debug_color = Color(1, 0, 0.12941177, 0.41960785)
-
-[node name="Head" type="Area2D" parent="HitBoxes" unique_id=962399433]
-collision_layer = 2
-collision_mask = 52
-
-[node name="HeadHit" type="CollisionShape2D" parent="HitBoxes/Head" unique_id=594617273]
-position = Vector2(0, -4.5)
-shape = SubResource("RectangleShape2D_dchgp")
-debug_color = Color(1, 0, 0.12941177, 0.41960785)
-
-[node name="Feet" type="Area2D" parent="HitBoxes" unique_id=1891391572]
-collision_layer = 2
-collision_mask = 52
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/Feet" unique_id=1257862884]
-position = Vector2(0, 7)
-shape = SubResource("RectangleShape2D_kdgjc")
-debug_color = Color(1, 0, 0.12941177, 0.41960785)
-
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
-[connection signal="area_entered" from="HitBoxes/RightSide" to="." method="_on_right_side_area_entered"]
-[connection signal="body_entered" from="HitBoxes/RightSide" to="." method="_on_right_side_body_entered"]
-[connection signal="area_entered" from="HitBoxes/LeftSide" to="." method="_on_left_side_area_entered"]
-[connection signal="body_entered" from="HitBoxes/LeftSide" to="." method="_on_left_side_body_entered"]
-[connection signal="area_entered" from="HitBoxes/Head" to="." method="_on_head_area_entered"]
-[connection signal="body_entered" from="HitBoxes/Head" to="." method="_on_head_body_entered"]
-[connection signal="body_exited" from="HitBoxes/Head" to="." method="_on_head_body_exited"]
-[connection signal="area_entered" from="HitBoxes/Feet" to="." method="_on_feet_area_entered"]
-[connection signal="body_entered" from="HitBoxes/Feet" to="." method="_on_feet_body_entered"]
-[connection signal="body_exited" from="HitBoxes/Feet" to="." method="_on_feet_body_exited"]

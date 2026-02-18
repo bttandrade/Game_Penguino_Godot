@@ -6,12 +6,15 @@ enum SkeletonState{
 	dead
 }
 
+@onready var skeleton: CharacterBody2D = $"."
+
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $HitBox
 @onready var wall_detector: RayCast2D = $WallDetector
 @onready var ground_detector: RayCast2D = $GroundDetector
 @onready var player_detector: RayCast2D = $PlayerDetector
 @onready var bone_start_position: Node2D = $BoneStartPosition
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 const SPINNING_BONE = preload("uid://b3pnlqs8ot0vo")
 const SPEED = 20.0
@@ -71,6 +74,7 @@ func go_to_dead_state():
 	status = SkeletonState.dead
 	anima.play("dead")
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	skeleton.remove_from_group("DamageArea")
 	velocity = Vector2.ZERO
 	
 func go_to_attack_state():
