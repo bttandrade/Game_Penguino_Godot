@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://entities/skeleton.tscn" id="9_6sio6"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://entities/camera.tscn" id="9_h8pji"]
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://entities/level_end.tscn" id="10_kgp6m"]
+[ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://entities/chest.tscn" id="11_5417o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -78,3 +79,6 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StageLimit" unique_id=1917195831]
 position = Vector2(2, 0)
 shape = SubResource("WorldBoundaryShape2D_58nyd")
+
+[node name="Chest" parent="." unique_id=1545059798 instance=ExtResource("11_5417o")]
+position = Vector2(424, 8)

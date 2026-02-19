@@ -16,11 +16,12 @@ enum PlayerState{
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var reload_timer: Timer = $ReloadTimer
+@onready var invin_timer: Timer = $InvinTimer
 
-@onready var right_side_box: CollisionShape2D = $HitBoxes/RightSide/RightSideHit
-@onready var left_side_box: CollisionShape2D = $HitBoxes/LeftSide/LeftSideHit
-@onready var head_box: CollisionShape2D = $HitBoxes/Head/HeadHit
-@onready var feet_box: CollisionShape2D = $HitBoxes/Feet/CollisionShape2D
+@onready var right_side_box: CollisionShape2D = $HitBoxes/RightSide/RightSideBox
+@onready var left_side_box: CollisionShape2D = $HitBoxes/LeftSide/LeftSideBox
+@onready var head_box: CollisionShape2D = $HitBoxes/Head/HeadBox
+@onready var feet_box: CollisionShape2D = $HitBoxes/Feet/FeetBox
 
 @onready var left_wall_detector: RayCast2D = $LeftWallDetector
 @onready var right_wall_detector: RayCast2D = $RightWallDetector
@@ -130,7 +131,6 @@ func go_to_dead_state():
 		return
 	status = PlayerState.dead
 	anima.play("dead")
-	velocity.x = 0
 	reload_timer.start()
 
 func idle_state(delta):
@@ -170,12 +170,16 @@ func walk_state(delta):
 		return
 
 func jump_state(delta):
+	if player_life <= 0:
+		go_to_dead_state()
+
 	apply_gravity(delta)
 	move(delta)
+
 	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
 		return
-	
+
 	if velocity.y > 0:
 		go_to_fall_state()
 		return
@@ -256,10 +260,15 @@ func swim_state(delta):
 
 func hurt_state(_delta):
 	player_life -= 1
+	print(player_life)
+	if player_life >= 1:
+		print("chegou aqui")
+		invin_timer.start()
 	go_to_jump_state()
-	
-func dead_state(_delta):
-	pass
+
+func dead_state(delta):
+	velocity.x = 0
+	apply_gravity(delta)
 
 func move(delta):
 	update_direction()
@@ -308,7 +317,7 @@ func set_collision_back():
 	head_box.position.y = -4.5
 
 func _on_right_side_area_entered(area: Area2D) -> void:
-	took_a_hit(area, 0)
+	took_a_hit(area, 1)
 
 func _on_left_side_area_entered(area: Area2D) -> void:
 	took_a_hit(area, -1)
@@ -317,6 +326,9 @@ func _on_head_area_entered(area: Area2D) -> void:
 	took_a_hit(area, 0)
 
 func _on_feet_area_entered(area: Area2D) -> void:
+	if area.is_in_group("DamageArea"):
+		took_a_hit(area, 0)
+		return
 	if area.is_in_group("Enemies"):
 		hit_enemy(area)
 
@@ -342,11 +354,29 @@ func _on_reload_timer_timeout() -> void:
 	get_tree().reload_current_scene()
 
 func hit_enemy(area: Area2D):
-	if velocity.y > 0:
+	if velocity.y > 0 and player_life >= 1:
+		print("hited")
 		area.get_parent().take_damage()
 		go_to_jump_state()
 
 func took_a_hit(what_hit, direction_of_hit):
+	if player_life <= 0:
+		return
 	if what_hit.is_in_group("DamageArea"):
 		velocity.x = knockback_value * direction_of_hit
+		be_invincible()
 		go_to_hurt_state()
+
+func be_invincible():
+	$HitBoxes/RightSide.set_collision_mask_value(3, false)
+	$HitBoxes/LeftSide.set_collision_mask_value(3, false)
+	$HitBoxes/Head.set_collision_mask_value(3, false)
+	$HitBoxes/Feet.set_collision_mask_value(3, false)
+
+func _on_invin_timer_timeout() -> void:
+	$HitBoxes/RightSide.set_collision_mask_value(3, true)
+	$HitBoxes/LeftSide.set_collision_mask_value(3, true)
+	$HitBoxes/Head.set_collision_mask_value(3, true)
+	$HitBoxes/Feet.set_collision_mask_value(3, true)
+	
+	

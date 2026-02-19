@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cme3i3gd33hsa"]
+
+[ext_resource type="Script" uid="uid://bh87trb4r8u8j" path="res://scripts/chest.gd" id="1_hbcot"]
+[ext_resource type="Texture2D" uid="uid://cr66und35sg2b" path="res://sprites/Mini FX, Items & UI/Common Pick-ups/Treasure_Chest (32 x 16).png" id="1_s5oot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbcot"]
+atlas = ExtResource("1_s5oot")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1ux3"]
+atlas = ExtResource("1_s5oot")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no8un"]
+atlas = ExtResource("1_s5oot")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj2ws"]
+atlas = ExtResource("1_s5oot")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e7q3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbcot")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1ux3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no8un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj2ws")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mfnb"]
+size = Vector2(16.25, 10.21875)
+
+[node name="Chest" type="Area2D" unique_id=1545059798]
+collision_mask = 2
+script = ExtResource("1_hbcot")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1705143169]
+sprite_frames = SubResource("SpriteFrames_8e7q3")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1750286534]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_2mfnb")
+
+[node name="spawn_coins" type="Marker2D" parent="." unique_id=1380314825]
+position = Vector2(0, -19)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

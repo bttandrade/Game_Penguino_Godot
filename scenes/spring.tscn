@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://entities/level_end.tscn" id="10_teosb"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://entities/skeleton.tscn" id="11_58nyd"]
 [ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://entities/coin.tscn" id="12_pcqmq"]
+[ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://entities/chest.tscn" id="13_ycc1q"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -80,7 +81,8 @@ position = Vector2(604, 165)
 next_level = "summer"
 
 [node name="Skeleton" parent="." unique_id=925847205 instance=ExtResource("11_58nyd")]
-position = Vector2(126, 154)
+position = Vector2(176, 152)
+initial_direction = -1
 
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=1245937780]
 collision_mask = 6
@@ -91,6 +93,7 @@ shape = SubResource("WorldBoundaryShape2D_58nyd")
 
 [node name="Skeleton2" parent="." unique_id=1272070052 instance=ExtResource("11_58nyd")]
 position = Vector2(405, 93)
+initial_direction = 1
 
 [node name="Coins" type="Node2D" parent="." unique_id=208013142]
 
@@ -103,11 +106,11 @@ position = Vector2(384, 128)
 [node name="Coin3" parent="Coins" unique_id=2084004833 instance=ExtResource("12_pcqmq")]
 position = Vector2(328, 128)
 
-[node name="Coin4" parent="Coins" unique_id=640140483 instance=ExtResource("12_pcqmq")]
-position = Vector2(184, 16)
-
 [node name="Coin5" parent="Coins" unique_id=356161652 instance=ExtResource("12_pcqmq")]
 position = Vector2(232, 64)
 
 [node name="Coin6" parent="Coins" unique_id=1561656864 instance=ExtResource("12_pcqmq")]
 position = Vector2(440, 128)
+
+[node name="Chest" parent="." unique_id=1545059798 instance=ExtResource("13_ycc1q")]
+position = Vector2(184, 24)

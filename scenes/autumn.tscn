@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://entities/level_end.tscn" id="11_f1ewc"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://entities/skeleton.tscn" id="12_kh4ky"]
 [ext_resource type="PackedScene" uid="uid://dyeqq2vm7e5jy" path="res://entities/moving_platform.tscn" id="13_6g7x1"]
+[ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://entities/chest.tscn" id="14_ruqjq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kh4ky"]
 normal = Vector2(1, 0)
@@ -118,5 +119,9 @@ time = 2
 
 [node name="Target" parent="MovingPlatform" index="1" unique_id=1958405296]
 position = Vector2(149, 0)
+
+[node name="Chest" parent="." unique_id=1545059798 instance=ExtResource("14_ruqjq")]
+position = Vector2(232, 152)
+scale = Vector2(-1, 1)
 
 [editable path="MovingPlatform"]

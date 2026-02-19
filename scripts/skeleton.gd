@@ -6,7 +6,7 @@ enum SkeletonState{
 	dead
 }
 
-@onready var skeleton: CharacterBody2D = $"."
+@export var initial_direction = 0
 
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $HitBox
@@ -18,14 +18,13 @@ enum SkeletonState{
 
 const SPINNING_BONE = preload("uid://b3pnlqs8ot0vo")
 const SPEED = 20.0
-# const JUMP_VELOCITY = -400.0
 
 var status: SkeletonState
 var direction = 1
 var can_throw = true
 
 func _ready() -> void:
-	go_to_walk_state()
+	start_move()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -40,6 +39,12 @@ func _physics_process(delta: float) -> void:
 			attack_state(delta)
 
 	move_and_slide()
+
+func start_move():
+	if initial_direction == -1:
+		direction *= -1
+		scale.x *= -1
+	go_to_walk_state()
 
 func walk_state(_delta):
 	if anima.frame == 2 or anima.frame == 3:
@@ -74,7 +79,7 @@ func go_to_dead_state():
 	status = SkeletonState.dead
 	anima.play("dead")
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
-	skeleton.remove_from_group("DamageArea")
+	remove_from_group("DamageArea")
 	velocity = Vector2.ZERO
 	
 func go_to_attack_state():
