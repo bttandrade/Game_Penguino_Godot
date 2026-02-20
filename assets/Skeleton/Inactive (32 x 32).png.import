@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqcxtpw6gcs0h"
-path="res://.godot/imported/Bone_Pile_Wakeup (32 x 32).png-50f68cb124aae2fd2a535bde6cf8f945.ctex"
+uid="uid://bu0bvnio0ssw6"
+path="res://.godot/imported/Inactive (32 x 32).png-7750b8b4ee7d451fee941e553f0504ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Bone_Pile_Wakeup (32 x 32).png"
-dest_files=["res://.godot/imported/Bone_Pile_Wakeup (32 x 32).png-50f68cb124aae2fd2a535bde6cf8f945.ctex"]
+source_file="res://assets/Skeleton/Inactive (32 x 32).png"
+dest_files=["res://.godot/imported/Inactive (32 x 32).png-7750b8b4ee7d451fee941e553f0504ac.ctex"]
 
 [params]
 

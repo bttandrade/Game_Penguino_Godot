@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://entities/coin.tscn" id="12_pcqmq"]
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://entities/chest.tscn" id="13_ycc1q"]
 [ext_resource type="PackedScene" uid="uid://bhnpe44owliji" path="res://entities/sign.tscn" id="14_430fb"]
+[ext_resource type="PackedScene" uid="uid://du4vxikwfh4gl" path="res://entities/bub.tscn" id="15_2jyx3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -82,7 +83,7 @@ position = Vector2(604, 165)
 next_level = "summer"
 
 [node name="Skeleton" parent="." unique_id=925847205 instance=ExtResource("11_58nyd")]
-position = Vector2(176, 152)
+position = Vector2(194, 151)
 initial_direction = -1
 
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=1245937780]
@@ -91,10 +92,6 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StageLimit" unique_id=1917195831]
 position = Vector2(2, 0)
 shape = SubResource("WorldBoundaryShape2D_58nyd")
-
-[node name="Skeleton2" parent="." unique_id=1272070052 instance=ExtResource("11_58nyd")]
-position = Vector2(405, 93)
-initial_direction = 1
 
 [node name="Coins" type="Node2D" parent="." unique_id=208013142]
 
@@ -116,3 +113,7 @@ position = Vector2(184, 24)
 [node name="Sign" parent="." unique_id=788242226 instance=ExtResource("14_430fb")]
 position = Vector2(184, 120)
 lines = Array[String](["Um Pinguino na primavera?", "Como você chegou aqui?", "Sua casa fica no inverno.", "Será um longo caminho de volta.", "Mas sei que irá conseguir.", "Boa sorte Penguino!"])
+
+[node name="Bub" parent="." unique_id=1670272699 instance=ExtResource("15_2jyx3")]
+position = Vector2(352, 104)
+initial_direction = -1

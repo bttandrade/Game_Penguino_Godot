@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyieqx4igud6j"
-path="res://.godot/imported/Bone_Toss (32 x 32).png-332e013421dd3a9bb575f024b63df89a.ctex"
+uid="uid://dcsw1ggbunrem"
+path="res://.godot/imported/Jumping (32 x 32).png-2e32fe2ef97c39562b6378f54d9d24b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Bone_Toss (32 x 32).png"
-dest_files=["res://.godot/imported/Bone_Toss (32 x 32).png-332e013421dd3a9bb575f024b63df89a.ctex"]
+source_file="res://assets/Skeleton/Jumping (32 x 32).png"
+dest_files=["res://.godot/imported/Jumping (32 x 32).png-2e32fe2ef97c39562b6378f54d9d24b9.ctex"]
 
 [params]
 

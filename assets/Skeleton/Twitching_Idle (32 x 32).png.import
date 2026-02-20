@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dewdh6i6f2ua5"
-path="res://.godot/imported/Crumbling_Into_Bone_Pile (32 x 32).png-fbe05dfa95d00b7695d84b334e0c8a3f.ctex"
+uid="uid://dxx77he0lcxkt"
+path="res://.godot/imported/Twitching_Idle (32 x 32).png-4212506693db845be4a656c7cda219ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Crumbling_Into_Bone_Pile (32 x 32).png"
-dest_files=["res://.godot/imported/Crumbling_Into_Bone_Pile (32 x 32).png-fbe05dfa95d00b7695d84b334e0c8a3f.ctex"]
+source_file="res://assets/Skeleton/Twitching_Idle (32 x 32).png"
+dest_files=["res://.godot/imported/Twitching_Idle (32 x 32).png-4212506693db845be4a656c7cda219ca.ctex"]
 
 [params]
 

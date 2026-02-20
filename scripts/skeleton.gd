@@ -14,7 +14,6 @@ enum SkeletonState{
 @onready var ground_detector: RayCast2D = $GroundDetector
 @onready var player_detector: RayCast2D = $PlayerDetector
 @onready var bone_start_position: Node2D = $BoneStartPosition
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 const SPINNING_BONE = preload("uid://b3pnlqs8ot0vo")
 const SPEED = 20.0

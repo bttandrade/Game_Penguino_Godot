@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxx77he0lcxkt"
-path="res://.godot/imported/Twitching_Idle (32 x 32).png-f353406a6638aca92bb276509c14707f.ctex"
+uid="uid://b6qm8f0y72lso"
+path="res://.godot/imported/Bone_Pile (32 x 32).png-e90848cde0db29e890c133c118fd3487.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Twitching_Idle (32 x 32).png"
-dest_files=["res://.godot/imported/Twitching_Idle (32 x 32).png-f353406a6638aca92bb276509c14707f.ctex"]
+source_file="res://assets/Skeleton/Bone_Pile (32 x 32).png"
+dest_files=["res://.godot/imported/Bone_Pile (32 x 32).png-e90848cde0db29e890c133c118fd3487.ctex"]
 
 [params]
 

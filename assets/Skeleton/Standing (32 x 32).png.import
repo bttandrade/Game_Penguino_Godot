@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwmnh0nd6d866"
-path="res://.godot/imported/Limping_Movement (32 x 32).png-86f2867dee54dd00cbbd35883cfbdf36.ctex"
+uid="uid://dips0unugj14l"
+path="res://.godot/imported/Standing (32 x 32).png-5350cdad866bdce977e5d17b78a8f10c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Limping_Movement (32 x 32).png"
-dest_files=["res://.godot/imported/Limping_Movement (32 x 32).png-86f2867dee54dd00cbbd35883cfbdf36.ctex"]
+source_file="res://assets/Skeleton/Standing (32 x 32).png"
+dest_files=["res://.godot/imported/Standing (32 x 32).png-5350cdad866bdce977e5d17b78a8f10c.ctex"]
 
 [params]
 

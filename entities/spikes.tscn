@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cj5bba1x11cwm"]
+
+[ext_resource type="Texture2D" uid="uid://dbrsyfrmxwbpa" path="res://assets/universal/Spike.png" id="1_cinjq"]
+[ext_resource type="Script" uid="uid://b2hlj0hug6lvy" path="res://scripts/spikes.gd" id="1_lnr0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnr0c"]
+size = Vector2(9, 8)
+
+[node name="Spikes" type="Area2D" unique_id=1702467889 groups=["DamageArea"]]
+z_index = -2
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_lnr0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1770791691]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_lnr0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857521535]
+texture_repeat = 2
+texture = ExtResource("1_cinjq")
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 8)

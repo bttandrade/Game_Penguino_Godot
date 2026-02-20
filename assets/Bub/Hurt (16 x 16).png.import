@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnlqbxsx1l3m4"
-path="res://.godot/imported/Standing_Idle (32 x 32).png-013c342079217d859c012aa7b85dc0a2.ctex"
+uid="uid://c6quo62702ygx"
+path="res://.godot/imported/Hurt (16 x 16).png-63fb821d47803b86883bedaa030496bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Standing_Idle (32 x 32).png"
-dest_files=["res://.godot/imported/Standing_Idle (32 x 32).png-013c342079217d859c012aa7b85dc0a2.ctex"]
+source_file="res://assets/Bub/Hurt (16 x 16).png"
+dest_files=["res://.godot/imported/Hurt (16 x 16).png-63fb821d47803b86883bedaa030496bc.ctex"]
 
 [params]
 

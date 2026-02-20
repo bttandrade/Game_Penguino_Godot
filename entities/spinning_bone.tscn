@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3pnlqs8ot0vo"]
 
-[ext_resource type="Texture2D" uid="uid://beiecxkrthxrb" path="res://assets/3 - Skeleton/Spinning_Bone (16 x 16).png" id="1_bkob1"]
+[ext_resource type="Texture2D" uid="uid://beiecxkrthxrb" path="res://assets/Skeleton/Spinning_Bone (16 x 16).png" id="1_bkob1"]
 [ext_resource type="Script" uid="uid://ptfrrbd1tvwu" path="res://scripts/spinning_bone.gd" id="1_njpw1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_njpw1"]

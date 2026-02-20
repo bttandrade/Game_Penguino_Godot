@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6qm8f0y72lso"
-path="res://.godot/imported/Bone_Pile (32 x 32).png-1bb91cd9ce215b726b5fbac92b5431e2.ctex"
+uid="uid://dum8hmpkmknea"
+path="res://.godot/imported/Running (16 x 16).png-efa246c7a0675dd9221bfe10f9ed6f9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Bone_Pile (32 x 32).png"
-dest_files=["res://.godot/imported/Bone_Pile (32 x 32).png-1bb91cd9ce215b726b5fbac92b5431e2.ctex"]
+source_file="res://assets/Bub/Running (16 x 16).png"
+dest_files=["res://.godot/imported/Running (16 x 16).png-efa246c7a0675dd9221bfe10f9ed6f9f.ctex"]
 
 [params]
 

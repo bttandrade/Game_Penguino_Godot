@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beiecxkrthxrb"
-path="res://.godot/imported/Spinning_Bone (16 x 16).png-e7ad2897cc1f2c51ce7e61524ad6b9b2.ctex"
+uid="uid://dewdh6i6f2ua5"
+path="res://.godot/imported/Crumbling_Into_Bone_Pile (32 x 32).png-7977052225cd3d90b1386770828b00a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Spinning_Bone (16 x 16).png"
-dest_files=["res://.godot/imported/Spinning_Bone (16 x 16).png-e7ad2897cc1f2c51ce7e61524ad6b9b2.ctex"]
+source_file="res://assets/Skeleton/Crumbling_Into_Bone_Pile (32 x 32).png"
+dest_files=["res://.godot/imported/Crumbling_Into_Bone_Pile (32 x 32).png-7977052225cd3d90b1386770828b00a9.ctex"]
 
 [params]
 

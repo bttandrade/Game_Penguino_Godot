@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcsw1ggbunrem"
-path="res://.godot/imported/Jumping (32 x 32).png-52e702a156d618905a392201a16d6751.ctex"
+uid="uid://cbqdr0ciyqri0"
+path="res://.godot/imported/Landed (32 x 32).png-826c85a342656802f9d817c76dbce59e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Jumping (32 x 32).png"
-dest_files=["res://.godot/imported/Jumping (32 x 32).png-52e702a156d618905a392201a16d6751.ctex"]
+source_file="res://assets/Skeleton/Landed (32 x 32).png"
+dest_files=["res://.godot/imported/Landed (32 x 32).png-826c85a342656802f9d817c76dbce59e.ctex"]
 
 [params]
 

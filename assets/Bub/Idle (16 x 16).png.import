@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu0bvnio0ssw6"
-path="res://.godot/imported/Inactive (32 x 32).png-64631c60e48d0085ccc5ff8441336068.ctex"
+uid="uid://bkaqliwogvde"
+path="res://.godot/imported/Idle (16 x 16).png-0cdec5945171176aec5e598a8675759e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3 - Skeleton/Inactive (32 x 32).png"
-dest_files=["res://.godot/imported/Inactive (32 x 32).png-64631c60e48d0085ccc5ff8441336068.ctex"]
+source_file="res://assets/Bub/Idle (16 x 16).png"
+dest_files=["res://.godot/imported/Idle (16 x 16).png-0cdec5945171176aec5e598a8675759e.ctex"]
 
 [params]
 
