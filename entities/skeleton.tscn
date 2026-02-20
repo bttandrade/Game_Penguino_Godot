@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dautccn5psivu"]
 
 [ext_resource type="Script" uid="uid://bmfpvt5djia26" path="res://scripts/skeleton.gd" id="1_yag7t"]
-[ext_resource type="Texture2D" uid="uid://dyieqx4igud6j" path="res://sprites/3 - Skeleton/Bone_Toss (32 x 32).png" id="2_4oc3b"]
-[ext_resource type="Texture2D" uid="uid://dewdh6i6f2ua5" path="res://sprites/3 - Skeleton/Crumbling_Into_Bone_Pile (32 x 32).png" id="2_fpmxe"]
-[ext_resource type="Texture2D" uid="uid://cwmnh0nd6d866" path="res://sprites/3 - Skeleton/Limping_Movement (32 x 32).png" id="3_4oc3b"]
+[ext_resource type="Texture2D" uid="uid://dyieqx4igud6j" path="res://assets/3 - Skeleton/Bone_Toss (32 x 32).png" id="2_4oc3b"]
+[ext_resource type="Texture2D" uid="uid://dewdh6i6f2ua5" path="res://assets/3 - Skeleton/Crumbling_Into_Bone_Pile (32 x 32).png" id="2_fpmxe"]
+[ext_resource type="Texture2D" uid="uid://cwmnh0nd6d866" path="res://assets/3 - Skeleton/Limping_Movement (32 x 32).png" id="3_4oc3b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yag7t"]
 size = Vector2(14, 19.5)

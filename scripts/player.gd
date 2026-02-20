@@ -262,7 +262,6 @@ func hurt_state(_delta):
 	player_life -= 1
 	print(player_life)
 	if player_life >= 1:
-		print("chegou aqui")
 		invin_timer.start()
 	go_to_jump_state()
 
@@ -355,7 +354,6 @@ func _on_reload_timer_timeout() -> void:
 
 func hit_enemy(area: Area2D):
 	if velocity.y > 0 and player_life >= 1:
-		print("hited")
 		area.get_parent().take_damage()
 		go_to_jump_state()
 

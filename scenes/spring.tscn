@@ -3,16 +3,17 @@
 [ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://tilesets/terrain.tres" id="1_61klm"]
 [ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://tilesets/decoration.tres" id="2_01pfy"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://entities/player.tscn" id="2_6vrsj"]
-[ext_resource type="Texture2D" uid="uid://c5q4a3svwrlfo" path="res://sprites/tiles_spring/Background parts/1 - Foreground_scenery.png" id="3_f6w1c"]
-[ext_resource type="Texture2D" uid="uid://bkhqhxtl3qtn1" path="res://sprites/tiles_spring/Background parts/2 - Hills.png" id="4_l7nqg"]
-[ext_resource type="Texture2D" uid="uid://dfeop5kpefprg" path="res://sprites/tiles_spring/Background parts/3 - Cloud_cover_1.png" id="5_yqx6w"]
-[ext_resource type="Texture2D" uid="uid://bybdcaxlanrx" path="res://sprites/tiles_spring/Background parts/4 - Cloud_cover_2.png" id="6_01pfy"]
-[ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://sprites/tiles_spring/Background parts/5 - Sky_color.png" id="7_teosb"]
+[ext_resource type="Texture2D" uid="uid://c5q4a3svwrlfo" path="res://assets/tiles_spring/Background parts/1 - Foreground_scenery.png" id="3_f6w1c"]
+[ext_resource type="Texture2D" uid="uid://bkhqhxtl3qtn1" path="res://assets/tiles_spring/Background parts/2 - Hills.png" id="4_l7nqg"]
+[ext_resource type="Texture2D" uid="uid://dfeop5kpefprg" path="res://assets/tiles_spring/Background parts/3 - Cloud_cover_1.png" id="5_yqx6w"]
+[ext_resource type="Texture2D" uid="uid://bybdcaxlanrx" path="res://assets/tiles_spring/Background parts/4 - Cloud_cover_2.png" id="6_01pfy"]
+[ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://assets/tiles_spring/Background parts/5 - Sky_color.png" id="7_teosb"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://entities/camera.tscn" id="8_yqx6w"]
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://entities/level_end.tscn" id="10_teosb"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://entities/skeleton.tscn" id="11_58nyd"]
 [ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://entities/coin.tscn" id="12_pcqmq"]
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://entities/chest.tscn" id="13_ycc1q"]
+[ext_resource type="PackedScene" uid="uid://bhnpe44owliji" path="res://entities/sign.tscn" id="14_430fb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -25,7 +26,7 @@ tile_map_data = PackedByteArray("AAAAAAsAAAACAAMAAAABAAsAAAACAAMAAAACAAsAAAACAAM
 tile_set = ExtResource("1_61klm")
 
 [node name="Decoration" type="TileMapLayer" parent="." unique_id=1215601790]
-tile_map_data = PackedByteArray("AAAkAAoAAAADAAUAAAAGAAkAAAABAAEAAAAOAAkAAAAFAAEAAAAUAAUAAAABAAEAAAAaAAkAAAAJAAEAAAAHAAoAAAABAAUAAAAMAAEAAAABAAUAAAAUAAgAAAABAAUAAAAXAAYAAAABAAUAAAAYAAYAAAABAAUAAAAcAAoAAAABAAUAAAA=")
+tile_map_data = PackedByteArray("AAAGAAkAAAABAAEAAAAOAAkAAAAFAAEAAAAUAAUAAAABAAEAAAAaAAkAAAAJAAEAAAAHAAoAAAABAAUAAAAMAAEAAAABAAUAAAAUAAgAAAABAAUAAAAXAAYAAAABAAUAAAAYAAYAAAABAAUAAAAcAAoAAAABAAUAAAALAAcAAAADAAUAAAAkAAoAAAADAAUAAAA=")
 tile_set = ExtResource("2_01pfy")
 
 [node name="Player" parent="." unique_id=976081242 instance=ExtResource("2_6vrsj")]
@@ -97,9 +98,6 @@ initial_direction = 1
 
 [node name="Coins" type="Node2D" parent="." unique_id=208013142]
 
-[node name="Coin" parent="Coins" unique_id=1899686123 instance=ExtResource("12_pcqmq")]
-position = Vector2(184, 112)
-
 [node name="Coin2" parent="Coins" unique_id=731432116 instance=ExtResource("12_pcqmq")]
 position = Vector2(384, 128)
 
@@ -114,3 +112,7 @@ position = Vector2(440, 128)
 
 [node name="Chest" parent="." unique_id=1545059798 instance=ExtResource("13_ycc1q")]
 position = Vector2(184, 24)
+
+[node name="Sign" parent="." unique_id=788242226 instance=ExtResource("14_430fb")]
+position = Vector2(184, 120)
+lines = Array[String](["Um Pinguino na primavera?", "Como você chegou aqui?", "Sua casa fica no inverno.", "Será um longo caminho de volta.", "Mas sei que irá conseguir.", "Boa sorte Penguino!"])

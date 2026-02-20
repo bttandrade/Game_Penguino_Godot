@@ -3,16 +3,17 @@
 [ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://tilesets/terrain.tres" id="1_tm3q1"]
 [ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://tilesets/decoration.tres" id="2_ok8qg"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://entities/player.tscn" id="2_xqb2k"]
-[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://sprites/tiles_summer/Tropics_entities (16 x 16).png" id="3_1i3w5"]
-[ext_resource type="Texture2D" uid="uid://bk3f8nq6566p1" path="res://sprites/tiles_summer/Background parts/5 - Sky_color.png" id="3_ok8qg"]
-[ext_resource type="Texture2D" uid="uid://bscxegee57ucj" path="res://sprites/tiles_summer/Background parts/4 - Background_clouds.png" id="4_1i3w5"]
-[ext_resource type="Texture2D" uid="uid://dguctl2vjd4yi" path="res://sprites/tiles_summer/Background parts/3 - Floating_clouds.png" id="5_hxncu"]
-[ext_resource type="Texture2D" uid="uid://fip6itl03y6y" path="res://sprites/tiles_summer/Background parts/2 - Waters_version_2.png" id="6_o1jn0"]
-[ext_resource type="Texture2D" uid="uid://clmt6wtupiota" path="res://sprites/tiles_summer/Background parts/1 - Waters_version_1.png" id="7_7i42h"]
+[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://assets/tiles_summer/Tropics_entities (16 x 16).png" id="3_1i3w5"]
+[ext_resource type="Texture2D" uid="uid://bk3f8nq6566p1" path="res://assets/tiles_summer/Background parts/5 - Sky_color.png" id="3_ok8qg"]
+[ext_resource type="Texture2D" uid="uid://bscxegee57ucj" path="res://assets/tiles_summer/Background parts/4 - Background_clouds.png" id="4_1i3w5"]
+[ext_resource type="Texture2D" uid="uid://dguctl2vjd4yi" path="res://assets/tiles_summer/Background parts/3 - Floating_clouds.png" id="5_hxncu"]
+[ext_resource type="Texture2D" uid="uid://fip6itl03y6y" path="res://assets/tiles_summer/Background parts/2 - Waters_version_2.png" id="6_o1jn0"]
+[ext_resource type="Texture2D" uid="uid://clmt6wtupiota" path="res://assets/tiles_summer/Background parts/1 - Waters_version_1.png" id="7_7i42h"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://entities/camera.tscn" id="8_j3gqv"]
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://entities/level_end.tscn" id="10_ok8qg"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://entities/skeleton.tscn" id="12_hxncu"]
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://entities/chest.tscn" id="13_o1jn0"]
+[ext_resource type="PackedScene" uid="uid://wekgtfrjcvyb" path="res://entities/falling_plataform.tscn" id="14_7i42h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxncu"]
 texture = ExtResource("3_1i3w5")
@@ -77,7 +78,7 @@ distance = -1.0
 [node name="Summer" type="Node2D" unique_id=1071220804]
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=1165921524]
-tile_map_data = PackedByteArray("AAAAAAsAAgACAAMAAAABAAsAAgACAAMAAAACAAsAAgACAAMAAAADAAsAAgACAAMAAAAEAAsAAgACAAMAAAAFAAsAAgACAAMAAAAGAAsAAgACAAMAAAAHAAsAAgACAAMAAAAIAAsAAgACAAMAAAAJAAsAAgACAAMAAAAKAAsAAgACAAMAAAALAAsAAgACAAMAAAAMAAsAAgACAAMAAAANAAsAAgACAAMAAAAOAAsAAgAHAAMAAAAWAAsAAgABAAMAAAAXAAsAAgACAAMAAAAYAAsAAgACAAMAAAAZAAsAAgACAAMAAAAaAAsAAgACAAMAAAAbAAsAAgACAAMAAAAcAAsAAgACAAMAAAAdAAsAAgACAAMAAAAeAAsAAgACAAMAAAAfAAsAAgACAAMAAAAgAAsAAgACAAMAAAAhAAsAAgACAAMAAAAiAAsAAgACAAMAAAAjAAsAAgACAAMAAAAAAAwAAgAEAAQAAAABAAwAAgAEAAQAAAACAAwAAgAEAAQAAAADAAwAAgAEAAQAAAAEAAwAAgAEAAQAAAAFAAwAAgAEAAQAAAAGAAwAAgAEAAQAAAAHAAwAAgAEAAQAAAAIAAwAAgAEAAQAAAAJAAwAAgAEAAQAAAAKAAwAAgAEAAQAAAALAAwAAgAEAAQAAAAMAAwAAgAEAAQAAAANAAwAAgAEAAQAAAAOAAwAAgAFAAUAAAAWAAwAAgADAAUAAAAXAAwAAgAEAAQAAAAYAAwAAgAEAAQAAAAZAAwAAgAEAAQAAAAaAAwAAgAEAAQAAAAbAAwAAgAEAAQAAAAcAAwAAgAEAAQAAAAdAAwAAgAEAAQAAAAeAAwAAgAEAAQAAAAfAAwAAgAEAAQAAAAgAAwAAgAEAAQAAAAhAAwAAgAEAAQAAAAiAAwAAgAEAAQAAAAjAAwAAgAEAAQAAAD//wwAAgAEAAQAAAD+/wwAAgAEAAQAAAD9/wwAAgAEAAQAAAD7/wwAAgAEAAQAAAD8/wwAAgAEAAQAAAD7/wsAAgACAAMAAAD8/wsAAgACAAMAAAD9/wsAAgACAAMAAAD+/wsAAgACAAMAAAD//wsAAgACAAMAAAAkAAsAAgAEAAEAAAAkAAwAAgAEAAUAAAAgAAkAAgAPAAMAAAAeAAcAAgAPAAMAAAAcAAUAAgAPAAMAAAAOAAMAAgAPAAMAAAAMAAUAAgAPAAMAAAAKAAcAAgAPAAMAAAAIAAkAAgAPAAMAAAASAAkAAgAPAAMAAAAlAAsAAgAEAAEAAAAmAAsAAgAFAAEAAAAmAAwAAgAFAAUAAAAlAAwAAgAEAAUAAAAUAAEAAgAKAAMAAAATAAEAAgAKAAMAAAAVAAEAAgANAAMAAAARAAEAAgAJAAMAAAASAAEAAgAKAAMAAAAZAAMAAgAPAAMAAAA=")
+tile_map_data = PackedByteArray("AAAAAAsAAgACAAMAAAABAAsAAgACAAMAAAACAAsAAgACAAMAAAADAAsAAgACAAMAAAAEAAsAAgACAAMAAAAFAAsAAgACAAMAAAAGAAsAAgACAAMAAAAHAAsAAgACAAMAAAAIAAsAAgACAAMAAAAJAAsAAgACAAMAAAAKAAsAAgACAAMAAAALAAsAAgACAAMAAAAMAAsAAgACAAMAAAANAAsAAgACAAMAAAAOAAsAAgAHAAMAAAAWAAsAAgABAAMAAAAXAAsAAgACAAMAAAAYAAsAAgACAAMAAAAZAAsAAgACAAMAAAAaAAsAAgACAAMAAAAbAAsAAgACAAMAAAAcAAsAAgACAAMAAAAdAAsAAgACAAMAAAAeAAsAAgACAAMAAAAfAAsAAgACAAMAAAAgAAsAAgACAAMAAAAhAAsAAgACAAMAAAAiAAsAAgACAAMAAAAjAAsAAgACAAMAAAAAAAwAAgAEAAQAAAABAAwAAgAEAAQAAAACAAwAAgAEAAQAAAADAAwAAgAEAAQAAAAEAAwAAgAEAAQAAAAFAAwAAgAEAAQAAAAGAAwAAgAEAAQAAAAHAAwAAgAEAAQAAAAIAAwAAgAEAAQAAAAJAAwAAgAEAAQAAAAKAAwAAgAEAAQAAAALAAwAAgAEAAQAAAAMAAwAAgAEAAQAAAANAAwAAgAEAAQAAAAOAAwAAgAFAAUAAAAWAAwAAgADAAUAAAAXAAwAAgAEAAQAAAAYAAwAAgAEAAQAAAAZAAwAAgAEAAQAAAAaAAwAAgAEAAQAAAAbAAwAAgAEAAQAAAAcAAwAAgAEAAQAAAAdAAwAAgAEAAQAAAAeAAwAAgAEAAQAAAAfAAwAAgAEAAQAAAAgAAwAAgAEAAQAAAAhAAwAAgAEAAQAAAAiAAwAAgAEAAQAAAAjAAwAAgAEAAQAAAD//wwAAgAEAAQAAAD+/wwAAgAEAAQAAAD9/wwAAgAEAAQAAAD7/wwAAgAEAAQAAAD8/wwAAgAEAAQAAAD7/wsAAgACAAMAAAD8/wsAAgACAAMAAAD9/wsAAgACAAMAAAD+/wsAAgACAAMAAAD//wsAAgACAAMAAAAkAAsAAgAEAAEAAAAkAAwAAgAEAAUAAAAgAAkAAgAPAAMAAAAeAAcAAgAPAAMAAAAcAAUAAgAPAAMAAAAOAAMAAgAPAAMAAAAMAAUAAgAPAAMAAAAKAAcAAgAPAAMAAAAIAAkAAgAPAAMAAAAlAAsAAgAEAAEAAAAmAAsAAgAFAAEAAAAmAAwAAgAFAAUAAAAlAAwAAgAEAAUAAAAUAAEAAgAKAAMAAAATAAEAAgAKAAMAAAAVAAEAAgANAAMAAAARAAEAAgAJAAMAAAASAAEAAgAKAAMAAAAZAAMAAgAPAAMAAAA=")
 tile_set = ExtResource("1_tm3q1")
 
 [node name="Decoration" type="TileMapLayer" parent="." unique_id=1819957118]
@@ -149,3 +150,6 @@ position = Vector2(411, 144)
 
 [node name="Chest" parent="." unique_id=1545059798 instance=ExtResource("13_o1jn0")]
 position = Vector2(320, 8)
+
+[node name="FallingPlataform" parent="." unique_id=1052016339 instance=ExtResource("14_7i42h")]
+position = Vector2(296, 152)
