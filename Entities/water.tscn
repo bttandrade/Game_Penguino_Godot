@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://25tylpk0to46"]
+
+[ext_resource type="Texture2D" uid="uid://bxscrjh80qyqa" path="res://Assets/TilesSummer/Sprite-0001.png" id="1_1llg5"]
+[ext_resource type="Texture2D" uid="uid://cntlwjvh5oy6l" path="res://Assets/TilesSummer/Sprite-0002.png" id="2_gup01"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1tlk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1llg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gup01")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk250"]
+size = Vector2(16, 16)
+
+[node name="Water" type="Area2D" unique_id=1304957545 groups=["enemy_hitbox"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1773863938]
+sprite_frames = SubResource("SpriteFrames_p1tlk")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.12013096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2132541764]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_rk250")
+debug_color = Color(1, 0, 0, 0.39215687)

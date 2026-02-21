@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cvao6ixkwsamh"]
+
+[ext_resource type="Texture2D" uid="uid://cfs7eqcoogjqg" path="res://Assets/Cherry/Hopping (16 x 32).png" id="1_pht46"]
+[ext_resource type="Script" uid="uid://hvt6s6d4foll" path="res://Scripts/cherry.gd" id="1_t1t5s"]
+[ext_resource type="Texture2D" uid="uid://xa7fhn62lqdq" path="res://Assets/Cherry/Hurt (16 x 32).png" id="2_c727j"]
+[ext_resource type="Texture2D" uid="uid://dk1lq4pjbxpdw" path="res://Assets/Cherry/Flying (16 x 32).png" id="3_spduq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spduq"]
+atlas = ExtResource("2_c727j")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maoi3"]
+atlas = ExtResource("3_spduq")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idcgq"]
+atlas = ExtResource("3_spduq")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1t5s"]
+atlas = ExtResource("1_pht46")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c727j"]
+atlas = ExtResource("1_pht46")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spduq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spduq")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maoi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idcgq")
+}],
+"loop": true,
+"name": &"patrol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1t5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c727j")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maoi3"]
+radius = 6.0827627
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_idcgq"]
+radius = 2.0
+height = 12.0
+
+[node name="Cherry" type="CharacterBody2D" unique_id=1967996673 groups=["DamageArea"]]
+collision_layer = 20
+script = ExtResource("1_t1t5s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=694633382]
+sprite_frames = SubResource("SpriteFrames_spduq")
+animation = &"patrol"
+autoplay = "patrol"
+frame = 1
+frame_progress = 0.20628557
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521059575]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_maoi3")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=149533414 groups=["Enemies"]]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1560561459]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_idcgq")
+debug_color = Color(1, 0.002440951, 0.09451675, 0.41960785)
