@@ -18,6 +18,8 @@ enum PlayerState{
 @onready var reload_timer: Timer = $ReloadTimer
 @onready var invin_timer: Timer = $InvinTimer
 
+@onready var hud_manager: Control = $"../HUD/HUDManager"
+
 @onready var right_side_box: CollisionShape2D = $HitBoxes/RightSide/RightSideBox
 @onready var left_side_box: CollisionShape2D = $HitBoxes/LeftSide/LeftSideBox
 @onready var head_box: CollisionShape2D = $HitBoxes/Head/HeadBox
@@ -38,15 +40,17 @@ const JUMP_VELOCITY = -300.0
 @export var water_max_speed = 100
 @export var water_acceleration = 200
 @export var water_jump_force = -100
-@export var player_life = 3
 @export var knockback_value = 200
 
+var player_initial_life = 3
 var last_direction = 0
 var jump_count = 0
 var direction = 0
 var status: PlayerState
 
 func _ready() -> void:
+	hud_manager.time_is_up.connect(go_to_dead_state)
+	Globals.player_life = player_initial_life
 	go_to_idle_state()
 
 func _physics_process(delta: float) -> void:
@@ -170,7 +174,7 @@ func walk_state(delta):
 		return
 
 func jump_state(delta):
-	if player_life <= 0:
+	if Globals.player_life <= 0:
 		go_to_dead_state()
 
 	apply_gravity(delta)
@@ -259,9 +263,8 @@ func swim_state(delta):
 		velocity.y = water_jump_force
 
 func hurt_state(_delta):
-	player_life -= 1
-	print(player_life)
-	if player_life >= 1:
+	Globals.player_life -= 1
+	if Globals.player_life >= 1:
 		invin_timer.start()
 	go_to_jump_state()
 
@@ -302,7 +305,7 @@ func set_collision_duck():
 	right_side_box.shape.size = Vector2(2, 8)
 	right_side_box.position.y = 2
 	head_box.position.y = -1
-	
+
 func set_collision_back():
 	collision_shape.shape.radius = 6
 	collision_shape.shape.height = 14
@@ -353,12 +356,12 @@ func _on_reload_timer_timeout() -> void:
 	get_tree().reload_current_scene()
 
 func hit_enemy(area: Area2D):
-	if velocity.y > 0 and player_life >= 1:
+	if velocity.y > 0 and Globals.player_life >= 1:
 		area.get_parent().take_damage()
 		go_to_jump_state()
 
 func took_a_hit(what_hit, direction_of_hit):
-	if player_life <= 0:
+	if Globals.player_life <= 0:
 		return
 	if what_hit.is_in_group("DamageArea"):
 		velocity.x = knockback_value * direction_of_hit

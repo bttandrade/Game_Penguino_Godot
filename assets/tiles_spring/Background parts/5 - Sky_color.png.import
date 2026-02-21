@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://30jwv2yg63r2"
-path="res://.godot/imported/5 - Sky_color.png-c616b7bb34476d9af0814af3264bf022.ctex"
+path="res://.godot/imported/5 - Sky_color.png-593a286e49c68586f6b7756bee6c9668.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_spring/Background parts/5 - Sky_color.png"
-dest_files=["res://.godot/imported/5 - Sky_color.png-c616b7bb34476d9af0814af3264bf022.ctex"]
+source_file="res://Assets/Tiles_spring/Background parts/5 - Sky_color.png"
+dest_files=["res://.godot/imported/5 - Sky_color.png-593a286e49c68586f6b7756bee6c9668.ctex"]
 
 [params]
 

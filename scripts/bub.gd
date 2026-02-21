@@ -6,6 +6,7 @@ enum BubState{
 }
 
 @export var initial_direction = 0
+@export var mob_value = 100
 
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $HitBox
@@ -61,6 +62,7 @@ func go_to_dead_state():
 	velocity.y = -200
 	status = BubState.dead
 	anima.play("dead")
+	Globals.player_score += mob_value
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	remove_from_group("DamageArea")
 
@@ -69,4 +71,5 @@ func apply_gravity(delta):
 		velocity += get_gravity() * delta
 
 func take_damage():
+	print("teste")
 	go_to_dead_state()

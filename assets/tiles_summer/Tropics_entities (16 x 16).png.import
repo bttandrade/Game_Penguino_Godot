@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btyiwgoqb1rm2"
-path="res://.godot/imported/Tropics_entities (16 x 16).png-a121f81ab06de358d03f1c4beef40627.ctex"
+path="res://.godot/imported/Tropics_entities (16 x 16).png-a0ecfedd3e2ca0b99d76928ab75be01c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_summer/Tropics_entities (16 x 16).png"
-dest_files=["res://.godot/imported/Tropics_entities (16 x 16).png-a121f81ab06de358d03f1c4beef40627.ctex"]
+source_file="res://Assets/Tiles_summer/Tropics_entities (16 x 16).png"
+dest_files=["res://.godot/imported/Tropics_entities (16 x 16).png-a0ecfedd3e2ca0b99d76928ab75be01c.ctex"]
 
 [params]
 

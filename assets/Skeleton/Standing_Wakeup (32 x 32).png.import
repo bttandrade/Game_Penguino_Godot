@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0cxmdsdmrro3"
-path="res://.godot/imported/Standing_Wakeup (32 x 32).png-a7f18ecc7573269d19d983fccd46180d.ctex"
+path="res://.godot/imported/Standing_Wakeup (32 x 32).png-2518c9e1dfcbfe7c4f6187d09a46f07d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skeleton/Standing_Wakeup (32 x 32).png"
-dest_files=["res://.godot/imported/Standing_Wakeup (32 x 32).png-a7f18ecc7573269d19d983fccd46180d.ctex"]
+source_file="res://Assets/Skeleton/Standing_Wakeup (32 x 32).png"
+dest_files=["res://.godot/imported/Standing_Wakeup (32 x 32).png-2518c9e1dfcbfe7c4f6187d09a46f07d.ctex"]
 
 [params]
 

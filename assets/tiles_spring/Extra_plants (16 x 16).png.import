@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bng60wvtxmr7o"
-path="res://.godot/imported/Extra_plants (16 x 16).png-d4531174f48cb7a4eff96a088cda48e2.ctex"
+path="res://.godot/imported/Extra_plants (16 x 16).png-a93ee3d662483428119b9d9b166a79a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_spring/Extra_plants (16 x 16).png"
-dest_files=["res://.godot/imported/Extra_plants (16 x 16).png-d4531174f48cb7a4eff96a088cda48e2.ctex"]
+source_file="res://Assets/Tiles_spring/Extra_plants (16 x 16).png"
+dest_files=["res://.godot/imported/Extra_plants (16 x 16).png-a93ee3d662483428119b9d9b166a79a9.ctex"]
 
 [params]
 

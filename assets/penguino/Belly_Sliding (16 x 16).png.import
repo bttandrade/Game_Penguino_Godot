@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bir0xmm164hml"
-path="res://.godot/imported/Belly_Sliding (16 x 16).png-efdf8dbe65c74e91a4c2a949c6031e02.ctex"
+path="res://.godot/imported/Belly_Sliding (16 x 16).png-5dbb72882987bddba56328f0b02a0c24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/penguino/Belly_Sliding (16 x 16).png"
-dest_files=["res://.godot/imported/Belly_Sliding (16 x 16).png-efdf8dbe65c74e91a4c2a949c6031e02.ctex"]
+source_file="res://Assets/Penguino/Belly_Sliding (16 x 16).png"
+dest_files=["res://.godot/imported/Belly_Sliding (16 x 16).png-5dbb72882987bddba56328f0b02a0c24.ctex"]
 
 [params]
 

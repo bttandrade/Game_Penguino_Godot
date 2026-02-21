@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" format=3 uid="uid://cayf158ysm7dm"]
 
-[ext_resource type="Texture2D" uid="uid://cmpo3bylm6otc" path="res://assets/tiles_spring/Terrain (16 x 16).png" id="1_kcw04"]
-[ext_resource type="Texture2D" uid="uid://bq35k58l17jdc" path="res://assets/tiles_autumn/Terrain (16 x 16).png" id="2_mvvlq"]
-[ext_resource type="Texture2D" uid="uid://d0fky87tjlqku" path="res://assets/tiles_summer/Terrain (16 x 16).png" id="3_t0xma"]
-[ext_resource type="Texture2D" uid="uid://b7ut5jsly8wrk" path="res://assets/tiles_winter/Terrain (16 x 16).png" id="4_bbiex"]
+[ext_resource type="Texture2D" uid="uid://cmpo3bylm6otc" path="res://Assets/Tiles_spring/Terrain (16 x 16).png" id="1_kcw04"]
+[ext_resource type="Texture2D" uid="uid://bq35k58l17jdc" path="res://Assets/Tiles_autumn/Terrain (16 x 16).png" id="2_mvvlq"]
+[ext_resource type="Texture2D" uid="uid://d0fky87tjlqku" path="res://Assets/Tiles_summer/Terrain (16 x 16).png" id="3_t0xma"]
+[ext_resource type="Texture2D" uid="uid://b7ut5jsly8wrk" path="res://Assets/Tiles_winter/Terrain (16 x 16).png" id="4_bbiex"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_kcw04"]
 tile_data = PackedInt32Array(0, 589824, 3, 1, 655360, 3, 2, 851968, 3)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cme3i3gd33hsa"]
 
-[ext_resource type="Script" uid="uid://bh87trb4r8u8j" path="res://scripts/chest.gd" id="1_hbcot"]
-[ext_resource type="Texture2D" uid="uid://cr66und35sg2b" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Treasure_Chest (32 x 16).png" id="1_s5oot"]
+[ext_resource type="Script" uid="uid://bh87trb4r8u8j" path="res://Scripts/chest.gd" id="1_hbcot"]
+[ext_resource type="Texture2D" uid="uid://cr66und35sg2b" path="res://Assets/Others/Common Pick-ups/Treasure_Chest (32 x 16).png" id="1_s5oot"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbcot"]
 atlas = ExtResource("1_s5oot")

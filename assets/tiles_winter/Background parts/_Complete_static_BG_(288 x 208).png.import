@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkx4jaxrm5qnh"
-path="res://.godot/imported/_Complete_static_BG_(288 x 208).png-5accdf92ceb5b6da9f68eaf546adda98.ctex"
+path="res://.godot/imported/_Complete_static_BG_(288 x 208).png-e916aa1249d6218657b26cd3d4ffb80d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_winter/Background parts/_Complete_static_BG_(288 x 208).png"
-dest_files=["res://.godot/imported/_Complete_static_BG_(288 x 208).png-5accdf92ceb5b6da9f68eaf546adda98.ctex"]
+source_file="res://Assets/Tiles_winter/Background parts/_Complete_static_BG_(288 x 208).png"
+dest_files=["res://.godot/imported/_Complete_static_BG_(288 x 208).png-e916aa1249d6218657b26cd3d4ffb80d.ctex"]
 
 [params]
 

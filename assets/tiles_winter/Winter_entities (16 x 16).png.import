@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfjjonc04lyvu"
-path="res://.godot/imported/Winter_entities (16 x 16).png-25b98255664335a9908287489bd8a101.ctex"
+path="res://.godot/imported/Winter_entities (16 x 16).png-d3d7a4d0f91bf00ee2570d0070d35566.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_winter/Winter_entities (16 x 16).png"
-dest_files=["res://.godot/imported/Winter_entities (16 x 16).png-25b98255664335a9908287489bd8a101.ctex"]
+source_file="res://Assets/Tiles_winter/Winter_entities (16 x 16).png"
+dest_files=["res://.godot/imported/Winter_entities (16 x 16).png-d3d7a4d0f91bf00ee2570d0070d35566.ctex"]
 
 [params]
 

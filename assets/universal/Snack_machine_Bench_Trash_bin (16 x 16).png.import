@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chsp2vvku2b5"
-path="res://.godot/imported/Snack_machine_Bench_Trash_bin (16 x 16).png-3d55db382e45071eeadd0b3324dc739d.ctex"
+path="res://.godot/imported/Snack_machine_Bench_Trash_bin (16 x 16).png-e940b5c0ced2d6781f52db710266cf60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/universal/Snack_machine_Bench_Trash_bin (16 x 16).png"
-dest_files=["res://.godot/imported/Snack_machine_Bench_Trash_bin (16 x 16).png-3d55db382e45071eeadd0b3324dc739d.ctex"]
+source_file="res://Assets/Universal/Snack_machine_Bench_Trash_bin (16 x 16).png"
+dest_files=["res://.godot/imported/Snack_machine_Bench_Trash_bin (16 x 16).png-e940b5c0ced2d6781f52db710266cf60.ctex"]
 
 [params]
 

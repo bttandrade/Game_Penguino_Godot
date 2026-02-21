@@ -18,13 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogManager="*uid://cy85klu6c45cp"
+Globals="*uid://bs8ywgofuigyv"
 
 [display]
 
-window/size/viewport_width=288
-window/size/viewport_height=208
-window/size/mode=2
+window/size/viewport_height=832
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale=4.0
 
 [global_group]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhm0vc4hwdl3u"
-path="res://.godot/imported/Surprised (16 x 16).png-9e76c3c277303b62fa7d48daa6de5575.ctex"
+path="res://.godot/imported/Surprised (16 x 16).png-740798354f0c1001f32095915465980e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/penguino/Surprised (16 x 16).png"
-dest_files=["res://.godot/imported/Surprised (16 x 16).png-9e76c3c277303b62fa7d48daa6de5575.ctex"]
+source_file="res://Assets/Penguino/Surprised (16 x 16).png"
+dest_files=["res://.godot/imported/Surprised (16 x 16).png-740798354f0c1001f32095915465980e.ctex"]
 
 [params]
 

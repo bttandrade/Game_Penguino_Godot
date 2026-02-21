@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqi2qkkrtt5ow"
-path="res://.godot/imported/Wall_Slide (16x16).png-64f121fa968f4e40986c4c2f2d1343f5.ctex"
+path="res://.godot/imported/Wall_Slide (16x16).png-93a6f15df2a874c8b732c1c82daec5bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/penguino/Wall_Slide (16x16).png"
-dest_files=["res://.godot/imported/Wall_Slide (16x16).png-64f121fa968f4e40986c4c2f2d1343f5.ctex"]
+source_file="res://Assets/Penguino/Wall_Slide (16x16).png"
+dest_files=["res://.godot/imported/Wall_Slide (16x16).png-93a6f15df2a874c8b732c1c82daec5bc.ctex"]
 
 [params]
 

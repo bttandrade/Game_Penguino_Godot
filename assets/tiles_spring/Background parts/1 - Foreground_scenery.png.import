@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5q4a3svwrlfo"
-path="res://.godot/imported/1 - Foreground_scenery.png-617b7e9cf0bf3174e4053e6f6c6e923d.ctex"
+path="res://.godot/imported/1 - Foreground_scenery.png-ede04f91e8c30d8b9f37b33f45eb9fdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_spring/Background parts/1 - Foreground_scenery.png"
-dest_files=["res://.godot/imported/1 - Foreground_scenery.png-617b7e9cf0bf3174e4053e6f6c6e923d.ctex"]
+source_file="res://Assets/Tiles_spring/Background parts/1 - Foreground_scenery.png"
+dest_files=["res://.godot/imported/1 - Foreground_scenery.png-ede04f91e8c30d8b9f37b33f45eb9fdf.ctex"]
 
 [params]
 

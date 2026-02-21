@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cu4kv6nf0bbcp"
-path="res://.godot/imported/Victory_Dance (16 x 16).png-08c8c9c6e43a90e14b586b200e642fb4.ctex"
+path="res://.godot/imported/Victory_Dance (16 x 16).png-a0ff35c3223a83ab38c9c1a44b3b489c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/penguino/Victory_Dance (16 x 16).png"
-dest_files=["res://.godot/imported/Victory_Dance (16 x 16).png-08c8c9c6e43a90e14b586b200e642fb4.ctex"]
+source_file="res://Assets/Penguino/Victory_Dance (16 x 16).png"
+dest_files=["res://.godot/imported/Victory_Dance (16 x 16).png-a0ff35c3223a83ab38c9c1a44b3b489c.ctex"]
 
 [params]
 

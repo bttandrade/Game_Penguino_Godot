@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de468yg32rv4b"
-path="res://.godot/imported/Lying_On_Ground (16 x 16).png-df0e4040aaf6d989c8b90c63c0398441.ctex"
+path="res://.godot/imported/Lying_On_Ground (16 x 16).png-294b5f96171090a37e74ad6e037f1756.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/penguino/Lying_On_Ground (16 x 16).png"
-dest_files=["res://.godot/imported/Lying_On_Ground (16 x 16).png-df0e4040aaf6d989c8b90c63c0398441.ctex"]
+source_file="res://Assets/Penguino/Lying_On_Ground (16 x 16).png"
+dest_files=["res://.godot/imported/Lying_On_Ground (16 x 16).png-294b5f96171090a37e74ad6e037f1756.ctex"]
 
 [params]
 

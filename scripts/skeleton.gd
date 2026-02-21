@@ -7,6 +7,7 @@ enum SkeletonState{
 }
 
 @export var initial_direction = 0
+@export var mob_value = 100
 
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $HitBox
@@ -77,7 +78,8 @@ func go_to_walk_state():
 func go_to_dead_state():
 	status = SkeletonState.dead
 	anima.play("dead")
-	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	Globals.player_score += mob_value
+	hit_box.queue_free()
 	remove_from_group("DamageArea")
 	velocity = Vector2.ZERO
 	

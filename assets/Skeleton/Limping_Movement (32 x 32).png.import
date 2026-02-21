@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwmnh0nd6d866"
-path="res://.godot/imported/Limping_Movement (32 x 32).png-b4be6cdcf475b41050577a766c6239e8.ctex"
+path="res://.godot/imported/Limping_Movement (32 x 32).png-53989090f3b55b026a0a556e8382f7ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skeleton/Limping_Movement (32 x 32).png"
-dest_files=["res://.godot/imported/Limping_Movement (32 x 32).png-b4be6cdcf475b41050577a766c6239e8.ctex"]
+source_file="res://Assets/Skeleton/Limping_Movement (32 x 32).png"
+dest_files=["res://.godot/imported/Limping_Movement (32 x 32).png-53989090f3b55b026a0a556e8382f7ef.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci5s6vsxqm3vh"
-path="res://.godot/imported/falling-platform-brown.png-54fdecd21a41b6a7c8b8a30d47eb9095.ctex"
+path="res://.godot/imported/falling-platform-brown.png-932f2b4a0948c3b4f4bd008b9b868684.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/universal/falling-platform-brown.png"
-dest_files=["res://.godot/imported/falling-platform-brown.png-54fdecd21a41b6a7c8b8a30d47eb9095.ctex"]
+source_file="res://Assets/Universal/falling-platform-brown.png"
+dest_files=["res://.godot/imported/falling-platform-brown.png-932f2b4a0948c3b4f4bd008b9b868684.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfeop5kpefprg"
-path="res://.godot/imported/3 - Cloud_cover_1.png-bd514b2a4e4d62f3ccac9ccea28dd683.ctex"
+path="res://.godot/imported/3 - Cloud_cover_1.png-ed8bb6e00db68a8f9de1b8ea1036e130.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_spring/Background parts/3 - Cloud_cover_1.png"
-dest_files=["res://.godot/imported/3 - Cloud_cover_1.png-bd514b2a4e4d62f3ccac9ccea28dd683.ctex"]
+source_file="res://Assets/Tiles_spring/Background parts/3 - Cloud_cover_1.png"
+dest_files=["res://.godot/imported/3 - Cloud_cover_1.png-ed8bb6e00db68a8f9de1b8ea1036e130.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b85wame8sunc4"]
 
-[ext_resource type="Texture2D" uid="uid://ddqo2iq2t7wcl" path="res://assets/universal/Dialog_Box(16 x 16).png" id="1_0pd5l"]
-[ext_resource type="Script" uid="uid://yxpxt58rh3om" path="res://scripts/dialog_box.gd" id="1_ydwb0"]
-[ext_resource type="FontFile" uid="uid://dx4dbuk0rrfp8" path="res://assets/fonts/RevMiniPixel.ttf" id="2_ydwb0"]
+[ext_resource type="Texture2D" uid="uid://ddqo2iq2t7wcl" path="res://Assets/Universal/Dialog_Box(16 x 16).png" id="1_0pd5l"]
+[ext_resource type="Script" uid="uid://yxpxt58rh3om" path="res://Scripts/dialog_box.gd" id="1_ydwb0"]
+[ext_resource type="FontFile" uid="uid://dx4dbuk0rrfp8" path="res://Assets/Fonts/RevMiniPixel.ttf" id="2_ydwb0"]
 
 [node name="DialogBox" type="MarginContainer" unique_id=1291638370]
 offset_right = 32.0

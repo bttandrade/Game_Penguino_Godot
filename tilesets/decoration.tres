@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" format=3 uid="uid://bhk6l7csfm861"]
 
-[ext_resource type="Texture2D" uid="uid://dkugoqs2u4ce1" path="res://assets/tiles_spring/Grassland_entities (16 x 16).png" id="1_g2y7v"]
-[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://assets/tiles_summer/Tropics_entities (16 x 16).png" id="2_omqfk"]
-[ext_resource type="Texture2D" uid="uid://bfjjonc04lyvu" path="res://assets/tiles_winter/Winter_entities (16 x 16).png" id="3_1rlr1"]
-[ext_resource type="Texture2D" uid="uid://c16708gj17ggm" path="res://assets/tiles_autumn/Autumn_entities (16 x 16).png" id="4_nuo48"]
+[ext_resource type="Texture2D" uid="uid://dkugoqs2u4ce1" path="res://Assets/Tiles_spring/Grassland_entities (16 x 16).png" id="1_g2y7v"]
+[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/Tiles_summer/Tropics_entities (16 x 16).png" id="2_omqfk"]
+[ext_resource type="Texture2D" uid="uid://bfjjonc04lyvu" path="res://Assets/Tiles_winter/Winter_entities (16 x 16).png" id="3_1rlr1"]
+[ext_resource type="Texture2D" uid="uid://c16708gj17ggm" path="res://Assets/Tiles_autumn/Autumn_entities (16 x 16).png" id="4_nuo48"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cum1x"]
 texture = ExtResource("1_g2y7v")

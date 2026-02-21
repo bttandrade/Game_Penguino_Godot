@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkugoqs2u4ce1"
-path="res://.godot/imported/Grassland_entities (16 x 16).png-077e496b29c70b63402f12202067ac0d.ctex"
+path="res://.godot/imported/Grassland_entities (16 x 16).png-53d78a0f92c5cc35fc2c5a97686178fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles_spring/Grassland_entities (16 x 16).png"
-dest_files=["res://.godot/imported/Grassland_entities (16 x 16).png-077e496b29c70b63402f12202067ac0d.ctex"]
+source_file="res://Assets/Tiles_spring/Grassland_entities (16 x 16).png"
+dest_files=["res://.godot/imported/Grassland_entities (16 x 16).png-53d78a0f92c5cc35fc2c5a97686178fd.ctex"]
 
 [params]
 

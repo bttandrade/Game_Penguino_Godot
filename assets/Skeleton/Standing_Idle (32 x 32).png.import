@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnlqbxsx1l3m4"
-path="res://.godot/imported/Standing_Idle (32 x 32).png-f7418bc4657ee0fff7b4ddd80231d8b0.ctex"
+path="res://.godot/imported/Standing_Idle (32 x 32).png-9f37ec14c136c483da566195aab6288e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skeleton/Standing_Idle (32 x 32).png"
-dest_files=["res://.godot/imported/Standing_Idle (32 x 32).png-f7418bc4657ee0fff7b4ddd80231d8b0.ctex"]
+source_file="res://Assets/Skeleton/Standing_Idle (32 x 32).png"
+dest_files=["res://.godot/imported/Standing_Idle (32 x 32).png-9f37ec14c136c483da566195aab6288e.ctex"]
 
 [params]
 

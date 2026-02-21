@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ce8mkdc75dyr"]
 
-[ext_resource type="Script" uid="uid://igskrpsegmj8" path="res://scripts/camera.gd" id="1_ixxe8"]
+[ext_resource type="Script" uid="uid://igskrpsegmj8" path="res://Scripts/camera.gd" id="1_ixxe8"]
 
 [node name="Camera2D" type="Camera2D" unique_id=2033492168]
 process_callback = 0

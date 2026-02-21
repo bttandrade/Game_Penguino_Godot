@@ -5,6 +5,3 @@ extends Area2D
 
 func _ready() -> void:
 	collision.shape.size.x = sprite.get_rect().size.x
-
-func _process(_delta: float) -> void:
-	pass

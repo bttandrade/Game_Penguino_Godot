@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmr3nbobv6jln"
-path="res://.godot/imported/Wall_Grab (16x16).png-83ac3f05be52f1c50576caf094835351.ctex"
+path="res://.godot/imported/Wall_Grab (16x16).png-977034b487c189a81841578254cd548a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/penguino/Wall_Grab (16x16).png"
-dest_files=["res://.godot/imported/Wall_Grab (16x16).png-83ac3f05be52f1c50576caf094835351.ctex"]
+source_file="res://Assets/Penguino/Wall_Grab (16x16).png"
+dest_files=["res://.godot/imported/Wall_Grab (16x16).png-977034b487c189a81841578254cd548a.ctex"]
 
 [params]
 
