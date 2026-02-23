@@ -128,7 +128,7 @@ scale = Vector2(-1, 1)
 position = Vector2(352, 190)
 
 [node name="Sprite2D" parent="Spikes" index="1" unique_id=1857521535]
-region_rect = Rect2(0, 8, 96, 8)
+region_rect = Rect2(0, 8, 112, 8)
 
 [node name="Bub" parent="." unique_id=1670272699 instance=ExtResource("16_btll8")]
 position = Vector2(492, 166)

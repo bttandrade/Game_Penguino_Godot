@@ -1,8 +1,8 @@
 extends AnimatableBody2D
 
-@onready var target: Sprite2D = $Target
-
 @export var time = 1
+
+@onready var target: Sprite2D = $Target
 
 func _ready() -> void:
 	target.visible = false

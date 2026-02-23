@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dybrsupndew4o"]
+
+[ext_resource type="Script" uid="uid://dh7w74fd7l0p2" path="res://Scripts/flying_cherry.gd" id="1_rtk3g"]
+[ext_resource type="Texture2D" uid="uid://cr3rl7umndmag" path="res://Assets/Cherry/Cherry.png" id="2_xjce1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd358"]
+atlas = ExtResource("2_xjce1")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c77ya"]
+atlas = ExtResource("2_xjce1")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtv1m"]
+atlas = ExtResource("2_xjce1")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fk33c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd358")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c77ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtv1m")
+}],
+"loop": true,
+"name": &"patrol",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maoi3"]
+radius = 6.0827627
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spduq"]
+radius = 7.0
+
+[node name="FlyingCherry" type="CharacterBody2D" unique_id=1967996673 groups=["enemy_body"]]
+collision_layer = 16
+script = ExtResource("1_rtk3g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1526325961]
+sprite_frames = SubResource("SpriteFrames_fk33c")
+animation = &"patrol"
+autoplay = "patrol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521059575]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_maoi3")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=149533414 groups=["enemy_hitbox"]]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1560561459]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_spduq")
+debug_color = Color(1, 0, 0, 0.39215687)
+
+[node name="PatrolPoints" type="Node2D" parent="." unique_id=1135144689]
+
+[node name="Point1" type="Node2D" parent="PatrolPoints" unique_id=1278352072]
+
+[node name="Point2" type="Node2D" parent="PatrolPoints" unique_id=746531560]
+
+[node name="Point3" type="Node2D" parent="PatrolPoints" unique_id=1814726944]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=933988395]
+
+[node name="SpawnPosition" type="Marker2D" parent="." unique_id=644498762]
+position = Vector2(0, 4)

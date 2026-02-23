@@ -23,13 +23,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
-
+	
 	match status:
 		BubState.walk:
 			walk_state(delta)
 		BubState.dead:
 			dead_state(delta)
-
+	
 	move_and_slide()
 
 func start_move():
@@ -59,12 +59,12 @@ func go_to_walk_state():
 	anima.play("walk")
 
 func go_to_dead_state():
+	hit_box.remove_from_group("enemy_hitbox")
+	remove_from_group("enemy_body")
 	velocity.y = -200
 	status = BubState.dead
 	anima.play("dead")
 	Globals.player_score += mob_value
-	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
-	remove_from_group("DamageArea")
 
 func apply_gravity(delta):
 	if not is_on_floor():

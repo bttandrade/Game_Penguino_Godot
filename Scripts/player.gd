@@ -13,24 +13,6 @@ enum PlayerState{
 	dead
 } 
 
-@onready var anima: AnimatedSprite2D = $AnimatedSprite2D
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var reload_timer: Timer = $ReloadTimer
-@onready var invin_timer: Timer = $InvinTimer
-
-@onready var hud_manager: Control = $"../HUD/HUDManager"
-
-@onready var left_wall_detector: RayCast2D = $LeftWallDetector
-@onready var right_wall_detector: RayCast2D = $RightWallDetector
-
-@onready var hurt_box: Area2D = $HitBoxes/HurtBox
-@onready var hurt_box_collision: CollisionShape2D = $HitBoxes/HurtBox/CollisionShape2D
-
-@onready var stomp_box: Area2D = $HitBoxes/StompBox
-@onready var stomp_box_collision: CollisionShape2D = $HitBoxes/StompBox/CollisionShape2D
-
-const JUMP_VELOCITY = -300.0
-
 @export var max_speed = 100
 @export var acceleration = 400
 @export var deceleration = 400
@@ -42,6 +24,20 @@ const JUMP_VELOCITY = -300.0
 @export var water_acceleration = 200
 @export var water_jump_force = -100
 @export var knockback_value = 200
+
+@onready var anima: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var reload_timer: Timer = $ReloadTimer
+@onready var invin_timer: Timer = $InvinTimer
+@onready var hud_manager: Control = $"../HUD/HUDManager"
+@onready var left_wall_detector: RayCast2D = $LeftWallDetector
+@onready var right_wall_detector: RayCast2D = $RightWallDetector
+@onready var hurt_box: Area2D = $HitBoxes/HurtBox
+@onready var hurt_box_collision: CollisionShape2D = $HitBoxes/HurtBox/CollisionShape2D
+@onready var stomp_box: Area2D = $HitBoxes/StompBox
+@onready var stomp_box_collision: CollisionShape2D = $HitBoxes/StompBox/CollisionShape2D
+
+const JUMP_VELOCITY = -300.0
 
 var player_initial_life = 3
 var last_direction = 0
@@ -103,18 +99,10 @@ func go_to_duck_state():
 	anima.play("duck")
 	set_collision_duck()
 
-func exit_from_duck_state():
-	set_collision_back()
-	pass
-	
 func go_to_slide_state():
 	status = PlayerState.slide
 	anima.play("slide")
 	set_collision_duck()
-
-func exit_slide_state():
-	set_collision_back()
-	pass
 
 func go_to_wall_state():
 	status = PlayerState.wall
@@ -179,14 +167,14 @@ func walk_state(delta):
 func jump_state(delta):
 	if Globals.player_life <= 0:
 		go_to_dead_state()
-
+	
 	apply_gravity(delta)
 	move(delta)
-
+	
 	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
 		return
-
+	
 	if velocity.y > 0:
 		go_to_fall_state()
 		return
@@ -212,9 +200,9 @@ func fall_state(delta):
 func duck_state(delta):
 	apply_gravity(delta)
 	update_direction()
-
+	
 	if Input.is_action_just_released("duck"):
-		exit_from_duck_state()
+		set_collision_back()
 		go_to_idle_state()
 		return
 
@@ -222,11 +210,11 @@ func slide_state(delta):
 	apply_gravity(delta)
 	velocity.x = move_toward(velocity.x, 0, slide_deceleration * delta)
 	if Input.is_action_just_released("duck"):
-		exit_slide_state()
+		set_collision_back()
 		go_to_walk_state()
 		
 	if velocity.x == 0:
-		exit_slide_state()
+		set_collision_back()
 		go_to_duck_state()
 
 func wall_state(delta):
@@ -266,6 +254,7 @@ func swim_state(delta):
 		velocity.y = water_jump_force
 
 func hurt_state(_delta):
+	set_collision_back()
 	Globals.player_life -= 1
 	if Globals.player_life >= 1:
 		invin_timer.start()
@@ -302,7 +291,7 @@ func set_collision_duck():
 	collision_shape.shape.height = 12
 	collision_shape.position.y = 3
 	collision_shape.rotation_degrees = 90
-
+	
 	hurt_box_collision.shape.size = Vector2(12, 8)
 	hurt_box_collision.position.y = 2
 

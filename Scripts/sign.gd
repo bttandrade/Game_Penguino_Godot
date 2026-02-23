@@ -1,9 +1,9 @@
 extends Node2D
 
+@export var lines: Array[String] = []
+
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var sign_area: Area2D = $SignArea
-
-@export var lines: Array[String] = []
 
 func _unhandled_input(event: InputEvent) -> void:
 	if sign_area.get_overlapping_bodies().size() > 0:

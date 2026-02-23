@@ -4,10 +4,8 @@ extends Node
 
 var message_lines: Array[String] = []
 var current_line = 0
-
 var dialog_box 
 var dialog_box_position = Vector2.ZERO
-
 var is_message_active = false
 var can_advance_message = false
 

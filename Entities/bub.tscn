@@ -95,7 +95,7 @@ collision_mask = 4
 position = Vector2(-2.1855695e-07, 3)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_gvbfr")
-debug_color = Color(1, 0, 0.15686275, 0.41960785)
+debug_color = Color(1, 0, 0, 0.39215687)
 
 [node name="WallDetector" type="RayCast2D" parent="." unique_id=893558415]
 position = Vector2(0, 3)

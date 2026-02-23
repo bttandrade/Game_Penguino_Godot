@@ -1,10 +1,10 @@
 extends AnimatableBody2D
 
+@export var timer_value = 2
+
 @onready var respawn_timer: Timer = $RespawnTimer
 @onready var anima: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
-
-@export var timer_value = 2
 
 var velocity = Vector2.ZERO
 var is_triggered = false

@@ -1,21 +1,15 @@
 extends Area2D
 
+@export var coin_amount = 5
+
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var spawn_coins: Marker2D = $spawn_coins
-
-@export var coin_amount = 5
 
 var is_open = false
 var coin_instance = preload("res://entities/rigid_coin.tscn")
 
-func _ready() -> void:
-	pass
-
-func _process(_delta: float) -> void:
-	pass
-
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player") and is_open == false:
+	if body.is_in_group("player_body") and is_open == false:
 		anima.play("open")
 		is_open = true
 		for i in range(coin_amount):

@@ -29,7 +29,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	match status:
 		SkeletonState.walk:
 			walk_state(delta)
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 			dead_state(delta)
 		SkeletonState.attack:
 			attack_state(delta)
-
+	
 	move_and_slide()
 
 func start_move():
@@ -62,15 +62,15 @@ func walk_state(_delta):
 	if player_detector.is_colliding():
 		go_to_attack_state()
 		return
-		
+
 func dead_state(_delta):
 	pass
-	
+
 func attack_state(_delta):
 	if anima.frame == 2 and can_throw:
 		throw_bone()
 		can_throw = false
-	
+
 func go_to_walk_state():
 	status = SkeletonState.walk
 	anima.play("walk")
@@ -82,16 +82,16 @@ func go_to_dead_state():
 	anima.play("dead")
 	Globals.player_score += mob_value
 	velocity = Vector2.ZERO
-	
+
 func go_to_attack_state():
 	status = SkeletonState.attack
 	anima.play("attack")
 	velocity = Vector2.ZERO
 	can_throw = true
-	
+
 func take_damage():
 	go_to_dead_state()
-	
+
 func throw_bone():
 	var new_bone = SPINNING_BONE.instantiate()
 	add_sibling(new_bone)
@@ -102,8 +102,3 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if anima.animation == "attack":
 		go_to_walk_state()
 		return
-	
-	
-	
-	
-	

@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bhnpe44owliji" path="res://Entities/sign.tscn" id="14_ei7ke"]
 [ext_resource type="PackedScene" uid="uid://du4vxikwfh4gl" path="res://Entities/bub.tscn" id="15_xqm33"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="16_6nlcg"]
+[ext_resource type="PackedScene" uid="uid://cvao6ixkwsamh" path="res://Entities/cherry.tscn" id="17_434qk"]
+[ext_resource type="PackedScene" uid="uid://dybrsupndew4o" path="res://Entities/flying_cherry.tscn" id="18_434qk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -87,8 +89,8 @@ position = Vector2(604, 165)
 next_level = "summer"
 
 [node name="Skeleton" parent="." unique_id=925847205 instance=ExtResource("11_vwr56")]
-position = Vector2(194, 151)
-initial_direction = 1
+position = Vector2(456, 152)
+initial_direction = -1
 mob_value = 200
 
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=1245937780]
@@ -124,3 +126,14 @@ position = Vector2(352, 104)
 initial_direction = -1
 
 [node name="HUD" parent="." unique_id=394713785 instance=ExtResource("16_6nlcg")]
+
+[node name="Cherry" parent="." unique_id=1967996673 instance=ExtResource("17_434qk")]
+position = Vector2(352, 128)
+
+[node name="FlyingCherry" parent="." unique_id=1373125003 instance=ExtResource("18_434qk")]
+position = Vector2(136, 152)
+
+[node name="Point2" parent="FlyingCherry/PatrolPoints" parent_id_path=PackedInt32Array(1373125003, 1135144689) index="1" unique_id=746531560]
+position = Vector2(0, -64)
+
+[editable path="FlyingCherry"]
