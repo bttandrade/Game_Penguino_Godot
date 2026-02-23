@@ -25,10 +25,9 @@ enum PlayerState{
 @export var water_jump_force = -100
 @export var knockback_value = 200
 
+@onready var player_scene = preload("res://Entities/player.tscn")
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var reload_timer: Timer = $ReloadTimer
-@onready var invin_timer: Timer = $InvinTimer
 @onready var hud_manager: Control = $"../HUD/HUDManager"
 @onready var left_wall_detector: RayCast2D = $LeftWallDetector
 @onready var right_wall_detector: RayCast2D = $RightWallDetector
@@ -39,7 +38,6 @@ enum PlayerState{
 
 const JUMP_VELOCITY = -300.0
 
-var player_initial_life = 3
 var last_direction = 0
 var jump_count = 0
 var direction = 0
@@ -47,7 +45,7 @@ var status: PlayerState
 
 func _ready() -> void:
 	hud_manager.time_is_up.connect(go_to_dead_state)
-	Globals.player_life = player_initial_life
+	Globals.current_checkpoint = self.global_position
 	go_to_idle_state()
 
 func _physics_process(delta: float) -> void:
@@ -120,13 +118,19 @@ func go_to_hurt_state():
 	anima.modulate = Color(1, 0, 0, 1)
 	var knockback_tween = get_tree().create_tween()
 	knockback_tween.tween_property(anima, "modulate", Color(1, 1, 1, 1), 0.25)
+	velocity.y = JUMP_VELOCITY
+	anima.play("dead")
+	respawn()
+
+func hurt_state(delta):
+	velocity.x = 0
+	apply_gravity(delta)
 
 func go_to_dead_state():
-	if status == PlayerState.dead:
-		return
-	status = PlayerState.dead
-	anima.play("dead")
-	reload_timer.start()
+	pass
+
+func dead_state(_delta):
+	pass
 
 func idle_state(delta):
 	apply_gravity(delta)
@@ -165,9 +169,6 @@ func walk_state(delta):
 		return
 
 func jump_state(delta):
-	if Globals.player_life <= 0:
-		go_to_dead_state()
-	
 	apply_gravity(delta)
 	move(delta)
 	
@@ -253,17 +254,6 @@ func swim_state(delta):
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = water_jump_force
 
-func hurt_state(_delta):
-	set_collision_back()
-	Globals.player_life -= 1
-	if Globals.player_life >= 1:
-		invin_timer.start()
-	go_to_jump_state()
-
-func dead_state(delta):
-	velocity.x = 0
-	apply_gravity(delta)
-
 func move(delta):
 	update_direction()
 	if direction:
@@ -304,8 +294,12 @@ func set_collision_back():
 	hurt_box_collision.shape.size = Vector2(12, 12)
 	hurt_box_collision.position.y = 0
 
-func _on_reload_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+func respawn():
+	await get_tree().create_timer(1.0).timeout
+	set_collision_back()
+	Globals.player = $"."
+	Globals.respawn_player()
+	go_to_idle_state()
 
 func hit_enemy(area: Area2D):
 	if velocity.y > 0 and area.is_in_group("enemy_body"):
@@ -318,7 +312,6 @@ func took_a_hit(area):
 	
 	var enemy_pos_x = area.global_position.x
 	var player_pos_x = global_position.x
-	
 	var direction_of_hit = 0
 	
 	if enemy_pos_x > player_pos_x:
@@ -332,9 +325,12 @@ func took_a_hit(area):
 
 func be_invincible():
 	hurt_box.set_collision_mask_value(6, false)
-
-func _on_invin_timer_timeout() -> void:
+	stomp_box.set_collision_mask_value(5, false)
+	stomp_box.set_collision_mask_value(7, false)
+	await get_tree().create_timer(1.0).timeout
 	hurt_box.set_collision_mask_value(6, true)
+	stomp_box.set_collision_mask_value(5, true)
+	stomp_box.set_collision_mask_value(7, true)
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy_hitbox"):

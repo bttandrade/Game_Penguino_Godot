@@ -60,7 +60,6 @@ func go_to_dead_state():
 	Globals.player_score += mob_value
 	status = CherryState.dead
 
-
 func dead_state(_delta):
 	var instance_enemy = CHERRY.instantiate()
 	instance_enemy.global_position = spawn_position.global_position

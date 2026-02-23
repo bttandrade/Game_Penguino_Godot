@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://7ttj3th0uv1x"]
 
-[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Tilesets/terrain.tres" id="1_5n1to"]
-[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Tilesets/decoration.tres" id="2_xiut5"]
+[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_5n1to"]
+[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_xiut5"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="3_pgmdk"]
 [ext_resource type="Texture2D" uid="uid://drb6s3bnonndi" path="res://Assets/TilesAutumn/Background/6 - Distant_trees.png" id="4_lhmlj"]
 [ext_resource type="Texture2D" uid="uid://dr82fotshqxou" path="res://Assets/TilesAutumn/Background/5 - Tree_row_BG_2.png" id="5_g3hnd"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cj5bba1x11cwm" path="res://Entities/spikes.tscn" id="15_bl5ev"]
 [ext_resource type="PackedScene" uid="uid://du4vxikwfh4gl" path="res://Entities/bub.tscn" id="16_btll8"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="17_xiut5"]
+[ext_resource type="PackedScene" uid="uid://div1gua7v5qxv" path="res://Entities/checkpoint.tscn" id="18_pgmdk"]
+[ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Entities/pause_menu.tscn" id="19_lhmlj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kh4ky"]
 normal = Vector2(1, 0)
@@ -134,6 +136,11 @@ region_rect = Rect2(0, 8, 112, 8)
 position = Vector2(492, 166)
 
 [node name="HUD" parent="." unique_id=394713785 instance=ExtResource("17_xiut5")]
+
+[node name="Checkpoint" parent="." unique_id=1619582870 instance=ExtResource("18_pgmdk")]
+position = Vector2(346, 115)
+
+[node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("19_lhmlj")]
 
 [editable path="MovingPlatform"]
 [editable path="Spikes"]

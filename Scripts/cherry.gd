@@ -42,7 +42,7 @@ func start_move():
 func go_to_walk_state():
 	status = CherryState.walk
 	anima.play("walk")
-	
+
 func walk_state(_delta):
 	velocity.x = SPEED * direction
 	if wall_detector.is_colliding():

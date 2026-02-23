@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dyubmp70bmwbf"]
 
-[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Tilesets/terrain.tres" id="1_46t7q"]
-[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Tilesets/decoration.tres" id="2_v58ws"]
+[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_46t7q"]
+[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_v58ws"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="3_ri2uj"]
 [ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://Assets/TilesSpring/Background/5 - Sky_color.png" id="4_0apvh"]
 [ext_resource type="Texture2D" uid="uid://bybdcaxlanrx" path="res://Assets/TilesSpring/Background/4 - Cloud_cover_2.png" id="5_lqeyt"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="16_6nlcg"]
 [ext_resource type="PackedScene" uid="uid://cvao6ixkwsamh" path="res://Entities/cherry.tscn" id="17_434qk"]
 [ext_resource type="PackedScene" uid="uid://dybrsupndew4o" path="res://Entities/flying_cherry.tscn" id="18_434qk"]
+[ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Entities/pause_menu.tscn" id="19_46t7q"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -125,8 +126,6 @@ lines = Array[String](["Um Pinguino na primavera?", "Como você chegou aqui?", "
 position = Vector2(352, 104)
 initial_direction = -1
 
-[node name="HUD" parent="." unique_id=394713785 instance=ExtResource("16_6nlcg")]
-
 [node name="Cherry" parent="." unique_id=1967996673 instance=ExtResource("17_434qk")]
 position = Vector2(352, 128)
 
@@ -135,5 +134,10 @@ position = Vector2(136, 152)
 
 [node name="Point2" parent="FlyingCherry/PatrolPoints" parent_id_path=PackedInt32Array(1373125003, 1135144689) index="1" unique_id=746531560]
 position = Vector2(0, -64)
+
+[node name="HUD" parent="." unique_id=394713785 instance=ExtResource("16_6nlcg")]
+
+[node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("19_46t7q")]
+visible = false
 
 [editable path="FlyingCherry"]

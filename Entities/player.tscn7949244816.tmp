@@ -273,6 +273,9 @@ collision_mask = 5
 target_position = Vector2(7, 0)
 collision_mask = 5
 
+[node name="InvinTimer" type="Timer" parent="." unique_id=38829558]
+wait_time = 0.2
+
 [node name="HitBoxes" type="Node2D" parent="." unique_id=792074376]
 
 [node name="HurtBox" type="Area2D" parent="HitBoxes" unique_id=1255440571]
@@ -293,6 +296,7 @@ position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_k47j4")
 debug_color = Color(0, 0.6394448, 0.36903545, 0.41960785)
 
+[connection signal="timeout" from="InvinTimer" to="." method="_on_invin_timer_timeout"]
 [connection signal="area_entered" from="HitBoxes/HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HitBoxes/StompBox" to="." method="_on_stomp_box_body_entered"]
 [connection signal="body_exited" from="HitBoxes/StompBox" to="." method="_on_stomp_box_body_exited"]

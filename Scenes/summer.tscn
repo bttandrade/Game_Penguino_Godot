@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://raw6pnghx4nb"]
 
-[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Tilesets/terrain.tres" id="1_1whjj"]
-[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Tilesets/decoration.tres" id="2_3abf5"]
+[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_1whjj"]
+[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_3abf5"]
 [ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/TilesSummer/Tropics_entities (16 x 16).png" id="3_85ogr"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="4_ar8af"]
 [ext_resource type="Texture2D" uid="uid://bk3f8nq6566p1" path="res://Assets/TilesSummer/Background/5 - Sky_color.png" id="5_nfexf"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="13_up8ik"]
 [ext_resource type="PackedScene" uid="uid://wekgtfrjcvyb" path="res://Entities/falling_plataform.tscn" id="14_dau0y"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="15_3abf5"]
+[ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Entities/pause_menu.tscn" id="16_85ogr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxncu"]
 texture = ExtResource("3_85ogr")
@@ -156,3 +157,5 @@ position = Vector2(320, 8)
 position = Vector2(296, 152)
 
 [node name="HUD" parent="." unique_id=394713785 instance=ExtResource("15_3abf5")]
+
+[node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("16_85ogr")]

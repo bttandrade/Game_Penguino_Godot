@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://b50byt6sufnno"]
 
-[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Tilesets/terrain.tres" id="1_etm65"]
-[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Tilesets/decoration.tres" id="2_qhabo"]
-[ext_resource type="TileSet" uid="uid://df6uqqscxni41" path="res://Tilesets/underwater.tres" id="3_56c8d"]
+[ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Entities/pause_menu.tscn" id="1_56c8d"]
+[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_etm65"]
+[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_qhabo"]
+[ext_resource type="TileSet" uid="uid://df6uqqscxni41" path="res://Themes/underwater.tres" id="3_56c8d"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="4_ghpx4"]
 [ext_resource type="Texture2D" uid="uid://ik6hij3y237f" path="res://Assets/TilesWinter/Background/3 - Big_mountain_BG.png" id="5_i8rp7"]
 [ext_resource type="Texture2D" uid="uid://4hgjlivrcl24" path="res://Assets/TilesWinter/Background/2 - Smaller_mountains.png" id="6_j7mi7"]
@@ -85,3 +86,5 @@ shape = SubResource("WorldBoundaryShape2D_58nyd")
 position = Vector2(424, 8)
 
 [node name="HUD" parent="." unique_id=394713785 instance=ExtResource("12_qhabo")]
+
+[node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("1_56c8d")]
