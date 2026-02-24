@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
+@onready var checked_sound: AudioStreamPlayer = $CheckedSound
 
 var is_active = false
 
@@ -12,6 +13,7 @@ func _on_body_entered(body: Node2D) -> void:
 func activate_checkpoint():
 	Globals.current_checkpoint = self.global_position
 	is_active = true
+	checked_sound.play()
 	anima.play("raising")
 
 func _on_animated_sprite_2d_animation_finished() -> void:

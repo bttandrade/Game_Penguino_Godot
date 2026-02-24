@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/TilesSummer/Tropics_entities (16 x 16).png" id="2_omqfk"]
 [ext_resource type="Texture2D" uid="uid://bfjjonc04lyvu" path="res://Assets/TilesWinter/Winter_entities (16 x 16).png" id="3_1rlr1"]
 [ext_resource type="Texture2D" uid="uid://c16708gj17ggm" path="res://Assets/TilesAutumn/Autumn_entities (16 x 16).png" id="4_nuo48"]
+[ext_resource type="Texture2D" uid="uid://chlsjsmgdhfjb" path="res://Assets/Universal/House (112 x 96).png" id="5_411qn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cum1x"]
 texture = ExtResource("1_g2y7v")
@@ -59,9 +60,7 @@ texture = ExtResource("2_omqfk")
 12:5/animation_frame_0/duration = 0.3
 12:5/animation_frame_1/duration = 0.3
 12:5/0 = 0
-12:5/0/modulate = Color(1, 1, 1, 0.47058824)
 12:6/0 = 0
-12:6/0/modulate = Color(1, 1, 1, 0.47058824)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38qtr"]
 texture = ExtResource("3_1rlr1")
@@ -77,6 +76,7 @@ texture = ExtResource("3_1rlr1")
 4:5/0 = 0
 1:1/size_in_atlas = Vector2i(3, 3)
 1:1/0 = 0
+1:1/0/z_index = 1
 5:1/size_in_atlas = Vector2i(3, 3)
 5:1/0 = 0
 
@@ -107,8 +107,51 @@ texture = ExtResource("4_nuo48")
 5:1/size_in_atlas = Vector2i(3, 3)
 5:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cevk6"]
+texture = ExtResource("5_411qn")
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:0/size_in_atlas = Vector2i(7, 6)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 8)
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_cum1x")
 sources/1 = SubResource("TileSetAtlasSource_mievr")
 sources/2 = SubResource("TileSetAtlasSource_38qtr")
 sources/3 = SubResource("TileSetAtlasSource_o7365")
+sources/4 = SubResource("TileSetAtlasSource_cevk6")

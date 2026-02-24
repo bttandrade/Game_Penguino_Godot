@@ -13,17 +13,17 @@ enum PlayerState{
 	dead
 } 
 
-@export var max_speed = 100
-@export var acceleration = 400
-@export var deceleration = 400
-@export var slide_deceleration = 100
-@export var max_jump_count = 2
-@export var wall_acceleration = 40
-@export var wall_jump_velocity = 250
-@export var water_max_speed = 100
-@export var water_acceleration = 200
-@export var water_jump_force = -100
-@export var knockback_value = 200
+@export var max_speed: float = 100.0
+@export var acceleration: float = 400.0
+@export var deceleration: float = 400.0
+@export var slide_deceleration: float = 100.0
+@export var max_jump_count: int = 2
+@export var wall_acceleration: float = 40.0
+@export var wall_jump_velocity: float = 250.0
+@export var water_max_speed: float = 100.0
+@export var water_acceleration: float = 200.0
+@export var water_jump_force: float = -100.0
+@export var knockback_value: float = 200.0
 
 @onready var player_scene = preload("res://Entities/player.tscn")
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
@@ -35,6 +35,11 @@ enum PlayerState{
 @onready var hurt_box_collision: CollisionShape2D = $HitBoxes/HurtBox/CollisionShape2D
 @onready var stomp_box: Area2D = $HitBoxes/StompBox
 @onready var stomp_box_collision: CollisionShape2D = $HitBoxes/StompBox/CollisionShape2D
+@onready var jump_sound: AudioStreamPlayer = $Sounds/JumpSound
+@onready var hit_sound: AudioStreamPlayer = $Sounds/HitSound
+@onready var hurt_sound: AudioStreamPlayer = $Sounds/HurtSound
+@onready var swim_sound: AudioStreamPlayer = $Sounds/SwimSound
+@onready var water_sound: AudioStreamPlayer = $Sounds/WaterSound
 
 const JUMP_VELOCITY = -300.0
 
@@ -78,60 +83,6 @@ func go_to_idle_state():
 	status = PlayerState.idle
 	anima.play("idle")
 
-func go_to_walk_state():
-	status = PlayerState.walk
-	anima.play("walk")
-
-func go_to_jump_state():
-	status = PlayerState.jump
-	anima.play("jump")
-	velocity.y = JUMP_VELOCITY
-	jump_count += 1
-
-func go_to_fall_state():
-	status = PlayerState.fall
-	anima.play("fall")
-
-func go_to_duck_state():
-	status = PlayerState.duck
-	anima.play("duck")
-	set_collision_duck()
-
-func go_to_slide_state():
-	status = PlayerState.slide
-	anima.play("slide")
-	set_collision_duck()
-
-func go_to_wall_state():
-	status = PlayerState.wall
-	anima.play("wall")
-	velocity = Vector2.ZERO
-	jump_count = 0
-
-func go_to_swim_state():
-	status = PlayerState.swim
-	anima.play("swim")
-	velocity.y = min(velocity.y, 150)
-
-func go_to_hurt_state():
-	status = PlayerState.hurt
-	anima.modulate = Color(1, 0, 0, 1)
-	var knockback_tween = get_tree().create_tween()
-	knockback_tween.tween_property(anima, "modulate", Color(1, 1, 1, 1), 0.25)
-	velocity.y = JUMP_VELOCITY
-	anima.play("dead")
-	respawn()
-
-func hurt_state(delta):
-	velocity.x = 0
-	apply_gravity(delta)
-
-func go_to_dead_state():
-	pass
-
-func dead_state(_delta):
-	pass
-
 func idle_state(delta):
 	apply_gravity(delta)
 	move(delta)
@@ -148,9 +99,14 @@ func idle_state(delta):
 		go_to_walk_state()
 		return
 
+func go_to_walk_state():
+	status = PlayerState.walk
+	anima.play("walk")
+
 func walk_state(delta):
 	apply_gravity(delta)
 	move(delta)
+		
 	if velocity.x == 0:
 		go_to_idle_state()
 		return
@@ -168,6 +124,13 @@ func walk_state(delta):
 		go_to_slide_state()
 		return
 
+func go_to_jump_state():
+	status = PlayerState.jump
+	jump_sound.play()
+	anima.play("jump")
+	velocity.y = JUMP_VELOCITY
+	jump_count += 1
+
 func jump_state(delta):
 	apply_gravity(delta)
 	move(delta)
@@ -179,6 +142,10 @@ func jump_state(delta):
 	if velocity.y > 0:
 		go_to_fall_state()
 		return
+
+func go_to_fall_state():
+	status = PlayerState.fall
+	anima.play("fall")
 
 func fall_state(delta):
 	apply_gravity(delta)
@@ -198,6 +165,11 @@ func fall_state(delta):
 	if (left_wall_detector.is_colliding() or right_wall_detector.is_colliding()) and is_on_wall():
 		go_to_wall_state()
 
+func go_to_duck_state():
+	status = PlayerState.duck
+	anima.play("duck")
+	set_collision_duck()
+
 func duck_state(delta):
 	apply_gravity(delta)
 	update_direction()
@@ -206,6 +178,11 @@ func duck_state(delta):
 		set_collision_back()
 		go_to_idle_state()
 		return
+
+func go_to_slide_state():
+	status = PlayerState.slide
+	anima.play("slide")
+	set_collision_duck()
 
 func slide_state(delta):
 	apply_gravity(delta)
@@ -217,6 +194,12 @@ func slide_state(delta):
 	if velocity.x == 0:
 		set_collision_back()
 		go_to_duck_state()
+
+func go_to_wall_state():
+	status = PlayerState.wall
+	anima.play("wall")
+	velocity = Vector2.ZERO
+	jump_count = 0
 
 func wall_state(delta):
 	velocity.y += wall_acceleration * delta
@@ -240,6 +223,12 @@ func wall_state(delta):
 		go_to_jump_state()
 		return
 
+func go_to_swim_state():
+	status = PlayerState.swim
+	water_sound.play()
+	anima.play("swim")
+	velocity.y = min(velocity.y, 150)
+
 func swim_state(delta):
 	update_direction()
 	
@@ -252,7 +241,28 @@ func swim_state(delta):
 	velocity.y = min(velocity.y, water_max_speed)
 	
 	if Input.is_action_just_pressed("jump"):
+		swim_sound.play()
 		velocity.y = water_jump_force
+
+func go_to_hurt_state():
+	status = PlayerState.hurt
+	anima.modulate = Color(1, 0, 0, 1)
+	var knockback_tween = get_tree().create_tween()
+	knockback_tween.tween_property(anima, "modulate", Color(1, 1, 1, 1), 0.25)
+	velocity.y = JUMP_VELOCITY
+	hurt_sound.play()
+	anima.play("dead")
+	respawn()
+
+func hurt_state(delta):
+	velocity.x = 0
+	apply_gravity(delta)
+
+func go_to_dead_state():
+	pass
+
+func dead_state(_delta):
+	pass
 
 func move(delta):
 	update_direction()
@@ -341,15 +351,16 @@ func _on_stomp_box_body_entered(body: Node2D) -> void:
 		go_to_swim_state()
 		return
 	if body.is_in_group("lethal_body"):
-		body.remove_from_group("lethal_body")
-		Globals.player_life = 0
-		go_to_jump_state()
+		be_invincible()
+		go_to_hurt_state()
 		return
 	if velocity.y > 0 and body.is_in_group("enemy_body"):
 		body.take_damage()
+		hit_sound.play()
 		go_to_jump_state()
 
 func _on_stomp_box_body_exited(body: Node2D) -> void:
 	if body.is_in_group("water_body"):
+		water_sound.play()
 		jump_count = 0
 		go_to_jump_state()

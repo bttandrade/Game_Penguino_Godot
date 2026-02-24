@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cvao6ixkwsamh" path="res://Entities/cherry.tscn" id="17_434qk"]
 [ext_resource type="PackedScene" uid="uid://dybrsupndew4o" path="res://Entities/flying_cherry.tscn" id="18_434qk"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Entities/pause_menu.tscn" id="19_46t7q"]
+[ext_resource type="AudioStream" uid="uid://dqtxydsxmgtim" path="res://Sounds/spring1.wav" id="20_v58ws"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -36,6 +37,17 @@ tile_set = ExtResource("2_v58ws")
 
 [node name="Player" parent="." unique_id=976081242 instance=ExtResource("3_ri2uj")]
 position = Vector2(49, 162)
+max_speed = 100.0
+acceleration = 400.0
+deceleration = 400.0
+slide_deceleration = 100.0
+max_jump_count = 2
+wall_acceleration = 40.0
+wall_jump_velocity = 250.0
+water_max_speed = 100.0
+water_acceleration = 200.0
+water_jump_force = -100.0
+knockback_value = 200.0
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10
@@ -139,5 +151,9 @@ position = Vector2(0, -64)
 
 [node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("19_46t7q")]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1835851818]
+stream = ExtResource("20_v58ws")
+autoplay = true
 
 [editable path="FlyingCherry"]

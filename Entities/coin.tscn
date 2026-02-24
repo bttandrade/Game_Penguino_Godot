@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bih2k03wbjmes" path="res://Scripts/coin.gd" id="1_y55b1"]
 [ext_resource type="Texture2D" uid="uid://cwhm4w57q2b0u" path="res://Assets/Others/Effects/Yellow_Sparkle (16 x 16).png" id="2_fbuj7"]
 [ext_resource type="Texture2D" uid="uid://dbyjcnrhq1boe" path="res://Assets/Others/Common Pick-ups/Coin (16 x 16).png" id="3_abjvq"]
+[ext_resource type="AudioStream" uid="uid://bs8dgnj1gf37t" path="res://Sounds/coin_collect.wav" id="4_fbuj7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cg25x"]
 
@@ -87,6 +88,9 @@ shape = SubResource("CircleShape2D_cg25x")
 sprite_frames = SubResource("SpriteFrames_r21wx")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="." unique_id=199373270]
+stream = ExtResource("4_fbuj7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

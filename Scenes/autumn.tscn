@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="17_xiut5"]
 [ext_resource type="PackedScene" uid="uid://div1gua7v5qxv" path="res://Entities/checkpoint.tscn" id="18_pgmdk"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Entities/pause_menu.tscn" id="19_lhmlj"]
+[ext_resource type="AudioStream" uid="uid://d1ic0a3128swi" path="res://Sounds/autumn1.wav" id="20_g3hnd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kh4ky"]
 normal = Vector2(1, 0)
@@ -42,6 +43,17 @@ collision_enabled = false
 
 [node name="Player" parent="." unique_id=976081242 instance=ExtResource("3_pgmdk")]
 position = Vector2(49, 162)
+max_speed = 100.0
+acceleration = 400.0
+deceleration = 400.0
+slide_deceleration = 100.0
+max_jump_count = 2
+wall_acceleration = 40.0
+wall_jump_velocity = 250.0
+water_max_speed = 100.0
+water_acceleration = 200.0
+water_jump_force = -100.0
+knockback_value = 200.0
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10
@@ -141,6 +153,10 @@ position = Vector2(492, 166)
 position = Vector2(346, 115)
 
 [node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("19_lhmlj")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=377013729]
+stream = ExtResource("20_g3hnd")
+autoplay = true
 
 [editable path="MovingPlatform"]
 [editable path="Spikes"]

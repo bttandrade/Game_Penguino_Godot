@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://b0xae0m5bw63g"]
+
+[ext_resource type="Texture2D" uid="uid://cfg4y10jiuv6l" path="res://Assets/Universal/title.png" id="1_0gni0"]
+[ext_resource type="Theme" uid="uid://ct7d51oxqcsn6" path="res://Themes/btn_default.tres" id="1_avhh4"]
+[ext_resource type="Script" uid="uid://dokdxqvlvb0y0" path="res://Scripts/title_screen.gd" id="1_t2ad1"]
+[ext_resource type="Texture2D" uid="uid://c37bh0k0ppl1r" path="res://Assets/Universal/logo.png" id="2_1biyc"]
+[ext_resource type="AudioStream" uid="uid://bv77j2c64b0kk" path="res://Sounds/title.mp3" id="5_t2ad1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gni0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2ad1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hp5x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfetl"]
+
+[node name="TitleScreen" type="Control" unique_id=2044408538]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t2ad1")
+metadata/_edit_vertical_guides_ = [1151.0]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1991931463]
+texture_repeat = 2
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 208.0
+texture = ExtResource("1_0gni0")
+expand_mode = 2
+
+[node name="Logo" type="TextureRect" parent="." unique_id=400490795]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 163.5
+offset_bottom = 102.0
+texture = ExtResource("2_1biyc")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=105977734]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_top = 78
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2143601690]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1203360727]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0gni0")
+
+[node name="StartBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1007304146]
+layout_mode = 2
+theme = ExtResource("1_avhh4")
+theme_override_font_sizes/font_size = 8
+text = "COMEÇAR"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1113860893]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_t2ad1")
+
+[node name="ContinueBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1000199119]
+layout_mode = 2
+theme = ExtResource("1_avhh4")
+theme_override_font_sizes/font_size = 8
+text = "CONTINUAR"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=518791331]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0hp5x")
+
+[node name="CreditsBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=66640419]
+layout_mode = 2
+theme = ExtResource("1_avhh4")
+theme_override_font_sizes/font_size = 8
+text = "CRÉDITOS"
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1916561985]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qfetl")
+
+[node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=252762973]
+layout_mode = 2
+theme = ExtResource("1_avhh4")
+theme_override_font_sizes/font_size = 8
+text = "FECHAR"
+
+[node name="TitleSound" type="AudioStreamPlayer" parent="." unique_id=491874339]
+stream = ExtResource("5_t2ad1")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsBtn" to="." method="_on_credits_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

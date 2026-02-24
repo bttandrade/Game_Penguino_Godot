@@ -4,18 +4,22 @@ extends Area2D
 
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var spawn_coins: Marker2D = $spawn_coins
+@onready var open_sound: AudioStreamPlayer = $OpenSound
+@onready var coin_spawn_sound: AudioStreamPlayer = $CoinSpawnSound
 
 var is_open = false
 var coin_instance = preload("res://entities/rigid_coin.tscn")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_body") and is_open == false:
+		open_sound.play()
 		anima.play("open")
 		is_open = true
 		for i in range(coin_amount):
 			if i == 0:
 				await get_tree().create_timer(0.4).timeout
 			await get_tree().create_timer(0.2).timeout
+			coin_spawn_sound.play()
 			create_coins()
 
 func create_coins():

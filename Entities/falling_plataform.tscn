@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://wekgtfrjcvyb"]
 
 [ext_resource type="Script" uid="uid://bv8hu2oeuxsk1" path="res://Scripts/falling_plataform.gd" id="1_mpuj2"]
+[ext_resource type="AudioStream" uid="uid://dxle4ijp8jg07" path="res://Sounds/platafom_stepped.wav" id="2_0nufm"]
+[ext_resource type="AudioStream" uid="uid://pfow8m25wm37" path="res://Sounds/plataform_fall.wav" id="3_0nufm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xeit8"]
 size = Vector2(32, 16)
@@ -98,7 +100,15 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_mpuj2")
 debug_color = Color(6.256998e-07, 0.64076316, 0.34970972, 0.41960785)
 
+[node name="SteppedSound" type="AudioStreamPlayer" parent="." unique_id=1868017064]
+stream = ExtResource("2_0nufm")
+volume_db = -10.0
+
+[node name="FallingSound" type="AudioStreamPlayer" parent="." unique_id=892689237]
+stream = ExtResource("3_0nufm")
+volume_db = -10.0
+pitch_scale = 1.5
+
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Stepped" to="." method="_on_stepped_area_entered"]
-[connection signal="body_entered" from="Stepped" to="." method="_on_stepped_body_entered"]

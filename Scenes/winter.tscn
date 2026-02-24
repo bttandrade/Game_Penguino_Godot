@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="10_1g0hl"]
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="11_drudi"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="12_qhabo"]
+[ext_resource type="AudioStream" uid="uid://bot5qh0cfrji3" path="res://Sounds/winter1.wav" id="14_ghpx4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -37,6 +38,17 @@ tile_set = ExtResource("3_56c8d")
 
 [node name="Player" parent="." unique_id=976081242 instance=ExtResource("4_ghpx4")]
 position = Vector2(49, 162)
+max_speed = 100.0
+acceleration = 400.0
+deceleration = 400.0
+slide_deceleration = 100.0
+max_jump_count = 2
+wall_acceleration = 40.0
+wall_jump_velocity = 250.0
+water_max_speed = 100.0
+water_acceleration = 200.0
+water_jump_force = -100.0
+knockback_value = 200.0
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10
@@ -88,3 +100,7 @@ position = Vector2(424, 8)
 [node name="HUD" parent="." unique_id=394713785 instance=ExtResource("12_qhabo")]
 
 [node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("1_56c8d")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=692684975]
+stream = ExtResource("14_ghpx4")
+autoplay = true

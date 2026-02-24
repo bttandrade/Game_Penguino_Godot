@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://wekgtfrjcvyb" path="res://Entities/falling_plataform.tscn" id="14_dau0y"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="15_3abf5"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Entities/pause_menu.tscn" id="16_85ogr"]
+[ext_resource type="AudioStream" uid="uid://ha5vxsiyql27" path="res://Sounds/summer1.wav" id="17_ar8af"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxncu"]
 texture = ExtResource("3_85ogr")
@@ -154,8 +155,15 @@ position = Vector2(411, 144)
 position = Vector2(320, 8)
 
 [node name="FallingPlataform" parent="." unique_id=1052016339 instance=ExtResource("14_dau0y")]
-position = Vector2(296, 152)
+position = Vector2(264, 144)
+
+[node name="FallingPlataform2" parent="." unique_id=1476565276 instance=ExtResource("14_dau0y")]
+position = Vector2(328, 144)
 
 [node name="HUD" parent="." unique_id=394713785 instance=ExtResource("15_3abf5")]
 
 [node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("16_85ogr")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=454872398]
+stream = ExtResource("17_ar8af")
+autoplay = true

@@ -258,17 +258,6 @@ size = Vector2(10, 2)
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_b0kkn")
-max_speed = null
-acceleration = null
-deceleration = null
-slide_deceleration = null
-max_jump_count = null
-wall_acceleration = null
-wall_jump_velocity = null
-water_max_speed = null
-water_acceleration = null
-water_jump_force = null
-knockback_value = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=964873476]
 position = Vector2(0, 0.2)

@@ -5,6 +5,8 @@ extends AnimatableBody2D
 @onready var respawn_timer: Timer = $RespawnTimer
 @onready var anima: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var stepped_sound: AudioStreamPlayer = $SteppedSound
+@onready var falling_sound: AudioStreamPlayer = $FallingSound
 
 var velocity = Vector2.ZERO
 var is_triggered = false
@@ -22,9 +24,12 @@ func _on_stepped_area_entered(area: Area2D) -> void:
 	if area.name == "StompBox":
 		is_triggered = true
 		anima.play("shake")
+		stepped_sound.play()
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	set_physics_process(true)
+	await get_tree().create_timer(0.3).timeout
+	falling_sound.play()
 	respawn_timer.start(timer_value)
 
 func _on_respawn_timer_timeout() -> void:

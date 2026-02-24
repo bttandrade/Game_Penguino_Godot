@@ -1,19 +1,19 @@
 extends CanvasLayer
 
-@onready var btn_resume: Button = $MenuHolder/BtnResume
+@onready var resume_btn: Button = $MenuHolder/ResumeBtn
 
 func _ready() -> void:
 	visible = false
 
-func _on_btn_resume_pressed() -> void:
+func _on_quit_btn_pressed() -> void:
+	get_tree().quit()
+
+func _on_resume_btn_pressed() -> void:
 	get_tree().paused = false
 	visible = false
-
-func _on_btn_quit_pressed() -> void:
-	get_tree().quit()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		visible = true
 		get_tree().paused = true
-		btn_resume.grab_focus()
+		resume_btn.grab_focus()
