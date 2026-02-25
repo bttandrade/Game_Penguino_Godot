@@ -6,6 +6,9 @@ var player_life = 3
 var player = null
 var current_checkpoint: Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
 func respawn_player():
 	player_life -= 1
 	

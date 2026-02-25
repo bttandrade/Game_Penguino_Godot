@@ -20,12 +20,6 @@ func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
 	position  += velocity * delta
 
-func _on_stepped_area_entered(area: Area2D) -> void:
-	if area.name == "StompBox":
-		is_triggered = true
-		anima.play("shake")
-		stepped_sound.play()
-
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	set_physics_process(true)
 	await get_tree().create_timer(0.3).timeout
@@ -40,3 +34,9 @@ func _on_respawn_timer_timeout() -> void:
 		var spawn_tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN_OUT)
 		spawn_tween.tween_property(sprite, "scale", Vector2(1, 1), 0.2).from(Vector2(0, 0))
 	is_triggered = false
+
+func _on_stepped_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_body") and body.velocity.y == 0:
+		is_triggered = true
+		anima.play("shake")
+		stepped_sound.play()

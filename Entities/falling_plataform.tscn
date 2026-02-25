@@ -93,7 +93,7 @@ libraries/ = SubResource("AnimationLibrary_d5ds4")
 
 [node name="Stepped" type="Area2D" parent="." unique_id=866200657]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stepped" unique_id=709757410]
 position = Vector2(0, -8)
@@ -112,3 +112,4 @@ pitch_scale = 1.5
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Stepped" to="." method="_on_stepped_area_entered"]
+[connection signal="body_entered" from="Stepped" to="." method="_on_stepped_body_entered"]

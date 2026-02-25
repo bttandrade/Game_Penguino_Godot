@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://egyipfsffttr"]
+
+[ext_resource type="Script" uid="uid://dewdq5r3q3iqc" path="res://Scripts/pause_menu.gd" id="1_ssk5n"]
+[ext_resource type="FontFile" uid="uid://dx4dbuk0rrfp8" path="res://Assets/Fonts/RevMiniPixel.ttf" id="2_qb0cr"]
+[ext_resource type="StyleBox" uid="uid://drt8sv77q5u10" path="res://Themes/btn_normal.tres" id="3_4mshr"]
+[ext_resource type="StyleBox" uid="uid://d33yh4m25d6oh" path="res://Themes/btn_pressed.tres" id="4_16x2r"]
+[ext_resource type="StyleBox" uid="uid://co7ce7wvhqtff" path="res://Themes/btn_hover.tres" id="5_huqcf"]
+[ext_resource type="Script" uid="uid://bjimkprrlxhhf" path="res://Scripts/style_btn.gd" id="6_myy0f"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qb0cr"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_4mshr"]
+events = [SubResource("InputEventAction_qb0cr")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmaqb"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2075938879]
+process_mode = 3
+script = ExtResource("1_ssk5n")
+
+[node name="BgOverlay" type="ColorRect" parent="." unique_id=459504017]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=396751697]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="MenuHolder" type="VBoxContainer" parent="MarginContainer" unique_id=322822622]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ResumeBtn" type="Button" parent="MarginContainer/MenuHolder" unique_id=1321967158]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_qb0cr")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_4mshr")
+theme_override_styles/pressed = ExtResource("4_16x2r")
+theme_override_styles/hover = ExtResource("5_huqcf")
+theme_override_styles/focus = ExtResource("4_16x2r")
+shortcut = SubResource("Shortcut_4mshr")
+text = "RETOMAR"
+script = ExtResource("6_myy0f")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/MenuHolder" unique_id=1899058200]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qmaqb")
+
+[node name="RestartBtn" type="Button" parent="MarginContainer/MenuHolder" unique_id=1299575657]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_qb0cr")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_4mshr")
+theme_override_styles/pressed = ExtResource("4_16x2r")
+theme_override_styles/hover = ExtResource("5_huqcf")
+theme_override_styles/focus = ExtResource("4_16x2r")
+text = "RECOMEÇAR"
+script = ExtResource("6_myy0f")
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/MenuHolder" unique_id=775850882]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qmaqb")
+
+[node name="QuitBtn" type="Button" parent="MarginContainer/MenuHolder" unique_id=229390948]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_qb0cr")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_4mshr")
+theme_override_styles/pressed = ExtResource("4_16x2r")
+theme_override_styles/hover = ExtResource("5_huqcf")
+theme_override_styles/focus = ExtResource("4_16x2r")
+text = "MENU INICIAL"
+script = ExtResource("6_myy0f")
+
+[connection signal="pressed" from="MarginContainer/MenuHolder/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/MenuHolder/RestartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/MenuHolder/QuitBtn" to="." method="_on_quit_btn_pressed"]

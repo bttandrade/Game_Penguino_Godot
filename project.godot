@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Penguino"
-run/main_scene="uid://dyubmp70bmwbf"
+run/main_scene="uid://b0xae0m5bw63g"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

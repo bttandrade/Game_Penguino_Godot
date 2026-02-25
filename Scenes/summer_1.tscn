@@ -1,25 +1,25 @@
 [gd_scene format=4 uid="uid://raw6pnghx4nb"]
 
-[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_1whjj"]
-[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_3abf5"]
-[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/TilesSummer/Tropics_entities (16 x 16).png" id="3_85ogr"]
-[ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="4_ar8af"]
-[ext_resource type="Texture2D" uid="uid://bk3f8nq6566p1" path="res://Assets/TilesSummer/Background/5 - Sky_color.png" id="5_nfexf"]
-[ext_resource type="Texture2D" uid="uid://bscxegee57ucj" path="res://Assets/TilesSummer/Background/4 - Background_clouds.png" id="6_bkexf"]
-[ext_resource type="Texture2D" uid="uid://dguctl2vjd4yi" path="res://Assets/TilesSummer/Background/3 - Floating_clouds.png" id="7_s4wx0"]
-[ext_resource type="Texture2D" uid="uid://fip6itl03y6y" path="res://Assets/TilesSummer/Background/2 - Waters_version_2.png" id="8_memu7"]
-[ext_resource type="Texture2D" uid="uid://clmt6wtupiota" path="res://Assets/TilesSummer/Background/1 - Waters_version_1.png" id="9_tpwfr"]
-[ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="10_fydj0"]
-[ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_588en"]
-[ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="12_l1d3t"]
-[ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="13_up8ik"]
-[ext_resource type="PackedScene" uid="uid://wekgtfrjcvyb" path="res://Entities/falling_plataform.tscn" id="14_dau0y"]
-[ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="15_3abf5"]
-[ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Entities/pause_menu.tscn" id="16_85ogr"]
-[ext_resource type="AudioStream" uid="uid://ha5vxsiyql27" path="res://Sounds/summer1.wav" id="17_ar8af"]
+[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_wbcot"]
+[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_ihiev"]
+[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/TilesSummer/Tropics_entities (16 x 16).png" id="3_kiurm"]
+[ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="4_hucnk"]
+[ext_resource type="Texture2D" uid="uid://bk3f8nq6566p1" path="res://Assets/TilesSummer/Background/5 - Sky_color.png" id="5_ro3ro"]
+[ext_resource type="Texture2D" uid="uid://bscxegee57ucj" path="res://Assets/TilesSummer/Background/4 - Background_clouds.png" id="6_bsic2"]
+[ext_resource type="Texture2D" uid="uid://dguctl2vjd4yi" path="res://Assets/TilesSummer/Background/3 - Floating_clouds.png" id="7_cuynj"]
+[ext_resource type="Texture2D" uid="uid://fip6itl03y6y" path="res://Assets/TilesSummer/Background/2 - Waters_version_2.png" id="8_0ghc0"]
+[ext_resource type="Texture2D" uid="uid://clmt6wtupiota" path="res://Assets/TilesSummer/Background/1 - Waters_version_1.png" id="9_daauc"]
+[ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="10_0orka"]
+[ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_k51ge"]
+[ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="12_dwb54"]
+[ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="13_x3fbk"]
+[ext_resource type="PackedScene" uid="uid://wekgtfrjcvyb" path="res://Entities/falling_plataform.tscn" id="14_xnehi"]
+[ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="15_5kax8"]
+[ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="16_ga4iy"]
+[ext_resource type="AudioStream" uid="uid://ha5vxsiyql27" path="res://Sounds/summer1.wav" id="17_yw1r2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxncu"]
-texture = ExtResource("3_85ogr")
+texture = ExtResource("3_kiurm")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -64,10 +64,10 @@ sources/0 = SubResource("TileSetAtlasSource_hxncu")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_memu7")
+"texture": ExtResource("8_0ghc0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_tpwfr")
+"texture": ExtResource("9_daauc")
 }],
 "loop": true,
 "name": &"default",
@@ -78,21 +78,21 @@ animations = [{
 normal = Vector2(1, 0)
 distance = -1.0
 
-[node name="Summer" type="Node2D" unique_id=1071220804]
+[node name="Summer1" type="Node2D" unique_id=1071220804]
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=1165921524]
 tile_map_data = PackedByteArray("AAAAAAsAAgACAAMAAAABAAsAAgACAAMAAAACAAsAAgACAAMAAAADAAsAAgACAAMAAAAEAAsAAgACAAMAAAAFAAsAAgACAAMAAAAGAAsAAgACAAMAAAAHAAsAAgACAAMAAAAIAAsAAgACAAMAAAAJAAsAAgACAAMAAAAKAAsAAgACAAMAAAALAAsAAgACAAMAAAAMAAsAAgACAAMAAAANAAsAAgACAAMAAAAOAAsAAgAHAAMAAAAWAAsAAgABAAMAAAAXAAsAAgACAAMAAAAYAAsAAgACAAMAAAAZAAsAAgACAAMAAAAaAAsAAgACAAMAAAAbAAsAAgACAAMAAAAcAAsAAgACAAMAAAAdAAsAAgACAAMAAAAeAAsAAgACAAMAAAAfAAsAAgACAAMAAAAgAAsAAgACAAMAAAAhAAsAAgACAAMAAAAiAAsAAgACAAMAAAAjAAsAAgACAAMAAAAAAAwAAgAEAAQAAAABAAwAAgAEAAQAAAACAAwAAgAEAAQAAAADAAwAAgAEAAQAAAAEAAwAAgAEAAQAAAAFAAwAAgAEAAQAAAAGAAwAAgAEAAQAAAAHAAwAAgAEAAQAAAAIAAwAAgAEAAQAAAAJAAwAAgAEAAQAAAAKAAwAAgAEAAQAAAALAAwAAgAEAAQAAAAMAAwAAgAEAAQAAAANAAwAAgAEAAQAAAAOAAwAAgAFAAUAAAAWAAwAAgADAAUAAAAXAAwAAgAEAAQAAAAYAAwAAgAEAAQAAAAZAAwAAgAEAAQAAAAaAAwAAgAEAAQAAAAbAAwAAgAEAAQAAAAcAAwAAgAEAAQAAAAdAAwAAgAEAAQAAAAeAAwAAgAEAAQAAAAfAAwAAgAEAAQAAAAgAAwAAgAEAAQAAAAhAAwAAgAEAAQAAAAiAAwAAgAEAAQAAAAjAAwAAgAEAAQAAAD//wwAAgAEAAQAAAD+/wwAAgAEAAQAAAD9/wwAAgAEAAQAAAD7/wwAAgAEAAQAAAD8/wwAAgAEAAQAAAD7/wsAAgACAAMAAAD8/wsAAgACAAMAAAD9/wsAAgACAAMAAAD+/wsAAgACAAMAAAD//wsAAgACAAMAAAAkAAsAAgAEAAEAAAAkAAwAAgAEAAUAAAAgAAkAAgAPAAMAAAAeAAcAAgAPAAMAAAAcAAUAAgAPAAMAAAAOAAMAAgAPAAMAAAAMAAUAAgAPAAMAAAAKAAcAAgAPAAMAAAAIAAkAAgAPAAMAAAAlAAsAAgAEAAEAAAAmAAsAAgAFAAEAAAAmAAwAAgAFAAUAAAAlAAwAAgAEAAUAAAAUAAEAAgAKAAMAAAATAAEAAgAKAAMAAAAVAAEAAgANAAMAAAARAAEAAgAJAAMAAAASAAEAAgAKAAMAAAAZAAMAAgAPAAMAAAA=")
-tile_set = ExtResource("1_1whjj")
+tile_set = ExtResource("1_wbcot")
 
 [node name="Decoration" type="TileMapLayer" parent="." unique_id=1819957118]
 tile_map_data = PackedByteArray("AAABAAkAAQABAAEAAAALAAkAAQABAAEAAAAcAAkAAQABAAEAAAACAAoAAQAJAAMAAAANAAoAAQAJAAMAAAAfAAoAAQAJAAMAAAAkAAoAAAADAAUAAAA=")
-tile_set = ExtResource("2_3abf5")
+tile_set = ExtResource("2_ihiev")
 
 [node name="Water" type="TileMapLayer" parent="." unique_id=359980883 groups=["lethal_body"]]
 tile_map_data = PackedByteArray("AAD7/wwAAAAMAAUAAAD8/wwAAAAMAAUAAAD9/wwAAAAMAAUAAAD+/wwAAAAMAAUAAAD//wwAAAAMAAUAAAAAAAwAAAAMAAUAAAABAAwAAAAMAAUAAAACAAwAAAAMAAUAAAADAAwAAAAMAAUAAAAEAAwAAAAMAAUAAAAFAAwAAAAMAAUAAAAGAAwAAAAMAAUAAAAHAAwAAAAMAAUAAAAIAAwAAAAMAAUAAAAJAAwAAAAMAAUAAAAKAAwAAAAMAAUAAAALAAwAAAAMAAUAAAAMAAwAAAAMAAUAAAANAAwAAAAMAAUAAAAXAAwAAAAMAAUAAAAYAAwAAAAMAAUAAAAZAAwAAAAMAAUAAAAaAAwAAAAMAAUAAAAbAAwAAAAMAAUAAAAcAAwAAAAMAAUAAAAdAAwAAAAMAAUAAAAeAAwAAAAMAAUAAAAfAAwAAAAMAAUAAAAgAAwAAAAMAAUAAAAhAAwAAAAMAAUAAAAiAAwAAAAMAAUAAAAjAAwAAAAMAAUAAAAkAAwAAAAMAAUAAAAlAAwAAAAMAAUAAAAmAAwAAAAMAAUAAAAOAAwAAAAMAAUAAAAPAAwAAAAMAAUAAAAQAAwAAAAMAAUAAAARAAwAAAAMAAUAAAASAAwAAAAMAAUAAAATAAwAAAAMAAUAAAAUAAwAAAAMAAUAAAAVAAwAAAAMAAUAAAAWAAwAAAAMAAUAAAA=")
 tile_set = SubResource("TileSet_o1jn0")
 
-[node name="Player" parent="." unique_id=976081242 instance=ExtResource("4_ar8af")]
+[node name="Player" parent="." unique_id=976081242 instance=ExtResource("4_hucnk")]
 position = Vector2(49, 162)
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
@@ -103,7 +103,7 @@ scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(288, 208)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax/4" unique_id=1363470958]
-texture = ExtResource("5_nfexf")
+texture = ExtResource("5_ro3ro")
 centered = false
 
 [node name="3" type="Parallax2D" parent="Parallax" unique_id=34135793]
@@ -111,7 +111,7 @@ scroll_scale = Vector2(0.3, 0.3)
 repeat_size = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax/3" unique_id=560363728]
-texture = ExtResource("6_bkexf")
+texture = ExtResource("6_bsic2")
 centered = false
 
 [node name="2" type="Parallax2D" parent="Parallax" unique_id=1150946671]
@@ -119,7 +119,7 @@ scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax/2" unique_id=128423065]
-texture = ExtResource("7_s4wx0")
+texture = ExtResource("7_cuynj")
 centered = false
 
 [node name="1" type="Parallax2D" parent="Parallax" unique_id=893283016]
@@ -132,11 +132,12 @@ autoplay = "default"
 frame_progress = 0.54867345
 centered = false
 
-[node name="Camera2D" parent="." unique_id=2033492168 instance=ExtResource("10_fydj0")]
+[node name="Camera2D" parent="." unique_id=2033492168 instance=ExtResource("10_0orka")]
+limit_bottom = 208
 
-[node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("11_588en")]
+[node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("11_k51ge")]
 position = Vector2(603, 164)
-next_level = "autumn"
+next_level = "summer_2"
 
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=985078629]
 collision_mask = 6
@@ -145,25 +146,25 @@ collision_mask = 6
 position = Vector2(2, 0)
 shape = SubResource("WorldBoundaryShape2D_1i3w5")
 
-[node name="Skeleton" parent="." unique_id=925847205 instance=ExtResource("12_l1d3t")]
+[node name="Skeleton" parent="." unique_id=925847205 instance=ExtResource("12_dwb54")]
 position = Vector2(141, 143)
 
-[node name="Skeleton2" parent="." unique_id=976503753 instance=ExtResource("12_l1d3t")]
+[node name="Skeleton2" parent="." unique_id=976503753 instance=ExtResource("12_dwb54")]
 position = Vector2(411, 144)
 
-[node name="Chest" parent="." unique_id=1545059798 instance=ExtResource("13_up8ik")]
+[node name="Chest" parent="." unique_id=1545059798 instance=ExtResource("13_x3fbk")]
 position = Vector2(320, 8)
 
-[node name="FallingPlataform" parent="." unique_id=1052016339 instance=ExtResource("14_dau0y")]
+[node name="FallingPlataform" parent="." unique_id=1052016339 instance=ExtResource("14_xnehi")]
 position = Vector2(264, 144)
 
-[node name="FallingPlataform2" parent="." unique_id=1476565276 instance=ExtResource("14_dau0y")]
+[node name="FallingPlataform2" parent="." unique_id=1476565276 instance=ExtResource("14_xnehi")]
 position = Vector2(328, 144)
 
-[node name="HUD" parent="." unique_id=394713785 instance=ExtResource("15_3abf5")]
+[node name="HUD" parent="." unique_id=394713785 instance=ExtResource("15_5kax8")]
 
-[node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("16_85ogr")]
+[node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("16_ga4iy")]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=454872398]
-stream = ExtResource("17_ar8af")
-autoplay = true
+stream = ExtResource("17_yw1r2")

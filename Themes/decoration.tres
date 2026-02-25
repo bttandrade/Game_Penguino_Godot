@@ -60,7 +60,9 @@ texture = ExtResource("2_omqfk")
 12:5/animation_frame_0/duration = 0.3
 12:5/animation_frame_1/duration = 0.3
 12:5/0 = 0
+12:5/0/modulate = Color(1, 1, 1, 0.43137255)
 12:6/0 = 0
+12:6/0/modulate = Color(1, 1, 1, 0.43137255)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38qtr"]
 texture = ExtResource("3_1rlr1")
@@ -76,7 +78,6 @@ texture = ExtResource("3_1rlr1")
 4:5/0 = 0
 1:1/size_in_atlas = Vector2i(3, 3)
 1:1/0 = 0
-1:1/0/z_index = 1
 5:1/size_in_atlas = Vector2i(3, 3)
 5:1/0 = 0
 
