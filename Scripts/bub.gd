@@ -51,7 +51,7 @@ func walk_state(_delta):
 func dead_state(delta):
 	apply_gravity(delta)
 	set_collision_mask_value(1, false)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
 func go_to_walk_state():

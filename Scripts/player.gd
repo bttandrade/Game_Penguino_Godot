@@ -40,8 +40,10 @@ enum PlayerState{
 @onready var hurt_sound: AudioStreamPlayer = $Sounds/HurtSound
 @onready var swim_sound: AudioStreamPlayer = $Sounds/SwimSound
 @onready var water_sound: AudioStreamPlayer = $Sounds/WaterSound
+@onready var coin_spawn_sound: AudioStreamPlayer = $Sounds/CoinSpawnSound
 
 const JUMP_VELOCITY = -300.0
+const RIGID_COIN = preload("res://Entities/rigid_coin.tscn")
 
 var last_direction = 0
 var jump_count = 0
@@ -330,6 +332,7 @@ func took_a_hit(area):
 		direction_of_hit = 1
 	
 	velocity.x = knockback_value * direction_of_hit
+	lose_coins()
 	be_invincible()
 	go_to_hurt_state()
 
@@ -341,6 +344,20 @@ func be_invincible():
 	hurt_box.set_collision_mask_value(6, true)
 	stomp_box.set_collision_mask_value(5, true)
 	stomp_box.set_collision_mask_value(7, true)
+
+func lose_coins():
+	var lost_coins = min(Globals.player_coins, 5)
+	Globals.player_coins -= lost_coins
+	for i in lost_coins:
+		set_collision_layer_value(2, false)
+		var coin = RIGID_COIN.instantiate()
+		get_parent().call_deferred("add_child", coin)
+		coin.global_position = global_position
+		coin.apply_impulse(Vector2(randi_range(-100, 100), -250))
+		await  get_tree().create_timer(0.03).timeout
+		coin_spawn_sound.play()
+	await  get_tree().create_timer(1.5).timeout
+	set_collision_layer_value(2, true)
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy_hitbox"):

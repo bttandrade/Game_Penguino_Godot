@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://wekgtfrjcvyb" path="res://Entities/falling_plataform.tscn" id="15_perhu"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="16_aydf5"]
 [ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="17_xww5g"]
+[ext_resource type="PackedScene" uid="uid://p7pvn42vqnq1" path="res://Entities/extra_life.tscn" id="18_glshk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxncu"]
 texture = ExtResource("3_glshk")
@@ -221,3 +222,6 @@ position = Vector2(544, 64)
 
 [node name="Coin9" parent="Coins" unique_id=1422723546 instance=ExtResource("17_xww5g")]
 position = Vector2(560, 120)
+
+[node name="ExtraLife" parent="." unique_id=1156779745 instance=ExtResource("18_glshk")]
+position = Vector2(336, 88)

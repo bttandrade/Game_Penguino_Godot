@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="14_gfrge"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="15_5bf5p"]
 [ext_resource type="PackedScene" uid="uid://du4vxikwfh4gl" path="res://Entities/bub.tscn" id="16_lpdkg"]
+[ext_resource type="PackedScene" uid="uid://p7pvn42vqnq1" path="res://Entities/extra_life.tscn" id="21_i46ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jh5k3"]
 texture = ExtResource("4_ibyfb")
@@ -309,3 +310,6 @@ position = Vector2(296, 80)
 [node name="Bub2" parent="." unique_id=1649797129 instance=ExtResource("16_lpdkg")]
 position = Vector2(328, 80)
 initial_direction = -1
+
+[node name="ExtraLife" parent="." unique_id=1156779745 instance=ExtResource("21_i46ef")]
+position = Vector2(16, -48)

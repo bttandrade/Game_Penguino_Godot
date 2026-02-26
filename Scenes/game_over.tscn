@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cth5g3q7ioqsh"]
+
+[ext_resource type="Texture2D" uid="uid://ck113j85up83e" path="res://Assets/Universal/game_over.png" id="1_j3ryr"]
+[ext_resource type="Script" uid="uid://cn2tyjmranjqm" path="res://Scripts/game_over.gd" id="1_rjluv"]
+[ext_resource type="FontFile" uid="uid://dx4dbuk0rrfp8" path="res://Assets/Fonts/RevMiniPixel.ttf" id="2_rjluv"]
+[ext_resource type="StyleBox" uid="uid://drt8sv77q5u10" path="res://Themes/btn_normal.tres" id="3_gjtdd"]
+[ext_resource type="StyleBox" uid="uid://d33yh4m25d6oh" path="res://Themes/btn_pressed.tres" id="4_uylih"]
+[ext_resource type="StyleBox" uid="uid://co7ce7wvhqtff" path="res://Themes/btn_hover.tres" id="5_3817r"]
+[ext_resource type="Script" uid="uid://bjimkprrlxhhf" path="res://Scripts/style_btn.gd" id="6_mitgx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmaqb"]
+
+[node name="GameOver" type="Control" unique_id=1350232928]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rjluv")
+
+[node name="BgOverlay" type="ColorRect" parent="." unique_id=459504017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=396751697]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 100
+
+[node name="MenuHolder" type="VBoxContainer" parent="MarginContainer" unique_id=322822622]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="RestartBtn" type="Button" parent="MarginContainer/MenuHolder" unique_id=1903618918]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_rjluv")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_gjtdd")
+theme_override_styles/pressed = ExtResource("4_uylih")
+theme_override_styles/hover = ExtResource("5_3817r")
+theme_override_styles/focus = ExtResource("4_uylih")
+text = "RECOMEÇAR"
+script = ExtResource("6_mitgx")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/MenuHolder" unique_id=775850882]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qmaqb")
+
+[node name="QuitBtn" type="Button" parent="MarginContainer/MenuHolder" unique_id=604997199]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.4379066, 0.6647231, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_rjluv")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_gjtdd")
+theme_override_styles/pressed = ExtResource("4_uylih")
+theme_override_styles/hover = ExtResource("5_3817r")
+theme_override_styles/focus = ExtResource("4_uylih")
+text = "MENU INICIAL"
+script = ExtResource("6_mitgx")
+
+[node name="GameOverTitle" type="TextureRect" parent="." unique_id=2004014531]
+layout_mode = 0
+offset_left = 30.0
+offset_top = -13.0
+offset_right = 1566.0
+offset_bottom = 1011.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_j3ryr")
+
+[connection signal="pressed" from="MarginContainer/MenuHolder/RestartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/MenuHolder/QuitBtn" to="." method="_on_quit_btn_pressed"]

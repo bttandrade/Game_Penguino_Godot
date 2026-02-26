@@ -39,6 +39,7 @@ enemy_body=""
 water_body=""
 lethal_body=""
 player_body=""
+collectibles=""
 
 [input]
 

@@ -13,11 +13,14 @@ func respawn_player():
 	player_life -= 1
 	
 	if player_life <= 0:
-		player_score = 0
-		player_coins = 0
-		player_life = 3
-		get_tree().reload_current_scene()
+		restart()
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 		return
 		
 	if current_checkpoint != Vector2.ZERO:
 		player.position = current_checkpoint
+
+func restart():
+	player_score = 0
+	player_coins = 0
+	player_life = 3

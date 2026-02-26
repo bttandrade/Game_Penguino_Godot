@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dilwd6cvi2yel" path="res://Assets/TilesAutumn/Background/1 - Leaf_top.png" id="9_pv05t"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="10_l3ebf"]
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_itv73"]
-[ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="12_5kkqs"]
 [ext_resource type="PackedScene" uid="uid://dyeqq2vm7e5jy" path="res://Entities/moving_platform.tscn" id="13_h412o"]
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="14_5eeoq"]
 [ext_resource type="PackedScene" uid="uid://cj5bba1x11cwm" path="res://Entities/spikes.tscn" id="15_cuaua"]
@@ -20,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://div1gua7v5qxv" path="res://Entities/checkpoint.tscn" id="18_f6mv2"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="19_6bmy7"]
 [ext_resource type="AudioStream" uid="uid://d1ic0a3128swi" path="res://Sounds/autumn1.wav" id="20_y2w18"]
+[ext_resource type="PackedScene" uid="uid://b7555b5fwsryo" path="res://Entities/percy.tscn" id="20_yaahx"]
+[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="21_sja7k"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kh4ky"]
 normal = Vector2(1, 0)
@@ -107,9 +108,6 @@ limit_bottom = 208
 position = Vector2(606, 165)
 next_level = "autumn_2"
 
-[node name="Skeleton" parent="." unique_id=925847205 instance=ExtResource("12_5kkqs")]
-position = Vector2(282, 77)
-
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=937786871]
 collision_mask = 6
 
@@ -147,6 +145,35 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=377013729]
 stream = ExtResource("20_y2w18")
+
+[node name="Percy" parent="." unique_id=925847205 instance=ExtResource("20_yaahx")]
+position = Vector2(214, 76)
+
+[node name="Coins" type="Node2D" parent="." unique_id=1242420936]
+
+[node name="Coin" parent="Coins" unique_id=1899686123 instance=ExtResource("21_sja7k")]
+position = Vector2(104, 120)
+
+[node name="Coin2" parent="Coins" unique_id=1369998768 instance=ExtResource("21_sja7k")]
+position = Vector2(160, 104)
+
+[node name="Coin3" parent="Coins" unique_id=1218175823 instance=ExtResource("21_sja7k")]
+position = Vector2(208, 72)
+
+[node name="Coin4" parent="Coins" unique_id=203889417 instance=ExtResource("21_sja7k")]
+position = Vector2(272, 72)
+
+[node name="Coin5" parent="Coins" unique_id=1037560705 instance=ExtResource("21_sja7k")]
+position = Vector2(336, 56)
+
+[node name="Coin6" parent="Coins" unique_id=1911142052 instance=ExtResource("21_sja7k")]
+position = Vector2(480, 56)
+
+[node name="Coin7" parent="Coins" unique_id=2046315809 instance=ExtResource("21_sja7k")]
+position = Vector2(416, 120)
+
+[node name="Coin8" parent="Coins" unique_id=2045604358 instance=ExtResource("21_sja7k")]
+position = Vector2(528, 120)
 
 [editable path="MovingPlatform"]
 [editable path="Spikes"]

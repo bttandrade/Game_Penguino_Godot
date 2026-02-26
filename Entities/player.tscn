@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://drbquj6u27x17" path="res://Sounds/hurt.wav" id="14_uck12"]
 [ext_resource type="AudioStream" uid="uid://fbjht3ord34o" path="res://Sounds/swim.wav" id="15_25cb4"]
 [ext_resource type="AudioStream" uid="uid://dmqqra1251qjl" path="res://Sounds/enter_water.wav" id="16_uck12"]
+[ext_resource type="AudioStream" uid="uid://dtf3403tfed7x" path="res://Sounds/coin_spawn.wav" id="17_uck12"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4p34"]
 atlas = ExtResource("2_b0kkn")
@@ -318,6 +319,9 @@ stream = ExtResource("15_25cb4")
 
 [node name="WaterSound" type="AudioStreamPlayer" parent="Sounds" unique_id=328533717]
 stream = ExtResource("16_uck12")
+
+[node name="CoinSpawnSound" type="AudioStreamPlayer" parent="Sounds" unique_id=1061387691]
+stream = ExtResource("17_uck12")
 
 [connection signal="area_entered" from="HitBoxes/HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HitBoxes/StompBox" to="." method="_on_stomp_box_body_entered"]

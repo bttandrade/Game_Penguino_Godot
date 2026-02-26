@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cj5bba1x11cwm" path="res://Entities/spikes.tscn" id="17_r77sx"]
 [ext_resource type="PackedScene" uid="uid://dyeqq2vm7e5jy" path="res://Entities/moving_platform.tscn" id="18_7jy7f"]
 [ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="19_ufun6"]
+[ext_resource type="PackedScene" uid="uid://p7pvn42vqnq1" path="res://Entities/extra_life.tscn" id="20_6bsrp"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kh4ky"]
 normal = Vector2(1, 0)
@@ -198,6 +199,9 @@ position = Vector2(544, 64)
 
 [node name="Coin9" parent="Coins" unique_id=1518809240 instance=ExtResource("19_ufun6")]
 position = Vector2(560, 112)
+
+[node name="ExtraLife" parent="Coins" unique_id=1156779745 instance=ExtResource("20_6bsrp")]
+position = Vector2(328, 88)
 
 [editable path="FlyingCherry"]
 [editable path="Spikes/Spikes"]
