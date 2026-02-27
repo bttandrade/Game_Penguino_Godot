@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" format=3 uid="uid://bhk6l7csfm861"]
 
-[ext_resource type="Texture2D" uid="uid://dkugoqs2u4ce1" path="res://Assets/TilesSpring/Grassland_entities (16 x 16).png" id="1_g2y7v"]
-[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/TilesSummer/Tropics_entities (16 x 16).png" id="2_omqfk"]
-[ext_resource type="Texture2D" uid="uid://bfjjonc04lyvu" path="res://Assets/TilesWinter/Winter_entities (16 x 16).png" id="3_1rlr1"]
-[ext_resource type="Texture2D" uid="uid://c16708gj17ggm" path="res://Assets/TilesAutumn/Autumn_entities (16 x 16).png" id="4_nuo48"]
+[ext_resource type="Texture2D" uid="uid://dkugoqs2u4ce1" path="res://Assets/Tilesets/TilesSpring/Grassland_entities (16 x 16).png" id="1_g2y7v"]
+[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/Tilesets/TilesSummer/Tropics_entities (16 x 16).png" id="2_omqfk"]
+[ext_resource type="Texture2D" uid="uid://bfjjonc04lyvu" path="res://Assets/Tilesets/TilesWinter/Winter_entities (16 x 16).png" id="3_1rlr1"]
+[ext_resource type="Texture2D" uid="uid://c16708gj17ggm" path="res://Assets/Tilesets/TilesAutumn/Autumn_entities (16 x 16).png" id="4_nuo48"]
 [ext_resource type="Texture2D" uid="uid://chlsjsmgdhfjb" path="res://Assets/Universal/House (112 x 96).png" id="5_411qn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cum1x"]

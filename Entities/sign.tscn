@@ -10,7 +10,6 @@ size = Vector2(32, 16)
 script = ExtResource("1_1rpqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1665358468]
-visible = false
 position = Vector2(0, -16)
 texture = ExtResource("1_svbwx")
 region_enabled = true
@@ -21,6 +20,8 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SignArea" unique_id=734633091]
 shape = SubResource("RectangleShape2D_1rpqm")
+
+[node name="SpawnText" type="Marker2D" parent="." unique_id=510611136]
 
 [connection signal="body_entered" from="SignArea" to="." method="_on_sign_area_body_entered"]
 [connection signal="body_exited" from="SignArea" to="." method="_on_sign_area_body_exited"]

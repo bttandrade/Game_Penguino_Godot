@@ -1,5 +1,6 @@
 extends Node
 
+var finished_the_game = false
 var player_coins = 0
 var player_score = 0
 var player_life = 3
@@ -17,10 +18,11 @@ func respawn_player():
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 		return
 		
-	if current_checkpoint != Vector2.ZERO:
-		player.position = current_checkpoint
+	if current_checkpoint != Vector2.ZERO and player:
+		player.global_position = current_checkpoint
 
 func restart():
+	finished_the_game = false
 	player_score = 0
 	player_coins = 0
 	player_life = 3

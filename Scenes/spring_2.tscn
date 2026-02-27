@@ -1,14 +1,15 @@
 [gd_scene format=4 uid="uid://ol3w6xg6ke84"]
 
+[ext_resource type="Script" uid="uid://jvcw0tqpj5ca" path="res://Scripts/begin_stage.gd" id="1_ax4x2"]
 [ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_yp6ce"]
 [ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_iplgc"]
 [ext_resource type="TileSet" uid="uid://c2wfxfkyeeauk" path="res://Themes/fall.tres" id="3_10go5"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="4_15y8n"]
-[ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://Assets/TilesSpring/Background/5 - Sky_color.png" id="5_gbjhm"]
-[ext_resource type="Texture2D" uid="uid://bybdcaxlanrx" path="res://Assets/TilesSpring/Background/4 - Cloud_cover_2.png" id="6_ax4x2"]
-[ext_resource type="Texture2D" uid="uid://dfeop5kpefprg" path="res://Assets/TilesSpring/Background/3 - Cloud_cover_1.png" id="7_qexjc"]
-[ext_resource type="Texture2D" uid="uid://bkhqhxtl3qtn1" path="res://Assets/TilesSpring/Background/2 - Hills.png" id="8_rcidx"]
-[ext_resource type="Texture2D" uid="uid://c5q4a3svwrlfo" path="res://Assets/TilesSpring/Background/1 - Foreground_scenery.png" id="9_i0mp4"]
+[ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://Assets/Tilesets/TilesSpring/Background/5 - Sky_color.png" id="5_gbjhm"]
+[ext_resource type="Texture2D" uid="uid://bybdcaxlanrx" path="res://Assets/Tilesets/TilesSpring/Background/4 - Cloud_cover_2.png" id="6_ax4x2"]
+[ext_resource type="Texture2D" uid="uid://dfeop5kpefprg" path="res://Assets/Tilesets/TilesSpring/Background/3 - Cloud_cover_1.png" id="7_qexjc"]
+[ext_resource type="Texture2D" uid="uid://bkhqhxtl3qtn1" path="res://Assets/Tilesets/TilesSpring/Background/2 - Hills.png" id="8_rcidx"]
+[ext_resource type="Texture2D" uid="uid://c5q4a3svwrlfo" path="res://Assets/Tilesets/TilesSpring/Background/1 - Foreground_scenery.png" id="9_i0mp4"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="10_cyicr"]
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_5k4e0"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="12_7uflb"]
@@ -20,12 +21,14 @@
 [ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="18_15y8n"]
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="19_gbjhm"]
 [ext_resource type="PackedScene" uid="uid://p7pvn42vqnq1" path="res://Entities/extra_life.tscn" id="20_15y8n"]
+[ext_resource type="PackedScene" uid="uid://b6ys34nusqhcu" path="res://Scenes/stage_name.tscn" id="21_gbjhm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
 distance = -1.0
 
 [node name="Spring2" type="Node2D" unique_id=1071220804]
+script = ExtResource("1_ax4x2")
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=1165921524]
 tile_map_data = PackedByteArray("AAAAAAsAAAACAAMAAAABAAsAAAACAAMAAAACAAsAAAACAAMAAAADAAsAAAACAAMAAAAEAAsAAAACAAMAAAAFAAsAAAACAAMAAAAGAAsAAAACAAMAAAAHAAsAAAACAAMAAAAIAAsAAAACAAMAAAAJAAsAAAACAAMAAAAKAAsAAAACAAMAAAALAAsAAAACAAMAAAAMAAsAAAACAAMAAAANAAsAAAACAAMAAAAOAAsAAAAHAAMAAAAcAAsAAAABAAMAAAAAAAwAAAAEAAQAAAABAAwAAAAEAAQAAAACAAwAAAAEAAQAAAADAAwAAAAEAAQAAAAEAAwAAAAEAAQAAAAFAAwAAAAEAAQAAAAGAAwAAAAEAAQAAAAHAAwAAAAEAAQAAAAIAAwAAAAEAAQAAAAJAAwAAAAEAAQAAAAKAAwAAAAEAAQAAAALAAwAAAAEAAQAAAAMAAwAAAAEAAQAAAANAAwAAAAEAAQAAAAOAAwAAAAFAAUAAAAcAAwAAAADAAUAAAAdAAsAAAACAAMAAAAeAAsAAAACAAMAAAAfAAsAAAACAAMAAAAgAAsAAAACAAMAAAAhAAsAAAACAAMAAAAiAAsAAAACAAMAAAAjAAsAAAACAAMAAAAkAAsAAAACAAMAAAAlAAsAAAACAAMAAAAmAAsAAAAHAAMAAAAdAAwAAAAEAAQAAAAeAAwAAAAEAAQAAAAfAAwAAAAEAAQAAAAgAAwAAAAEAAQAAAAhAAwAAAAEAAQAAAAiAAwAAAAEAAQAAAAjAAwAAAAEAAQAAAAkAAwAAAAEAAQAAAAlAAwAAAAEAAQAAAAmAAwAAAAFAAUAAAD//wsAAAACAAMAAAD+/wsAAAACAAMAAAD9/wsAAAACAAMAAAD8/wsAAAACAAMAAAD7/wsAAAACAAMAAAD//wwAAAAEAAQAAAD+/wwAAAAEAAQAAAD9/wwAAAAEAAQAAAD8/wwAAAAEAAQAAAD7/wwAAAAEAAQAAAAcAA0AAAADAAUAAAAOAA0AAAAFAAUAAAANAA0AAAAEAAQAAAAMAA0AAAAEAAQAAAALAA0AAAAEAAQAAAAKAA0AAAAEAAQAAAAJAA0AAAAEAAQAAAAIAA0AAAAEAAQAAAAHAA0AAAAEAAQAAAAGAA0AAAAEAAQAAAAFAA0AAAAEAAQAAAAEAA0AAAAEAAQAAAADAA0AAAAEAAQAAAACAA0AAAAEAAQAAAABAA0AAAAEAAQAAAAAAA0AAAAEAAQAAAD//w0AAAAEAAQAAAD+/w0AAAAEAAQAAAD9/w0AAAAEAAQAAAD8/w0AAAAEAAQAAAD7/w0AAAAEAAQAAAAdAA0AAAAEAAQAAAAeAA0AAAAEAAQAAAAfAA0AAAAEAAQAAAAgAA0AAAAEAAQAAAAhAA0AAAAEAAQAAAAmAA0AAAAFAAUAAAAlAA0AAAAEAAQAAAAkAA0AAAAEAAQAAAAjAA0AAAAEAAQAAAAiAA0AAAAEAAQAAAADAAEAAAAJAAMAAAAEAAEAAAAKAAMAAAAFAAEAAAANAAMAAAAXAAYAAAAJAAMAAAAcAAYAAAANAAMAAAAYAAYAAAAKAAMAAAAZAAYAAAAKAAMAAAAaAAYAAAAKAAMAAAAbAAYAAAAKAAMAAAAMAAgAAAAPAAMAAAAPAAYAAAAPAAMAAAASAAQAAAAPAAMAAAAKAAUAAAAPAAMAAAAIAAMAAAAPAAMAAAAVAAMAAAAPAAMAAAA=")
@@ -41,7 +44,7 @@ tile_map_data = PackedByteArray("AAAPABAAAAADAAEAAAAQABAAAAADAAEAAAARABAAAAADAAE
 tile_set = ExtResource("3_10go5")
 
 [node name="Player" parent="." unique_id=976081242 instance=ExtResource("4_15y8n")]
-position = Vector2(49, 162)
+position = Vector2(48, 168)
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10
@@ -90,7 +93,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 288, 208)
 
 [node name="Camera2D" parent="." unique_id=2033492168 instance=ExtResource("10_cyicr")]
-limit_bottom = 208
 
 [node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("11_5k4e0")]
 position = Vector2(604, 165)
@@ -159,5 +161,10 @@ scale = Vector2(-1, 1)
 
 [node name="ExtraLife" parent="." unique_id=1156779745 instance=ExtResource("20_15y8n")]
 position = Vector2(392, 16)
+
+[node name="StageName" parent="." unique_id=546803335 instance=ExtResource("21_gbjhm")]
+visible = false
+which_season = "PRIMAVERA"
+stage_number = "1 - 2"
 
 [editable path="FlyingCherry"]

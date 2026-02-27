@@ -29,10 +29,14 @@ func _on_all_text_displayed():
 	can_advance_message = true
 
 func _unhandled_input(event: InputEvent) -> void:
-	if (event.is_action_pressed("advance_message") and is_message_active and can_advance_message):
+	if (event.is_action_pressed("interact") and is_message_active and can_advance_message):
 		dialog_box.queue_free()
 		current_line += 1
-		if current_line >= message_lines.size():
+		if current_line >= message_lines.size() and Globals.finished_the_game:
+			await get_tree().create_timer(1.0).timeout
+			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+			return
+		elif current_line >= message_lines.size():
 			is_message_active = false
 			current_line = 0
 			return

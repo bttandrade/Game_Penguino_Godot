@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b7555b5fwsryo"]
 
 [ext_resource type="Script" uid="uid://c7adx0rdqhcv" path="res://Scripts/percy.gd" id="1_ga0sm"]
-[ext_resource type="Texture2D" uid="uid://bxawr4yo2g4tf" path="res://Assets/Percy/Shooting_Fireball (32 x 32).png" id="2_ga0sm"]
-[ext_resource type="Texture2D" uid="uid://ctqehkmrs1gtu" path="res://Assets/Percy/Hurt (32 x 32).png" id="3_ga0sm"]
-[ext_resource type="Texture2D" uid="uid://bk7vb0l3qkl6d" path="res://Assets/Percy/Running (32 x 32).png" id="3_omhgw"]
+[ext_resource type="Texture2D" uid="uid://bxawr4yo2g4tf" path="res://Assets/Mobs/Percy/Shooting_Fireball (32 x 32).png" id="2_ga0sm"]
+[ext_resource type="Texture2D" uid="uid://ctqehkmrs1gtu" path="res://Assets/Mobs/Percy/Hurt (32 x 32).png" id="3_ga0sm"]
+[ext_resource type="Texture2D" uid="uid://bk7vb0l3qkl6d" path="res://Assets/Mobs/Percy/Running (32 x 32).png" id="3_omhgw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpqwb"]
 atlas = ExtResource("2_ga0sm")

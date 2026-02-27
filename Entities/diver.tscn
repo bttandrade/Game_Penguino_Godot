@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://c3a2700b1ptfy"]
+
+[ext_resource type="Script" uid="uid://bykd6otvxeomb" path="res://Scripts/diver.gd" id="1_hnkft"]
+[ext_resource type="Texture2D" uid="uid://cfni7np206trx" path="res://Assets/Mobs/Diver/Hurt (16 x 16).png" id="2_hnkft"]
+[ext_resource type="Texture2D" uid="uid://csrelujvko2se" path="res://Assets/Mobs/Diver/Swimming (16 x 16).png" id="3_mr6jd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo38k"]
+atlas = ExtResource("2_hnkft")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hutf1"]
+atlas = ExtResource("3_mr6jd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47aa1"]
+atlas = ExtResource("3_mr6jd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjqfy"]
+atlas = ExtResource("3_mr6jd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2s37"]
+atlas = ExtResource("3_mr6jd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fk33c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo38k")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hutf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47aa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjqfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2s37")
+}],
+"loop": true,
+"name": &"patrol",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maoi3"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spduq"]
+radius = 8.0
+
+[node name="Diver" type="CharacterBody2D" unique_id=1967996673 groups=["enemy_body"]]
+collision_layer = 16
+script = ExtResource("1_hnkft")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1526325961]
+sprite_frames = SubResource("SpriteFrames_fk33c")
+animation = &"patrol"
+autoplay = "patrol"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521059575]
+shape = SubResource("CircleShape2D_maoi3")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=149533414 groups=["enemy_hitbox"]]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1560561459]
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_spduq")
+debug_color = Color(1, 0, 0, 0.39215687)
+
+[node name="PatrolPoints" type="Node2D" parent="." unique_id=1135144689]
+
+[node name="Point1" type="Node2D" parent="PatrolPoints" unique_id=1278352072]
+
+[node name="Point2" type="Node2D" parent="PatrolPoints" unique_id=746531560]
+
+[node name="Point3" type="Node2D" parent="PatrolPoints" unique_id=1814726944]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=933988395]

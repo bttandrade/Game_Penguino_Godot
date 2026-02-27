@@ -1,0 +1,196 @@
+[gd_scene format=4 uid="uid://fljgn1kds2or"]
+
+[ext_resource type="Script" uid="uid://cudfm6jxp76c0" path="res://Scripts/the_end.gd" id="1_y7v6c"]
+[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="2_747u8"]
+[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="3_w54tb"]
+[ext_resource type="Texture2D" uid="uid://c6upk0qfwlsq0" path="res://Assets/Penguino/Looking_Off (16 x 16).png" id="4_f2265"]
+[ext_resource type="Texture2D" uid="uid://dyw3mf06a5re0" path="res://Assets/Penguino/Sitting (16 x 16).png" id="5_pxilg"]
+[ext_resource type="Texture2D" uid="uid://cp1c2raowogix" path="res://Assets/Penguino/Standing (16 x 16).png" id="6_5sd6u"]
+[ext_resource type="Texture2D" uid="uid://dhm0vc4hwdl3u" path="res://Assets/Penguino/Surprised (16 x 16).png" id="7_wlc0j"]
+[ext_resource type="Texture2D" uid="uid://cu4kv6nf0bbcp" path="res://Assets/Penguino/Victory_Dance (16 x 16).png" id="8_8fmbk"]
+[ext_resource type="Texture2D" uid="uid://ik6hij3y237f" path="res://Assets/Tilesets/TilesWinter/Background/3 - Big_mountain_BG.png" id="9_1e6nl"]
+[ext_resource type="Texture2D" uid="uid://4hgjlivrcl24" path="res://Assets/Tilesets/TilesWinter/Background/2 - Smaller_mountains.png" id="10_3amem"]
+[ext_resource type="Texture2D" uid="uid://cl3p5hjtohrfi" path="res://Assets/Tilesets/TilesWinter/Background/1 - Snowy_foreground_area.png" id="11_w6d5j"]
+[ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="12_bbfaa"]
+[ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="13_le5mv"]
+[ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="14_bm7cq"]
+[ext_resource type="PackedScene" uid="uid://b6ys34nusqhcu" path="res://Scenes/stage_name.tscn" id="15_xcol5"]
+[ext_resource type="PackedScene" uid="uid://dhwdmxvpoxdec" path="res://Entities/penguino.tscn" id="16_d1ocr"]
+[ext_resource type="PackedScene" uid="uid://bhnpe44owliji" path="res://Entities/sign.tscn" id="17_747u8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmfat"]
+texture = ExtResource("4_f2265")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mgyfp"]
+texture = ExtResource("5_pxilg")
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/z_index = 1
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shnee"]
+texture = ExtResource("6_5sd6u")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71tud"]
+texture = ExtResource("7_wlc0j")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpkfc"]
+texture = ExtResource("8_8fmbk")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hrrsx"]
+sources/0 = SubResource("TileSetAtlasSource_pmfat")
+sources/3 = SubResource("TileSetAtlasSource_mgyfp")
+sources/4 = SubResource("TileSetAtlasSource_shnee")
+sources/5 = SubResource("TileSetAtlasSource_71tud")
+sources/6 = SubResource("TileSetAtlasSource_qpkfc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5hsy"]
+size = Vector2(167, 8)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yb8mu"]
+normal = Vector2(1, 0)
+distance = -1.0
+
+[node name="TheEnd" type="Node2D" unique_id=813078412]
+script = ExtResource("1_y7v6c")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2135161151]
+position = Vector2(0, -24)
+tile_map_data = PackedByteArray("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")
+tile_set = ExtResource("2_747u8")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=788004858]
+position = Vector2(0, -24)
+tile_map_data = PackedByteArray("AAAAAA0AAQAMAAUAAAABAA0AAQAMAAUAAAACAA0AAQAMAAUAAAADAA0AAQAMAAUAAAAEAA0AAQAMAAUAAAAFAA0AAQAMAAUAAAAGAA0AAQAMAAUAAAAHAA0AAQAMAAUAAAAIAA0AAQAMAAUAAAAJAA0AAQAMAAUAAAAKAA0AAQAMAAUAAAALAA0AAQAMAAUAAAAMAA0AAQAMAAUAAAANAA0AAQAMAAUAAAAOAA0AAQAMAAUAAAAPAA0AAQAMAAUAAAAQAA0AAQAMAAUAAAARAA0AAQAMAAUAAAASAA0AAQAMAAUAAAATAA0AAQAMAAUAAAAUAA0AAQAMAAUAAAAUAA4AAQAMAAYAAAAVAA4AAQAMAAYAAAAVAA0AAQAMAAUAAAAWAA0AAQAMAAUAAAAXAA0AAQAMAAUAAAAYAA0AAQAMAAUAAAAZAA0AAQAMAAUAAAAcAAwAAwACAAMAAAAdAAwAAwACAAMAAAAeAAwAAwACAAMAAAAfAAwAAwACAAMAAAAgAAwAAwACAAMAAAAfAA0AAQAMAAUAAAAeAA0AAQAMAAUAAAAdAA0AAQAMAAUAAAAcAA0AAQAMAAUAAAAbAA0AAQAMAAUAAAAaAA0AAQAMAAUAAAAgAA0AAQAMAAUAAAAhAA0AAQAMAAUAAAAbAAoAAwACAAMAAAAcAAoAAwACAAMAAAAdAAoAAwACAAMAAAAeAAsAAwACAAMAAAAfAAsAAwACAAMAAAAgAAsAAwACAAMAAAAhAAsAAwACAAMAAAAiAA0AAQAMAAUAAAAhAAwAAwACAAMAAAASAAwAAwACAAMAAAARAAwAAwACAAMAAAATAAwAAwACAAMAAAAUAAwAAwACAAMAAAAVAAsAAwACAAMAAAAWAAsAAwACAAMAAAAWAAoAAwACAAMAAAAXAAoAAwACAAMAAAAYAAoAAwACAAMAAAAZAAoAAwACAAMAAAAeAAoAAwACAAMAAAAfAAoAAwACAAMAAAAUAAsAAwACAAMAAAAaAAoAAwACAAMAAAAbAAcABAAIAAAAAAAXAAgAAgABAAEAAAAhAAkAAgAFAAEAAAAIAAsAAgABAAEAAAAbAAkAAgAJAAEAAAAcAAkAAgAKAAEAAAAdAAkAAgALAAEAAAAJAAwAAgABAAUAAAAEAAwAAgABAAUAAAALAAwAAgADAAUAAAAMAAwAAgAEAAUAAAAUAAoAAgADAAUAAAAVAAoAAgAEAAUAAAAgAAoAAgABAAUAAAAiAA4AAQAMAAYAAAAjAA4AAQAMAAYAAAAkAA4AAQAMAAYAAAAkAA8AAQAMAAYAAAAlAA4AAQAMAAYAAAAmAA4AAQAMAAYAAAAnAA4AAQAMAAYAAAAiAA8AAQAMAAYAAAAjAA8AAQAMAAYAAAAlAA8AAQAMAAYAAAAmAA8AAQAMAAYAAAAnAA8AAQAMAAYAAAAjAA0AAQAMAAUAAAAnAA0AAQAMAAUAAAAmAA0AAQAMAAUAAAAlAA0AAQAMAAUAAAAkAA0AAQAMAAUAAAAAAA4AAQAMAAYAAAABAA4AAQAMAAYAAAACAA4AAQAMAAYAAAADAA4AAQAMAAYAAAAEAA4AAQAMAAYAAAAFAA4AAQAMAAYAAAAGAA4AAQAMAAYAAAAHAA4AAQAMAAYAAAAIAA4AAQAMAAYAAAAJAA4AAQAMAAYAAAAKAA4AAQAMAAYAAAALAA4AAQAMAAYAAAAMAA4AAQAMAAYAAAANAA4AAQAMAAYAAAAOAA4AAQAMAAYAAAAPAA4AAQAMAAYAAAAQAA4AAQAMAAYAAAARAA4AAQAMAAYAAAASAA4AAQAMAAYAAAATAA4AAQAMAAYAAAAWAA4AAQAMAAYAAAAXAA4AAQAMAAYAAAAYAA4AAQAMAAYAAAAZAA4AAQAMAAYAAAAaAA4AAQAMAAYAAAAbAA4AAQAMAAYAAAAcAA4AAQAMAAYAAAAdAA4AAQAMAAYAAAAeAA4AAQAMAAYAAAAfAA4AAQAMAAYAAAAgAA4AAQAMAAYAAAAhAA4AAQAMAAYAAAAhAA8AAQAMAAYAAAAgAA8AAQAMAAYAAAAfAA8AAQAMAAYAAAAeAA8AAQAMAAYAAAAdAA8AAQAMAAYAAAAcAA8AAQAMAAYAAAAbAA8AAQAMAAYAAAAaAA8AAQAMAAYAAAAZAA8AAQAMAAYAAAAYAA8AAQAMAAYAAAAXAA8AAQAMAAYAAAAWAA8AAQAMAAYAAAAVAA8AAQAMAAYAAAAUAA8AAQAMAAYAAAATAA8AAQAMAAYAAAASAA8AAQAMAAYAAAARAA8AAQAMAAYAAAAQAA8AAQAMAAYAAAAPAA8AAQAMAAYAAAAOAA8AAQAMAAYAAAANAA8AAQAMAAYAAAAMAA8AAQAMAAYAAAALAA8AAQAMAAYAAAAKAA8AAQAMAAYAAAAJAA8AAQAMAAYAAAAIAA8AAQAMAAYAAAAHAA8AAQAMAAYAAAAGAA8AAQAMAAYAAAAFAA8AAQAMAAYAAAAEAA8AAQAMAAYAAAADAA8AAQAMAAYAAAACAA8AAQAMAAYAAAABAA8AAQAMAAYAAAAAAA8AAQAMAAYAAAAPAAoAAgABAAEAAAASAAsAAgABAAUAAAAQAAsAAgABAAUAAAA=")
+tile_set = ExtResource("3_w54tb")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=568245496]
+position = Vector2(0, -24)
+tile_set = SubResource("TileSet_hrrsx")
+
+[node name="Parallax" type="Node2D" parent="." unique_id=123921197]
+z_index = -10
+
+[node name="3" type="Parallax2D" parent="Parallax" unique_id=1926493760]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(288, 208)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/3" unique_id=1634991582]
+texture = ExtResource("9_1e6nl")
+centered = false
+
+[node name="2" type="Parallax2D" parent="Parallax" unique_id=1692494933]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/2" unique_id=1126948146]
+texture = ExtResource("10_3amem")
+centered = false
+
+[node name="1" type="Parallax2D" parent="Parallax" unique_id=2074494476]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/1" unique_id=1091132905]
+texture = ExtResource("11_w6d5j")
+centered = false
+
+[node name="Stop" type="Area2D" parent="." unique_id=1141378332]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stop" unique_id=894484054]
+position = Vector2(286, 83.5)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_g5hsy")
+
+[node name="Player" parent="." unique_id=976081242 instance=ExtResource("12_bbfaa")]
+position = Vector2(56, 176)
+
+[node name="Camera2D" parent="." unique_id=2033492168 instance=ExtResource("13_le5mv")]
+position = Vector2(144, 112)
+limit_top = -9999989
+limit_bottom = 217
+
+[node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("14_bm7cq")]
+visible = false
+
+[node name="StageName" parent="." unique_id=546803335 instance=ExtResource("15_xcol5")]
+visible = false
+which_season = "INVERNO"
+stage_number = "FINAL"
+
+[node name="StageLimit" type="StaticBody2D" parent="." unique_id=1267464881]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StageLimit" unique_id=1790823778]
+position = Vector2(2, 0)
+shape = SubResource("WorldBoundaryShape2D_yb8mu")
+
+[node name="Penguinos" type="Node2D" parent="." unique_id=1577863937]
+
+[node name="Penguino" parent="Penguinos" unique_id=339245273 instance=ExtResource("16_d1ocr")]
+position = Vector2(344, 144)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino2" parent="Penguinos" unique_id=1621383647 instance=ExtResource("16_d1ocr")]
+position = Vector2(320, 144)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino3" parent="Penguinos" unique_id=1852915634 instance=ExtResource("16_d1ocr")]
+position = Vector2(368, 128)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino4" parent="Penguinos" unique_id=59313930 instance=ExtResource("16_d1ocr")]
+position = Vector2(392, 128)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino5" parent="Penguinos" unique_id=1912952765 instance=ExtResource("16_d1ocr")]
+position = Vector2(240, 160)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino6" parent="Penguinos" unique_id=1684915040 instance=ExtResource("16_d1ocr")]
+position = Vector2(200, 176)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino7" parent="Penguinos" unique_id=1555707232 instance=ExtResource("16_d1ocr")]
+position = Vector2(160, 176)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino8" parent="Penguinos" unique_id=1188619979 instance=ExtResource("16_d1ocr")]
+position = Vector2(112, 176)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino9" parent="Penguinos" unique_id=1011789858 instance=ExtResource("16_d1ocr")]
+position = Vector2(96, 176)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Sign" parent="." unique_id=788242226 instance=ExtResource("17_747u8")]
+position = Vector2(298, 159)
+lines = Array[String](["Bem vindo de volta Penguino", "Imagino que tenha ", "Sua casa fica no inverno.", "Será um longo caminho de volta.", "Mas sei que irá conseguir.", "Boa sorte Penguino!"])
+
+[node name="Sprite2D" parent="Sign" index="0" unique_id=1665358468]
+position = Vector2(69, -47)
+
+[node name="SpawnText" parent="Sign" index="2" unique_id=510611136]
+position = Vector2(40, -24)
+
+[connection signal="body_entered" from="Stop" to="." method="_on_stop_body_entered"]
+
+[editable path="Sign"]

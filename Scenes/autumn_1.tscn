@@ -3,12 +3,12 @@
 [ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_yaahx"]
 [ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_sja7k"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="3_ouw8x"]
-[ext_resource type="Texture2D" uid="uid://drb6s3bnonndi" path="res://Assets/TilesAutumn/Background/6 - Distant_trees.png" id="4_0yhie"]
-[ext_resource type="Texture2D" uid="uid://dr82fotshqxou" path="res://Assets/TilesAutumn/Background/5 - Tree_row_BG_2.png" id="5_asf7f"]
-[ext_resource type="Texture2D" uid="uid://dtng2h8wpihd" path="res://Assets/TilesAutumn/Background/4 - Tree_row_BG_1.png" id="6_ed20s"]
-[ext_resource type="Texture2D" uid="uid://cx4ne4vw7wvj8" path="res://Assets/TilesAutumn/Background/3 - Bottom_leaf_piles.png" id="7_cfk8l"]
-[ext_resource type="Texture2D" uid="uid://cs3oaxcrq8xph" path="res://Assets/TilesAutumn/Background/2 - Trees.png" id="8_a4m0h"]
-[ext_resource type="Texture2D" uid="uid://dilwd6cvi2yel" path="res://Assets/TilesAutumn/Background/1 - Leaf_top.png" id="9_pv05t"]
+[ext_resource type="Texture2D" uid="uid://drb6s3bnonndi" path="res://Assets/Tilesets/TilesAutumn/Background/6 - Distant_trees.png" id="4_0yhie"]
+[ext_resource type="Texture2D" uid="uid://dr82fotshqxou" path="res://Assets/Tilesets/TilesAutumn/Background/5 - Tree_row_BG_2.png" id="5_asf7f"]
+[ext_resource type="Texture2D" uid="uid://dtng2h8wpihd" path="res://Assets/Tilesets/TilesAutumn/Background/4 - Tree_row_BG_1.png" id="6_ed20s"]
+[ext_resource type="Texture2D" uid="uid://cx4ne4vw7wvj8" path="res://Assets/Tilesets/TilesAutumn/Background/3 - Bottom_leaf_piles.png" id="7_cfk8l"]
+[ext_resource type="Texture2D" uid="uid://cs3oaxcrq8xph" path="res://Assets/Tilesets/TilesAutumn/Background/2 - Trees.png" id="8_a4m0h"]
+[ext_resource type="Texture2D" uid="uid://dilwd6cvi2yel" path="res://Assets/Tilesets/TilesAutumn/Background/1 - Leaf_top.png" id="9_pv05t"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="10_l3ebf"]
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_itv73"]
 [ext_resource type="PackedScene" uid="uid://dyeqq2vm7e5jy" path="res://Entities/moving_platform.tscn" id="13_h412o"]
@@ -102,7 +102,6 @@ centered = false
 region_rect = Rect2(0, 0, 288, 208)
 
 [node name="Camera2D" parent="." unique_id=2033492168 instance=ExtResource("10_l3ebf")]
-limit_bottom = 208
 
 [node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("11_itv73")]
 position = Vector2(606, 165)

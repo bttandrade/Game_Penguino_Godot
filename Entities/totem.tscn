@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://d22jfrwjeohcn"]
+
+[ext_resource type="Script" uid="uid://bsbiytda6kqog" path="res://Scripts/totem.gd" id="1_ymark"]
+[ext_resource type="Texture2D" uid="uid://c2dgyl6yuf4ug" path="res://Assets/Mobs/Totem/Hurt (16 x 16).png" id="2_cjivp"]
+[ext_resource type="Texture2D" uid="uid://c7u50fhkhymad" path="res://Assets/Mobs/Totem/Armored_Walking (16 x 32).png" id="3_mpdk8"]
+[ext_resource type="Texture2D" uid="uid://dhwlxceh0y0d7" path="res://Assets/Mobs/Totem/Walking (16 x 16).png" id="4_q7bl2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyut8"]
+atlas = ExtResource("2_cjivp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcjrk"]
+atlas = ExtResource("3_mpdk8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa08m"]
+atlas = ExtResource("3_mpdk8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpnea"]
+atlas = ExtResource("4_q7bl2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qyr3"]
+atlas = ExtResource("4_q7bl2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j750"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyut8")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcjrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa08m")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpnea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qyr3")
+}],
+"loop": true,
+"name": &"walk_small",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xm3w0"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvbfr"]
+size = Vector2(16, 12)
+
+[node name="Totem" type="CharacterBody2D" unique_id=1670272699 groups=["enemy_body"]]
+collision_layer = 16
+script = ExtResource("1_ymark")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1048508538]
+position = Vector2(0, 0.2)
+sprite_frames = SubResource("SpriteFrames_6j750")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=866672575]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_xm3w0")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1615748848 groups=["enemy_hitbox"]]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1609527229]
+position = Vector2(4.371139e-08, 7)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_gvbfr")
+debug_color = Color(1, 0, 0, 0.39215687)
+
+[node name="WallDetector" type="RayCast2D" parent="." unique_id=893558415]
+position = Vector2(0, 10)
+target_position = Vector2(-13, 0)
+
+[node name="GroundDetector" type="RayCast2D" parent="." unique_id=2006968891]
+position = Vector2(-12, 10)
+target_position = Vector2(0, 7)

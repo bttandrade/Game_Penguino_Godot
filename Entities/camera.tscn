@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://igskrpsegmj8" path="res://Scripts/camera.gd" id="1_ixxe8"]
 
 [node name="Camera2D" type="Camera2D" unique_id=2033492168]
+position = Vector2(-5, 106)
 process_callback = 0
 limit_left = 0
 limit_top = -9999998
-limit_bottom = 210
+limit_bottom = 208
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("1_ixxe8")

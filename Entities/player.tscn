@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ps8icnk8b77w" path="res://Assets/Penguino/Waddling (16 x 16).png" id="4_qly61"]
 [ext_resource type="Texture2D" uid="uid://bir0xmm164hml" path="res://Assets/Penguino/Belly_Sliding (16 x 16).png" id="6_6nm46"]
 [ext_resource type="Texture2D" uid="uid://b8op6jlb2t8p2" path="res://Assets/Penguino/Swimming (16 x 16).png" id="9_x08pd"]
+[ext_resource type="Texture2D" uid="uid://c6upk0qfwlsq0" path="res://Assets/Penguino/Looking_Off (16 x 16).png" id="10_mat3c"]
 [ext_resource type="Texture2D" uid="uid://bqi2qkkrtt5ow" path="res://Assets/Penguino/Wall_Slide (16x16).png" id="10_tjdhl"]
 [ext_resource type="AudioStream" uid="uid://b13o2xsypkqt7" path="res://Sounds/jump.wav" id="12_eyssl"]
 [ext_resource type="AudioStream" uid="uid://c6khnlsbgv70a" path="res://Sounds/hit.mp3" id="14_25cb4"]
@@ -69,6 +70,10 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_slxql"]
 atlas = ExtResource("9_x08pd")
 region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffc7a"]
+atlas = ExtResource("10_mat3c")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ef06p"]
 atlas = ExtResource("4_qly61")
@@ -206,6 +211,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ffc7a")
+}],
+"loop": false,
+"name": &"turn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ef06p")
 }, {
 "duration": 1.0,
@@ -260,10 +273,10 @@ z_index = 1
 collision_layer = 2
 script = ExtResource("1_b0kkn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=964873476]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=964873476 groups=["player_body"]]
 position = Vector2(0, 0.2)
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"walk"
+animation = &"turn"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=51162149]

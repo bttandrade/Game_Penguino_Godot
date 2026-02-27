@@ -86,7 +86,7 @@ layout_mode = 2
 theme_override_constants/separation = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_t2ad1")
 
-[node name="ContinueBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1826513572]
+[node name="TutorialBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1826513572]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0.4379066, 0.6647231, 1)
@@ -98,7 +98,7 @@ theme_override_styles/normal = ExtResource("5_07cxn")
 theme_override_styles/pressed = ExtResource("6_x2pfe")
 theme_override_styles/focus = ExtResource("6_x2pfe")
 button_mask = 0
-text = "CONTINUAR"
+text = "TUTORIAL"
 script = ExtResource("7_w5sh6")
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=518791331]
@@ -144,15 +144,5 @@ script = ExtResource("7_w5sh6")
 [node name="TitleSound" type="AudioStreamPlayer" parent="." unique_id=491874339]
 stream = ExtResource("12_2ia2x")
 
-[connection signal="focus_entered" from="MarginContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_focus_entered"]
-[connection signal="focus_exited" from="MarginContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_focus_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
-[connection signal="focus_entered" from="MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_focus_entered"]
-[connection signal="focus_exited" from="MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_focus_exited"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
-[connection signal="focus_entered" from="MarginContainer/VBoxContainer/CreditsBtn" to="." method="_on_credits_btn_focus_entered"]
-[connection signal="focus_exited" from="MarginContainer/VBoxContainer/CreditsBtn" to="." method="_on_credits_btn_focus_exited"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsBtn" to="." method="_on_creditsbtn_pressed"]
-[connection signal="focus_entered" from="MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_focus_entered"]
-[connection signal="focus_exited" from="MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_focus_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

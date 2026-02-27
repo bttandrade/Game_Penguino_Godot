@@ -4,9 +4,9 @@
 [ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_1h328"]
 [ext_resource type="TileSet" uid="uid://df6uqqscxni41" path="res://Themes/underwater.tres" id="3_rbahi"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="4_h832o"]
-[ext_resource type="Texture2D" uid="uid://ik6hij3y237f" path="res://Assets/TilesWinter/Background/3 - Big_mountain_BG.png" id="5_mdqk3"]
-[ext_resource type="Texture2D" uid="uid://4hgjlivrcl24" path="res://Assets/TilesWinter/Background/2 - Smaller_mountains.png" id="6_vj7x2"]
-[ext_resource type="Texture2D" uid="uid://cl3p5hjtohrfi" path="res://Assets/TilesWinter/Background/1 - Snowy_foreground_area.png" id="7_eg46x"]
+[ext_resource type="Texture2D" uid="uid://ik6hij3y237f" path="res://Assets/Tilesets/TilesWinter/Background/3 - Big_mountain_BG.png" id="5_mdqk3"]
+[ext_resource type="Texture2D" uid="uid://4hgjlivrcl24" path="res://Assets/Tilesets/TilesWinter/Background/2 - Smaller_mountains.png" id="6_vj7x2"]
+[ext_resource type="Texture2D" uid="uid://cl3p5hjtohrfi" path="res://Assets/Tilesets/TilesWinter/Background/1 - Snowy_foreground_area.png" id="7_eg46x"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="8_6s0c1"]
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="9_24mva"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="10_jvjem"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="13_wxasg"]
 [ext_resource type="AudioStream" uid="uid://bot5qh0cfrji3" path="res://Sounds/winter1.wav" id="14_dj8um"]
 [ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="15_1h328"]
+[ext_resource type="PackedScene" uid="uid://dpo00ridkq3s0" path="res://Entities/bub_pokey.tscn" id="16_rbahi"]
+[ext_resource type="PackedScene" uid="uid://c3a2700b1ptfy" path="res://Entities/diver.tscn" id="17_h832o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58nyd"]
 normal = Vector2(1, 0)
@@ -78,9 +80,6 @@ limit_bottom = 330
 position = Vector2(604, 165)
 next_level = "winter_2"
 
-[node name="Skeleton" parent="." unique_id=925847205 instance=ExtResource("10_jvjem")]
-position = Vector2(205, 158)
-
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=1245937780]
 collision_mask = 6
 
@@ -102,19 +101,19 @@ stream = ExtResource("14_dj8um")
 [node name="Coins" type="Node2D" parent="." unique_id=2135357066]
 
 [node name="Coin" parent="Coins" unique_id=1899686123 instance=ExtResource("15_1h328")]
-position = Vector2(104, 256)
+position = Vector2(104, 248)
 
 [node name="Coin2" parent="Coins" unique_id=1683462495 instance=ExtResource("15_1h328")]
-position = Vector2(160, 272)
+position = Vector2(160, 280)
 
 [node name="Coin3" parent="Coins" unique_id=1361282921 instance=ExtResource("15_1h328")]
-position = Vector2(216, 248)
+position = Vector2(224, 248)
 
 [node name="Coin4" parent="Coins" unique_id=1706115752 instance=ExtResource("15_1h328")]
-position = Vector2(272, 272)
+position = Vector2(288, 280)
 
 [node name="Coin5" parent="Coins" unique_id=2141572013 instance=ExtResource("15_1h328")]
-position = Vector2(336, 248)
+position = Vector2(344, 248)
 
 [node name="Coin6" parent="Coins" unique_id=880141482 instance=ExtResource("15_1h328")]
 position = Vector2(336, 168)
@@ -124,3 +123,36 @@ position = Vector2(136, 56)
 
 [node name="Coin8" parent="Coins" unique_id=357112140 instance=ExtResource("15_1h328")]
 position = Vector2(280, 56)
+
+[node name="Mobs" type="Node2D" parent="." unique_id=1989707923]
+
+[node name="Skeleton" parent="Mobs" unique_id=925847205 instance=ExtResource("10_jvjem")]
+position = Vector2(136, 64)
+
+[node name="Skeleton2" parent="Mobs" unique_id=599808845 instance=ExtResource("10_jvjem")]
+position = Vector2(280, 64)
+
+[node name="BubPokey" parent="Mobs" unique_id=1670272699 instance=ExtResource("16_rbahi")]
+position = Vector2(184, 160)
+mob_speed = 40.0
+
+[node name="BubPokey2" parent="Mobs" unique_id=1958724047 instance=ExtResource("16_rbahi")]
+position = Vector2(232, 160)
+initial_direction = -1
+mob_speed = 40.0
+
+[node name="Diver" parent="Mobs" unique_id=1967996673 instance=ExtResource("17_h832o")]
+position = Vector2(112, 280)
+initial_direction = -1
+
+[node name="Point2" parent="Mobs/Diver/PatrolPoints" parent_id_path=PackedInt32Array(1967996673, 1135144689) index="1" unique_id=746531560]
+position = Vector2(256, 0)
+
+[node name="Diver2" parent="Mobs" unique_id=2033719577 instance=ExtResource("17_h832o")]
+position = Vector2(368, 240)
+
+[node name="Point2" parent="Mobs/Diver2/PatrolPoints" parent_id_path=PackedInt32Array(2033719577, 1135144689) index="1" unique_id=746531560]
+position = Vector2(-256, 0)
+
+[editable path="Mobs/Diver"]
+[editable path="Mobs/Diver2"]

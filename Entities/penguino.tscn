@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dhwdmxvpoxdec"]
+
+[ext_resource type="Texture2D" uid="uid://cu4kv6nf0bbcp" path="res://Assets/Penguino/Victory_Dance (16 x 16).png" id="1_lj5tf"]
+[ext_resource type="Texture2D" uid="uid://bd5c7itdkixp1" path="res://Assets/Penguino/Idle (16 x 16).png" id="2_lj5tf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rake3"]
+atlas = ExtResource("1_lj5tf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyf0o"]
+atlas = ExtResource("1_lj5tf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4sks"]
+atlas = ExtResource("1_lj5tf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v7wc"]
+atlas = ExtResource("1_lj5tf")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bidvo"]
+atlas = ExtResource("2_lj5tf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjkim"]
+atlas = ExtResource("2_lj5tf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irf0b"]
+atlas = ExtResource("2_lj5tf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wl0b"]
+atlas = ExtResource("2_lj5tf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2ra3"]
+atlas = ExtResource("2_lj5tf")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irf0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rake3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyf0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4sks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v7wc")
+}],
+"loop": true,
+"name": &"dancing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bidvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjkim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irf0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wl0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2ra3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wl0b"]
+radius = 6.0
+height = 16.0
+
+[node name="Penguino" type="CharacterBody2D" unique_id=1621383647]
+collision_layer = 0
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=812703516]
+sprite_frames = SubResource("SpriteFrames_irf0b")
+animation = &"idle"
+autoplay = "dancing"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=221470997]
+visible = false
+shape = SubResource("CapsuleShape2D_2wl0b")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlsbuhchru5iv"]
 
 [ext_resource type="Script" uid="uid://ptfrrbd1tvwu" path="res://Scripts/spinning_bone.gd" id="1_w8g7c"]
-[ext_resource type="Texture2D" uid="uid://dmp8k7kk28j3e" path="res://Assets/Percy/Fireball_Projectile (16 x 16).png" id="2_hu338"]
+[ext_resource type="Texture2D" uid="uid://dmp8k7kk28j3e" path="res://Assets/Mobs/Percy/Fireball_Projectile (16 x 16).png" id="2_hu338"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhbmf"]
 atlas = ExtResource("2_hu338")

@@ -1,14 +1,15 @@
 [gd_scene format=4 uid="uid://raw6pnghx4nb"]
 
+[ext_resource type="Script" uid="uid://jvcw0tqpj5ca" path="res://Scripts/begin_stage.gd" id="1_hucnk"]
 [ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="1_wbcot"]
 [ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="2_ihiev"]
-[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/TilesSummer/Tropics_entities (16 x 16).png" id="3_kiurm"]
+[ext_resource type="Texture2D" uid="uid://btyiwgoqb1rm2" path="res://Assets/Tilesets/TilesSummer/Tropics_entities (16 x 16).png" id="3_kiurm"]
 [ext_resource type="PackedScene" uid="uid://dm0xy6rtb31vm" path="res://Entities/player.tscn" id="4_hucnk"]
-[ext_resource type="Texture2D" uid="uid://bk3f8nq6566p1" path="res://Assets/TilesSummer/Background/5 - Sky_color.png" id="5_ro3ro"]
-[ext_resource type="Texture2D" uid="uid://bscxegee57ucj" path="res://Assets/TilesSummer/Background/4 - Background_clouds.png" id="6_bsic2"]
-[ext_resource type="Texture2D" uid="uid://dguctl2vjd4yi" path="res://Assets/TilesSummer/Background/3 - Floating_clouds.png" id="7_cuynj"]
-[ext_resource type="Texture2D" uid="uid://fip6itl03y6y" path="res://Assets/TilesSummer/Background/2 - Waters_version_2.png" id="8_0ghc0"]
-[ext_resource type="Texture2D" uid="uid://clmt6wtupiota" path="res://Assets/TilesSummer/Background/1 - Waters_version_1.png" id="9_daauc"]
+[ext_resource type="Texture2D" uid="uid://bk3f8nq6566p1" path="res://Assets/Tilesets/TilesSummer/Background/5 - Sky_color.png" id="5_ro3ro"]
+[ext_resource type="Texture2D" uid="uid://bscxegee57ucj" path="res://Assets/Tilesets/TilesSummer/Background/4 - Background_clouds.png" id="6_bsic2"]
+[ext_resource type="Texture2D" uid="uid://dguctl2vjd4yi" path="res://Assets/Tilesets/TilesSummer/Background/3 - Floating_clouds.png" id="7_cuynj"]
+[ext_resource type="Texture2D" uid="uid://fip6itl03y6y" path="res://Assets/Tilesets/TilesSummer/Background/2 - Waters_version_2.png" id="8_0ghc0"]
+[ext_resource type="Texture2D" uid="uid://clmt6wtupiota" path="res://Assets/Tilesets/TilesSummer/Background/1 - Waters_version_1.png" id="9_daauc"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="10_0orka"]
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_k51ge"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="12_dwb54"]
@@ -17,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="15_5kax8"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="16_ga4iy"]
 [ext_resource type="AudioStream" uid="uid://ha5vxsiyql27" path="res://Sounds/summer1.wav" id="17_yw1r2"]
+[ext_resource type="PackedScene" uid="uid://d22jfrwjeohcn" path="res://Entities/totem.tscn" id="18_ihiev"]
+[ext_resource type="PackedScene" uid="uid://b6ys34nusqhcu" path="res://Scenes/stage_name.tscn" id="20_ro3ro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxncu"]
 texture = ExtResource("3_kiurm")
@@ -79,6 +82,7 @@ normal = Vector2(1, 0)
 distance = -1.0
 
 [node name="Summer1" type="Node2D" unique_id=1071220804]
+script = ExtResource("1_hucnk")
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=1165921524]
 tile_map_data = PackedByteArray("AAAAAAsAAgACAAMAAAABAAsAAgACAAMAAAACAAsAAgACAAMAAAADAAsAAgACAAMAAAAEAAsAAgACAAMAAAAFAAsAAgACAAMAAAAGAAsAAgACAAMAAAAHAAsAAgACAAMAAAAIAAsAAgACAAMAAAAJAAsAAgACAAMAAAAKAAsAAgACAAMAAAALAAsAAgACAAMAAAAMAAsAAgACAAMAAAANAAsAAgACAAMAAAAOAAsAAgAHAAMAAAAWAAsAAgABAAMAAAAXAAsAAgACAAMAAAAYAAsAAgACAAMAAAAZAAsAAgACAAMAAAAaAAsAAgACAAMAAAAbAAsAAgACAAMAAAAcAAsAAgACAAMAAAAdAAsAAgACAAMAAAAeAAsAAgACAAMAAAAfAAsAAgACAAMAAAAgAAsAAgACAAMAAAAhAAsAAgACAAMAAAAiAAsAAgACAAMAAAAjAAsAAgACAAMAAAAAAAwAAgAEAAQAAAABAAwAAgAEAAQAAAACAAwAAgAEAAQAAAADAAwAAgAEAAQAAAAEAAwAAgAEAAQAAAAFAAwAAgAEAAQAAAAGAAwAAgAEAAQAAAAHAAwAAgAEAAQAAAAIAAwAAgAEAAQAAAAJAAwAAgAEAAQAAAAKAAwAAgAEAAQAAAALAAwAAgAEAAQAAAAMAAwAAgAEAAQAAAANAAwAAgAEAAQAAAAOAAwAAgAFAAUAAAAWAAwAAgADAAUAAAAXAAwAAgAEAAQAAAAYAAwAAgAEAAQAAAAZAAwAAgAEAAQAAAAaAAwAAgAEAAQAAAAbAAwAAgAEAAQAAAAcAAwAAgAEAAQAAAAdAAwAAgAEAAQAAAAeAAwAAgAEAAQAAAAfAAwAAgAEAAQAAAAgAAwAAgAEAAQAAAAhAAwAAgAEAAQAAAAiAAwAAgAEAAQAAAAjAAwAAgAEAAQAAAD//wwAAgAEAAQAAAD+/wwAAgAEAAQAAAD9/wwAAgAEAAQAAAD7/wwAAgAEAAQAAAD8/wwAAgAEAAQAAAD7/wsAAgACAAMAAAD8/wsAAgACAAMAAAD9/wsAAgACAAMAAAD+/wsAAgACAAMAAAD//wsAAgACAAMAAAAkAAsAAgAEAAEAAAAkAAwAAgAEAAUAAAAgAAkAAgAPAAMAAAAeAAcAAgAPAAMAAAAcAAUAAgAPAAMAAAAOAAMAAgAPAAMAAAAMAAUAAgAPAAMAAAAKAAcAAgAPAAMAAAAIAAkAAgAPAAMAAAAlAAsAAgAEAAEAAAAmAAsAAgAFAAEAAAAmAAwAAgAFAAUAAAAlAAwAAgAEAAUAAAAUAAEAAgAKAAMAAAATAAEAAgAKAAMAAAAVAAEAAgANAAMAAAARAAEAAgAJAAMAAAASAAEAAgAKAAMAAAAZAAMAAgAPAAMAAAA=")
@@ -133,7 +137,6 @@ frame_progress = 0.54867345
 centered = false
 
 [node name="Camera2D" parent="." unique_id=2033492168 instance=ExtResource("10_0orka")]
-limit_bottom = 208
 
 [node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("11_k51ge")]
 position = Vector2(603, 164)
@@ -152,6 +155,9 @@ position = Vector2(141, 143)
 [node name="Skeleton2" parent="." unique_id=976503753 instance=ExtResource("12_dwb54")]
 position = Vector2(411, 144)
 
+[node name="Totem" parent="." unique_id=1670272699 instance=ExtResource("18_ihiev")]
+position = Vector2(300, -1)
+
 [node name="Chest" parent="." unique_id=1545059798 instance=ExtResource("13_x3fbk")]
 position = Vector2(320, 8)
 
@@ -168,3 +174,8 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=454872398]
 stream = ExtResource("17_yw1r2")
+
+[node name="StageName" parent="." unique_id=546803335 instance=ExtResource("20_ro3ro")]
+visible = false
+which_season = "VERÃO"
+stage_number = "2 - 1"

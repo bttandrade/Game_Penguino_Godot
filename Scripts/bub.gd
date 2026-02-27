@@ -6,14 +6,13 @@ enum BubState{
 }
 
 @export var initial_direction = 0
+@export var mob_speed = 20.0
 @export var mob_value = 100
 
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $HitBox
 @onready var wall_detector: RayCast2D = $WallDetector
 @onready var ground_detector: RayCast2D = $GroundDetector
-
-const SPEED = 20.0
 
 var status: BubState
 var direction = -1
@@ -39,7 +38,7 @@ func start_move():
 	go_to_walk_state()
 
 func walk_state(_delta):
-	velocity.x = SPEED * direction
+	velocity.x = mob_speed * direction
 	if wall_detector.is_colliding():
 		scale.x *= -1
 		direction *= -1

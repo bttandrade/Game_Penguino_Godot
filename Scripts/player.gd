@@ -28,7 +28,7 @@ enum PlayerState{
 @onready var player_scene = preload("res://Entities/player.tscn")
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var hud_manager: Control = $"../HUD/HUDManager"
+#@onready var hud_manager: Control = $"../HUD/HUDManager"
 @onready var left_wall_detector: RayCast2D = $LeftWallDetector
 @onready var right_wall_detector: RayCast2D = $RightWallDetector
 @onready var hurt_box: Area2D = $HitBoxes/HurtBox
@@ -48,15 +48,23 @@ const RIGID_COIN = preload("res://Entities/rigid_coin.tscn")
 var last_direction = 0
 var jump_count = 0
 var direction = 0
+var control_lock = false
 var status: PlayerState
 
 func _ready() -> void:
-	hud_manager.time_is_up.connect(go_to_dead_state)
+	if get_parent().has_node("HUD"):
+		var hud_manager: Control = $"../HUD/HUDManager"
+		hud_manager.time_is_up.connect(go_to_dead_state)	
 	Globals.current_checkpoint = self.global_position
 	go_to_idle_state()
 
 func _physics_process(delta: float) -> void:
-
+	if control_lock:
+		velocity.x = 0
+		apply_gravity(delta)
+		move_and_slide()
+		return
+		
 	match status:
 		PlayerState.idle:
 			idle_state(delta)
@@ -201,7 +209,7 @@ func go_to_wall_state():
 	status = PlayerState.wall
 	anima.play("wall")
 	velocity = Vector2.ZERO
-	jump_count = 0
+	jump_count = 1
 
 func wall_state(delta):
 	velocity.y += wall_acceleration * delta
@@ -257,7 +265,6 @@ func go_to_hurt_state():
 	respawn()
 
 func hurt_state(delta):
-	velocity.x = 0
 	apply_gravity(delta)
 
 func go_to_dead_state():
@@ -278,6 +285,10 @@ func apply_gravity(delta):
 		velocity += get_gravity() * delta
 
 func update_direction():
+	if control_lock:
+		direction = 0
+		return
+		
 	direction = Input.get_axis("left", "right")
 	
 	if direction < 0:
@@ -308,6 +319,7 @@ func set_collision_back():
 
 func respawn():
 	await get_tree().create_timer(1.0).timeout
+	control_lock = false
 	set_collision_back()
 	Globals.player = $"."
 	Globals.respawn_player()
@@ -321,7 +333,7 @@ func hit_enemy(area: Area2D):
 func took_a_hit(area):
 	if Globals.player_life <= 0:
 		return
-	
+	control_lock = true
 	var enemy_pos_x = area.global_position.x
 	var player_pos_x = global_position.x
 	var direction_of_hit = 0
@@ -364,20 +376,29 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		took_a_hit(area)
 
 func _on_stomp_box_body_entered(body: Node2D) -> void:
+	if control_lock or status == PlayerState.hurt:
+		return
+		
 	if body.is_in_group("water_body"):
 		go_to_swim_state()
 		return
+		
 	if body.is_in_group("lethal_body"):
+		control_lock = true
 		be_invincible()
 		go_to_hurt_state()
 		return
+		
 	if velocity.y > 0 and body.is_in_group("enemy_body"):
 		body.take_damage()
 		hit_sound.play()
 		go_to_jump_state()
 
 func _on_stomp_box_body_exited(body: Node2D) -> void:
+	if control_lock or status == PlayerState.hurt:
+		return
+		
 	if body.is_in_group("water_body"):
 		water_sound.play()
-		jump_count = 0
+		jump_count = 1
 		go_to_jump_state()
