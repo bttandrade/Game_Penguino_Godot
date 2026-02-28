@@ -144,6 +144,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=377013729]
 stream = ExtResource("20_y2w18")
+autoplay = true
 
 [node name="Percy" parent="." unique_id=925847205 instance=ExtResource("20_yaahx")]
 position = Vector2(214, 76)

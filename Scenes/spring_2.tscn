@@ -112,6 +112,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1835851818]
 stream = ExtResource("14_tiea1")
+autoplay = true
 
 [node name="Bub" parent="." unique_id=1670272699 instance=ExtResource("15_7o84e")]
 position = Vector2(214, 166)

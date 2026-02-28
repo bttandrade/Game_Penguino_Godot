@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://bdwhpi6xh2nw7"]
+
+[ext_resource type="Texture2D" uid="uid://ddqo2iq2t7wcl" path="res://Assets/Universal/Dialog_Box(16 x 16).png" id="1_koko0"]
+[ext_resource type="FontFile" uid="uid://dx4dbuk0rrfp8" path="res://Assets/Fonts/RevMiniPixel.ttf" id="2_lsb8r"]
+[ext_resource type="Texture2D" uid="uid://ciugncameleia" path="res://Assets/Others/Mini UI/left.png" id="3_ap3ea"]
+[ext_resource type="Texture2D" uid="uid://bo6kqqh7ycni2" path="res://Assets/Others/Mini UI/right.png" id="4_t6ver"]
+[ext_resource type="Texture2D" uid="uid://bddce5waqc2dk" path="res://Assets/Others/Mini UI/a.png" id="5_2nb4t"]
+[ext_resource type="Texture2D" uid="uid://4kpbmikaduqw" path="res://Assets/Others/Mini UI/d.png" id="6_jb51l"]
+[ext_resource type="Texture2D" uid="uid://k3hqeelgjqpw" path="res://Assets/Others/Mini UI/up.png" id="7_dxsep"]
+[ext_resource type="Texture2D" uid="uid://bbt3a8lhhpr8b" path="res://Assets/Others/Mini UI/enter.png" id="7_lsb8r"]
+[ext_resource type="Texture2D" uid="uid://b4nox04euj851" path="res://Assets/Others/Mini UI/w.png" id="8_lexqi"]
+[ext_resource type="Texture2D" uid="uid://c5rufaqpoag3k" path="res://Assets/Others/Mini UI/space.png" id="9_pkgwa"]
+[ext_resource type="Texture2D" uid="uid://0gy04nd0rdn" path="res://Assets/Others/Mini UI/down.png" id="10_radxo"]
+[ext_resource type="Texture2D" uid="uid://cjiojshg6fgpw" path="res://Assets/Others/Mini UI/s.png" id="11_1cu4j"]
+[ext_resource type="Texture2D" uid="uid://dr7ednucbgot8" path="res://Assets/Others/Mini UI/e.png" id="12_djl3p"]
+[ext_resource type="Texture2D" uid="uid://da08vg075qi3b" path="res://Assets/Others/Mini UI/esc.png" id="13_73805"]
+
+[node name="Tutorial" type="CanvasLayer" unique_id=1583732572]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1894960863]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="DialogBox" type="MarginContainer" parent="." unique_id=1291638370]
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 240.0
+offset_bottom = 168.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="DialogBox" unique_id=2015232254]
+layout_mode = 2
+texture = ExtResource("1_koko0")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Labels" type="Control" parent="." unique_id=1939310920]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Labels" unique_id=977722894]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 44.0
+offset_right = 262.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_lsb8r")
+theme_override_font_sizes/font_size = 8
+text = "   : INTERAGIR / AVANÇAR DIÁLOGO"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Labels" unique_id=1258524821]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 68.0
+offset_right = 334.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_lsb8r")
+theme_override_font_sizes/font_size = 8
+text = "   : IR PARA OS LADOS"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Labels" unique_id=323958755]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 92.0
+offset_right = 343.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_lsb8r")
+theme_override_font_sizes/font_size = 8
+text = "   : PULAR"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Labels" unique_id=73376874]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 116.0
+offset_right = 286.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_lsb8r")
+theme_override_font_sizes/font_size = 8
+text = "   : ABAIXAR"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Labels" unique_id=1934700239]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 140.0
+offset_right = 263.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_lsb8r")
+theme_override_font_sizes/font_size = 8
+text = "   : PAUSAR / SAIR DO PAUSE"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Labels" unique_id=1324663208]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 123.0
+offset_right = 380.0
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_lsb8r")
+theme_override_font_sizes/font_size = 8
+text = "   : ACEITAR"
+vertical_alignment = 1
+
+[node name="Keys" type="Control" parent="." unique_id=1229196803]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="A" type="Sprite2D" parent="Keys" unique_id=9482476]
+position = Vector2(64, 72)
+texture = ExtResource("5_2nb4t")
+
+[node name="D" type="Sprite2D" parent="Keys" unique_id=760768906]
+position = Vector2(88, 72)
+texture = ExtResource("6_jb51l")
+
+[node name="Down" type="Sprite2D" parent="Keys" unique_id=485688534]
+position = Vector2(64, 120)
+texture = ExtResource("10_radxo")
+
+[node name="E" type="Sprite2D" parent="Keys" unique_id=1998972425]
+position = Vector2(64, 48)
+texture = ExtResource("12_djl3p")
+
+[node name="Enter" type="Sprite2D" parent="Keys" unique_id=1513827825]
+position = Vector2(214, 104)
+texture = ExtResource("7_lsb8r")
+
+[node name="Esc" type="Sprite2D" parent="Keys" unique_id=850571662]
+position = Vector2(64, 144)
+texture = ExtResource("13_73805")
+
+[node name="Left" type="Sprite2D" parent="Keys" unique_id=1694447966]
+position = Vector2(112, 72)
+texture = ExtResource("3_ap3ea")
+
+[node name="Right" type="Sprite2D" parent="Keys" unique_id=710849716]
+position = Vector2(136, 72)
+texture = ExtResource("4_t6ver")
+
+[node name="S" type="Sprite2D" parent="Keys" unique_id=1871902816]
+position = Vector2(88, 120)
+texture = ExtResource("11_1cu4j")
+
+[node name="Space" type="Sprite2D" parent="Keys" unique_id=872374554]
+position = Vector2(128, 96)
+texture = ExtResource("9_pkgwa")
+
+[node name="Up" type="Sprite2D" parent="Keys" unique_id=1786774540]
+position = Vector2(88, 96)
+texture = ExtResource("7_dxsep")
+
+[node name="W" type="Sprite2D" parent="Keys" unique_id=1164630658]
+position = Vector2(64, 96)
+texture = ExtResource("8_lexqi")

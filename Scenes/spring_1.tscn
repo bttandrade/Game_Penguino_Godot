@@ -144,12 +144,15 @@ position = Vector2(136, 152)
 position = Vector2(0, -64)
 
 [node name="HUD" parent="." unique_id=394713785 instance=ExtResource("16_6nlcg")]
+default_minutes = 2
+default_seconds = 59
 
 [node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("19_46t7q")]
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1835851818]
 stream = ExtResource("20_v58ws")
+autoplay = true
 
 [node name="StageName" parent="." unique_id=546803335 instance=ExtResource("21_bdrxr")]
 visible = false

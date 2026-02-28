@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d02uq6kykqvmi"]
 
 [ext_resource type="Script" uid="uid://crafo7montp4o" path="res://Scripts/hud_manager.gd" id="1_ao4gm"]
+[ext_resource type="Script" uid="uid://grcw47746625" path="res://Scripts/hud.gd" id="1_urqr1"]
 [ext_resource type="Texture2D" uid="uid://ctw0g51kihvjh" path="res://Assets/Others/Common Pick-ups/00_Coin-Sprites.png" id="2_urqr1"]
 [ext_resource type="Texture2D" uid="uid://vkg66t56h235" path="res://Assets/Others/Common Pick-ups/02_Coin-Sprites.png" id="3_2k8gd"]
 [ext_resource type="Texture2D" uid="uid://b8tuqfjjfsxcq" path="res://Assets/Others/Common Pick-ups/03_Coin-Sprites.png" id="4_1ncl0"]
@@ -21,9 +22,10 @@ frame_2/duration = 1.0
 frame_3/texture = ExtResource("4_1ncl0")
 frame_3/duration = 1.0
 
-[node name="HUD" type="CanvasLayer" unique_id=394713785]
+[node name="HUD" type="CanvasLayer" unique_id=1318826501]
+script = ExtResource("1_urqr1")
 
-[node name="HUDManager" type="Control" parent="." unique_id=1897720527]
+[node name="HUDManager" type="Control" parent="." unique_id=1232095795]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,13 +33,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ao4gm")
-default_minutes = 2
-default_seconds = 59
 
-[node name="ClockTimer" type="Timer" parent="HUDManager" unique_id=45373122]
+[node name="ClockTimer" type="Timer" parent="HUDManager" unique_id=1585668156]
 autostart = true
 
-[node name="MarginContainer" type="MarginContainer" parent="HUDManager" unique_id=107953245]
+[node name="MarginContainer" type="MarginContainer" parent="HUDManager" unique_id=1789123178]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,20 +49,20 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="CoinContainer" type="HBoxContainer" parent="HUDManager/MarginContainer" unique_id=1096579]
+[node name="CoinContainer" type="HBoxContainer" parent="HUDManager/MarginContainer" unique_id=1869726201]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="HUDManager/MarginContainer/CoinContainer" unique_id=659426889]
+[node name="MarginContainer" type="MarginContainer" parent="HUDManager/MarginContainer/CoinContainer" unique_id=1062982362]
 layout_mode = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="TextureRect" type="TextureRect" parent="HUDManager/MarginContainer/CoinContainer/MarginContainer" unique_id=2040834586]
+[node name="TextureRect" type="TextureRect" parent="HUDManager/MarginContainer/CoinContainer/MarginContainer" unique_id=1360824017]
 layout_mode = 2
 texture = SubResource("AnimatedTexture_dcvnt")
 
-[node name="CoinAmount" type="Label" parent="HUDManager/MarginContainer/CoinContainer" unique_id=374687093]
+[node name="CoinAmount" type="Label" parent="HUDManager/MarginContainer/CoinContainer" unique_id=51538012]
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_cbln1")
@@ -70,43 +70,43 @@ theme_override_font_sizes/font_size = 8
 text = "0000"
 vertical_alignment = 1
 
-[node name="TimeContainer" type="HBoxContainer" parent="HUDManager/MarginContainer" unique_id=1662829612]
+[node name="TimeContainer" type="HBoxContainer" parent="HUDManager/MarginContainer" unique_id=448151846]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="HUDManager/MarginContainer/TimeContainer" unique_id=1517972028]
+[node name="MarginContainer" type="MarginContainer" parent="HUDManager/MarginContainer/TimeContainer" unique_id=469702519]
 layout_mode = 2
 theme_override_constants/margin_top = 1
 
-[node name="Timer" type="Label" parent="HUDManager/MarginContainer/TimeContainer/MarginContainer" unique_id=477988453]
+[node name="Timer" type="Label" parent="HUDManager/MarginContainer/TimeContainer/MarginContainer" unique_id=1098975809]
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_cbln1")
 theme_override_font_sizes/font_size = 8
 text = "TIME:"
 
-[node name="MarginContainer2" type="MarginContainer" parent="HUDManager/MarginContainer/TimeContainer" unique_id=198673859]
+[node name="MarginContainer2" type="MarginContainer" parent="HUDManager/MarginContainer/TimeContainer" unique_id=1044731680]
 layout_mode = 2
 theme_override_constants/margin_top = 1
 
-[node name="TimeAmount" type="Label" parent="HUDManager/MarginContainer/TimeContainer/MarginContainer2" unique_id=1390458246]
+[node name="TimeAmount" type="Label" parent="HUDManager/MarginContainer/TimeContainer/MarginContainer2" unique_id=1974110520]
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_cbln1")
 theme_override_font_sizes/font_size = 8
 text = "00:00"
 
-[node name="ScoreContainer" type="HBoxContainer" parent="HUDManager/MarginContainer" unique_id=508735236]
+[node name="ScoreContainer" type="HBoxContainer" parent="HUDManager/MarginContainer" unique_id=1252605264]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="HUDManager/MarginContainer/ScoreContainer" unique_id=123582991]
+[node name="MarginContainer" type="MarginContainer" parent="HUDManager/MarginContainer/ScoreContainer" unique_id=2109539527]
 layout_mode = 2
 theme_override_constants/margin_top = 1
 
-[node name="ScoreText" type="Label" parent="HUDManager/MarginContainer/ScoreContainer/MarginContainer" unique_id=632699282]
+[node name="ScoreText" type="Label" parent="HUDManager/MarginContainer/ScoreContainer/MarginContainer" unique_id=1039160598]
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_cbln1")
@@ -114,11 +114,11 @@ theme_override_font_sizes/font_size = 8
 text = "SCORE:"
 vertical_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="HUDManager/MarginContainer/ScoreContainer" unique_id=225091434]
+[node name="MarginContainer2" type="MarginContainer" parent="HUDManager/MarginContainer/ScoreContainer" unique_id=1942345580]
 layout_mode = 2
 theme_override_constants/margin_top = 1
 
-[node name="ScoreAmount" type="Label" parent="HUDManager/MarginContainer/ScoreContainer/MarginContainer2" unique_id=1000774237]
+[node name="ScoreAmount" type="Label" parent="HUDManager/MarginContainer/ScoreContainer/MarginContainer2" unique_id=734848663]
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_cbln1")
@@ -126,20 +126,20 @@ theme_override_font_sizes/font_size = 8
 text = "000000"
 vertical_alignment = 1
 
-[node name="LifeContainer" type="HBoxContainer" parent="HUDManager/MarginContainer" unique_id=1431078071]
+[node name="LifeContainer" type="HBoxContainer" parent="HUDManager/MarginContainer" unique_id=1387091572]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="HUDManager/MarginContainer/LifeContainer" unique_id=916579237]
+[node name="MarginContainer" type="MarginContainer" parent="HUDManager/MarginContainer/LifeContainer" unique_id=2106602822]
 layout_mode = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="TextureRect" type="TextureRect" parent="HUDManager/MarginContainer/LifeContainer/MarginContainer" unique_id=1883332838]
+[node name="TextureRect" type="TextureRect" parent="HUDManager/MarginContainer/LifeContainer/MarginContainer" unique_id=1594101755]
 layout_mode = 2
 texture = ExtResource("6_vfo3v")
 
-[node name="LifeX" type="Label" parent="HUDManager/MarginContainer/LifeContainer" unique_id=1543618685]
+[node name="LifeX" type="Label" parent="HUDManager/MarginContainer/LifeContainer" unique_id=2121441944]
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_cbln1")
@@ -147,7 +147,7 @@ theme_override_font_sizes/font_size = 8
 text = "X"
 vertical_alignment = 1
 
-[node name="LifeAmount" type="Label" parent="HUDManager/MarginContainer/LifeContainer" unique_id=2125640543]
+[node name="LifeAmount" type="Label" parent="HUDManager/MarginContainer/LifeContainer" unique_id=1524511320]
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_cbln1")

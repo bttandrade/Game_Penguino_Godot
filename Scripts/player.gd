@@ -28,7 +28,6 @@ enum PlayerState{
 @onready var player_scene = preload("res://Entities/player.tscn")
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
-#@onready var hud_manager: Control = $"../HUD/HUDManager"
 @onready var left_wall_detector: RayCast2D = $LeftWallDetector
 @onready var right_wall_detector: RayCast2D = $RightWallDetector
 @onready var hurt_box: Area2D = $HitBoxes/HurtBox
@@ -262,13 +261,22 @@ func go_to_hurt_state():
 	velocity.y = JUMP_VELOCITY
 	hurt_sound.play()
 	anima.play("dead")
+	jump_count = 0
 	respawn()
 
 func hurt_state(delta):
 	apply_gravity(delta)
 
 func go_to_dead_state():
-	pass
+	if status == PlayerState.dead:
+		return
+	status = PlayerState.dead
+	Globals.player_life = 0
+	control_lock = true
+	velocity = Vector2.ZERO
+	anima.play("dead")
+	hurt_sound.play()
+	respawn()
 
 func dead_state(_delta):
 	pass

@@ -135,7 +135,6 @@ frame_progress = 0.54867345
 centered = false
 
 [node name="Camera2D" parent="." unique_id=2033492168 instance=ExtResource("10_j5vg1")]
-limit_bottom = 208
 
 [node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("11_0timw")]
 position = Vector2(603, 164)
@@ -155,6 +154,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=454872398]
 stream = ExtResource("14_mb20y")
+autoplay = true
 
 [node name="FallingPlataform" parent="." unique_id=1052016339 instance=ExtResource("15_perhu")]
 position = Vector2(128, 152)

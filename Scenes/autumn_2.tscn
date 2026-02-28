@@ -114,6 +114,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=377013729]
 stream = ExtResource("14_dj4ai")
+autoplay = true
 
 [node name="FlyingCherry" parent="." unique_id=1967996673 instance=ExtResource("16_oyd6m")]
 position = Vector2(496, 16)

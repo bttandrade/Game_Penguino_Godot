@@ -97,6 +97,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=692684975]
 stream = ExtResource("14_dj8um")
+autoplay = true
 
 [node name="Coins" type="Node2D" parent="." unique_id=2135357066]
 
