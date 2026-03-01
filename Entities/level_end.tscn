@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dr0fafepwkbt8" path="res://Scripts/level_end.gd" id="1_y82ty"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bc8j"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dlg0k"]
+a = Vector2(0, -192)
+b = Vector2(0, 192)
 
 [node name="Area2D" type="Area2D" unique_id=793917536]
 collision_layer = 8
@@ -10,6 +12,10 @@ collision_mask = 2
 script = ExtResource("1_y82ty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1806589529]
-shape = SubResource("RectangleShape2D_4bc8j")
+shape = SubResource("SegmentShape2D_dlg0k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=713877714]
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

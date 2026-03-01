@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://6yddaf01cfsr" path="res://Scripts/player.gd" id="1_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://bd5c7itdkixp1" path="res://Assets/Penguino/Idle (16 x 16).png" id="2_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://daweevnc05vhu" path="res://Assets/Penguino/Hurt (16 x 16).png" id="2_ef06p"]
+[ext_resource type="Texture2D" uid="uid://cu4kv6nf0bbcp" path="res://Assets/Penguino/Victory_Dance (16 x 16).png" id="2_ffc7a"]
 [ext_resource type="Texture2D" uid="uid://ntqb4n8r0lmb" path="res://Assets/Penguino/Ducking (16 x 16).png" id="2_qly61"]
 [ext_resource type="Texture2D" uid="uid://b887yufbjexpf" path="res://Assets/Penguino/Falling (16 x 16).png" id="3_qsoyl"]
 [ext_resource type="Texture2D" uid="uid://b07quxicwyjvy" path="res://Assets/Penguino/Jump (16 x 16).png" id="3_rfe5m"]
@@ -15,9 +16,25 @@
 [ext_resource type="AudioStream" uid="uid://b13o2xsypkqt7" path="res://Sounds/jump.wav" id="12_eyssl"]
 [ext_resource type="AudioStream" uid="uid://c6khnlsbgv70a" path="res://Sounds/hit.mp3" id="14_25cb4"]
 [ext_resource type="AudioStream" uid="uid://drbquj6u27x17" path="res://Sounds/hurt.wav" id="14_uck12"]
-[ext_resource type="AudioStream" uid="uid://fbjht3ord34o" path="res://Sounds/swim.wav" id="15_25cb4"]
+[ext_resource type="AudioStream" uid="uid://fbjht3ord34o" path="res://Sounds/swimming.wav" id="15_25cb4"]
 [ext_resource type="AudioStream" uid="uid://dmqqra1251qjl" path="res://Sounds/enter_water.wav" id="16_uck12"]
 [ext_resource type="AudioStream" uid="uid://dtf3403tfed7x" path="res://Sounds/coin_spawn.wav" id="17_uck12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irn06"]
+atlas = ExtResource("2_ffc7a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3fwn"]
+atlas = ExtResource("2_ffc7a")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8jwp"]
+atlas = ExtResource("2_ffc7a")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5h13"]
+atlas = ExtResource("2_ffc7a")
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4p34"]
 atlas = ExtResource("2_b0kkn")
@@ -117,6 +134,23 @@ region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i623q"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irn06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3fwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8jwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5h13")
+}],
+"loop": true,
+"name": &"dancing",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_ef06p")
@@ -276,8 +310,9 @@ script = ExtResource("1_b0kkn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=964873476 groups=["player_body"]]
 position = Vector2(0, 0.2)
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"turn"
+animation = &"dancing"
 autoplay = "idle"
+frame_progress = 0.052961335
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=51162149]
 visible = false
@@ -327,10 +362,10 @@ volume_db = -5.0
 stream = ExtResource("14_uck12")
 pitch_scale = 2.0
 
-[node name="SwimSound" type="AudioStreamPlayer" parent="Sounds" unique_id=427512093]
+[node name="SwimmingSound" type="AudioStreamPlayer" parent="Sounds" unique_id=427512093]
 stream = ExtResource("15_25cb4")
 
-[node name="WaterSound" type="AudioStreamPlayer" parent="Sounds" unique_id=328533717]
+[node name="WaterSplashSound" type="AudioStreamPlayer" parent="Sounds" unique_id=328533717]
 stream = ExtResource("16_uck12")
 
 [node name="CoinSpawnSound" type="AudioStreamPlayer" parent="Sounds" unique_id=1061387691]

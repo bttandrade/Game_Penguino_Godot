@@ -13,11 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_0timw"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="12_03gni"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="13_kwj12"]
-[ext_resource type="AudioStream" uid="uid://ha5vxsiyql27" path="res://Sounds/summer1.wav" id="14_mb20y"]
 [ext_resource type="PackedScene" uid="uid://wekgtfrjcvyb" path="res://Entities/falling_plataform.tscn" id="15_perhu"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="16_aydf5"]
 [ext_resource type="PackedScene" uid="uid://wksbunf5ytle" path="res://Entities/bub_spikey.tscn" id="17_xlylw"]
-[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="17_xww5g"]
+[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin_collect.tscn" id="17_xww5g"]
 [ext_resource type="PackedScene" uid="uid://p7pvn42vqnq1" path="res://Entities/extra_life.tscn" id="18_glshk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxncu"]
@@ -138,7 +137,7 @@ centered = false
 
 [node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("11_0timw")]
 position = Vector2(603, 164)
-next_level = "autumn_1"
+next_level = "summer_3"
 
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=985078629]
 collision_mask = 6
@@ -151,10 +150,6 @@ shape = SubResource("WorldBoundaryShape2D_1i3w5")
 
 [node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("13_kwj12")]
 visible = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=454872398]
-stream = ExtResource("14_mb20y")
-autoplay = true
 
 [node name="FallingPlataform" parent="." unique_id=1052016339 instance=ExtResource("15_perhu")]
 position = Vector2(128, 152)

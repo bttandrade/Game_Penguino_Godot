@@ -37,9 +37,9 @@ enum PlayerState{
 @onready var jump_sound: AudioStreamPlayer = $Sounds/JumpSound
 @onready var hit_sound: AudioStreamPlayer = $Sounds/HitSound
 @onready var hurt_sound: AudioStreamPlayer = $Sounds/HurtSound
-@onready var swim_sound: AudioStreamPlayer = $Sounds/SwimSound
-@onready var water_sound: AudioStreamPlayer = $Sounds/WaterSound
 @onready var coin_spawn_sound: AudioStreamPlayer = $Sounds/CoinSpawnSound
+@onready var swimming_sound: AudioStreamPlayer = $Sounds/SwimmingSound
+@onready var water_splash_sound: AudioStreamPlayer = $Sounds/WaterSplashSound
 
 const JUMP_VELOCITY = -300.0
 const RIGID_COIN = preload("res://Entities/rigid_coin.tscn")
@@ -234,7 +234,7 @@ func wall_state(delta):
 
 func go_to_swim_state():
 	status = PlayerState.swim
-	water_sound.play()
+	water_splash_sound.play()
 	anima.play("swim")
 	velocity.y = min(velocity.y, 150)
 
@@ -250,7 +250,7 @@ func swim_state(delta):
 	velocity.y = min(velocity.y, water_max_speed)
 	
 	if Input.is_action_just_pressed("jump"):
-		swim_sound.play()
+		swimming_sound.play()
 		velocity.y = water_jump_force
 
 func go_to_hurt_state():
@@ -407,6 +407,6 @@ func _on_stomp_box_body_exited(body: Node2D) -> void:
 		return
 		
 	if body.is_in_group("water_body"):
-		water_sound.play()
+		water_splash_sound.play()
 		jump_count = 1
 		go_to_jump_state()

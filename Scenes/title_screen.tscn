@@ -145,6 +145,7 @@ script = ExtResource("7_w5sh6")
 [node name="TitleSound" type="AudioStreamPlayer" parent="." unique_id=491874339]
 process_mode = 3
 stream = ExtResource("12_2ia2x")
+volume_db = -10.0
 autoplay = true
 
 [node name="Tutorial" parent="." unique_id=1583732572 instance=ExtResource("10_8mikk")]

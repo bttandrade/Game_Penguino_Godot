@@ -97,7 +97,7 @@ autoplay = &"idle"
 
 [node name="LifeSound" type="AudioStreamPlayer" parent="." unique_id=12070382]
 stream = ExtResource("4_tfbnh")
-volume_db = -10.0
+volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

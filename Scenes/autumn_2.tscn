@@ -13,11 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_x80yn"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="12_glu21"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="13_u3gns"]
-[ext_resource type="AudioStream" uid="uid://d1ic0a3128swi" path="res://Sounds/autumn1.wav" id="14_dj4ai"]
 [ext_resource type="PackedScene" uid="uid://dybrsupndew4o" path="res://Entities/flying_cherry.tscn" id="16_oyd6m"]
 [ext_resource type="PackedScene" uid="uid://cj5bba1x11cwm" path="res://Entities/spikes.tscn" id="17_r77sx"]
 [ext_resource type="PackedScene" uid="uid://dyeqq2vm7e5jy" path="res://Entities/moving_platform.tscn" id="18_7jy7f"]
-[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="19_ufun6"]
+[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin_collect.tscn" id="19_ufun6"]
 [ext_resource type="PackedScene" uid="uid://p7pvn42vqnq1" path="res://Entities/extra_life.tscn" id="20_6bsrp"]
 [ext_resource type="PackedScene" uid="uid://gfnh3fww3in" path="res://Entities/bub_blocky.tscn" id="20_v1pee"]
 
@@ -98,7 +97,7 @@ region_rect = Rect2(0, 0, 288, 208)
 
 [node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("11_x80yn")]
 position = Vector2(606, 165)
-next_level = "winter_1"
+next_level = "autumn_3"
 
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=937786871]
 collision_mask = 6
@@ -111,10 +110,6 @@ shape = SubResource("WorldBoundaryShape2D_kh4ky")
 
 [node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("13_u3gns")]
 visible = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=377013729]
-stream = ExtResource("14_dj4ai")
-autoplay = true
 
 [node name="FlyingCherry" parent="." unique_id=1967996673 instance=ExtResource("16_oyd6m")]
 position = Vector2(496, 16)

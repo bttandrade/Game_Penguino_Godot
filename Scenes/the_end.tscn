@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b6ys34nusqhcu" path="res://Scenes/stage_name.tscn" id="15_xcol5"]
 [ext_resource type="PackedScene" uid="uid://dhwdmxvpoxdec" path="res://Entities/penguino.tscn" id="16_d1ocr"]
 [ext_resource type="PackedScene" uid="uid://bhnpe44owliji" path="res://Entities/sign.tscn" id="17_747u8"]
+[ext_resource type="AudioStream" uid="uid://cfr1j6lv11vsq" path="res://Sounds/final.wav" id="18_w54tb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmfat"]
 texture = ExtResource("4_f2265")
@@ -191,6 +192,12 @@ position = Vector2(69, -47)
 [node name="SpawnText" parent="Sign" index="2" unique_id=510611136]
 position = Vector2(40, -24)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=621506506]
+stream = ExtResource("18_w54tb")
+volume_db = -10.0
+autoplay = true
+
 [connection signal="body_entered" from="Stop" to="." method="_on_stop_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="Sign"]

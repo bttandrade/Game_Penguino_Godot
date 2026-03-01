@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wekgtfrjcvyb"]
 
 [ext_resource type="Script" uid="uid://bv8hu2oeuxsk1" path="res://Scripts/falling_plataform.gd" id="1_mpuj2"]
-[ext_resource type="AudioStream" uid="uid://dxle4ijp8jg07" path="res://Sounds/platafom_stepped.wav" id="2_0nufm"]
+[ext_resource type="AudioStream" uid="uid://dxle4ijp8jg07" path="res://Sounds/plataform_break.wav" id="2_0nufm"]
 [ext_resource type="AudioStream" uid="uid://pfow8m25wm37" path="res://Sounds/plataform_fall.wav" id="3_0nufm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xeit8"]

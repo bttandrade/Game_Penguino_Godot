@@ -89,5 +89,9 @@ offset_bottom = 1011.0
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_j3ryr")
 
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=1382054879]
+volume_db = -10.0
+autoplay = true
+
 [connection signal="pressed" from="MarginContainer/MenuHolder/RestartBtn" to="." method="_on_restart_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/MenuHolder/QuitBtn" to="." method="_on_quit_btn_pressed"]

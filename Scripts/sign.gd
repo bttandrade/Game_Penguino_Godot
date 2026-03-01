@@ -22,11 +22,13 @@ func _unhandled_input(event: InputEvent) -> void:
 				lines = [
 				"Bem-vindo de volta Penguino!",
 				"Sei que teve uma aventura e tanto.",
-				"Viajar por todas as estações, enfrentando seus perigos . . .",
-				"Em busca de moedas para comprarmos comida.",
+				"Viajar por todas as estações, enfrentando seus perigos.",
+				"Em busca de moedas para comprarmos comida . . .",
 				success_line, success_line2, success_line3, success_line4]
 				where_to_start = spawn_other_place.global_position
-			DialogManager.start_message(where_to_start, lines)
+				DialogManager.start_message(where_to_start, lines)
+			else:
+				DialogManager.start_message(global_position, lines)
 	else:
 		sprite.hide()
 		if DialogManager.dialog_box != null:

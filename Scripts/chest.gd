@@ -4,15 +4,15 @@ extends Area2D
 
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var spawn_coins: Marker2D = $spawn_coins
-@onready var open_sound: AudioStreamPlayer = $OpenSound
 @onready var coin_spawn_sound: AudioStreamPlayer = $CoinSpawnSound
+@onready var open_chest_sound: AudioStreamPlayer = $OpenChestSound
 
 var is_open = false
 var coin_instance = preload("res://entities/rigid_coin.tscn")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_body") and is_open == false:
-		open_sound.play()
+		open_chest_sound.play()
 		anima.play("open")
 		is_open = true
 		for i in range(coin_amount):

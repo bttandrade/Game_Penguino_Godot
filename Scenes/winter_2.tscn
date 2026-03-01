@@ -15,8 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="9_i46ef"]
 [ext_resource type="PackedScene" uid="uid://d02uq6kykqvmi" path="res://Entities/hud.tscn" id="10_0rq4k"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="11_unk66"]
-[ext_resource type="AudioStream" uid="uid://bot5qh0cfrji3" path="res://Sounds/winter1.wav" id="12_jh5k3"]
-[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="13_xjufv"]
+[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin_collect.tscn" id="13_xjufv"]
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="14_gfrge"]
 [ext_resource type="PackedScene" uid="uid://dautccn5psivu" path="res://Entities/skeleton.tscn" id="15_5bf5p"]
 [ext_resource type="PackedScene" uid="uid://du4vxikwfh4gl" path="res://Entities/bub.tscn" id="16_lpdkg"]
@@ -192,7 +191,7 @@ sources/3 = SubResource("TileSetAtlasSource_mrck1")
 normal = Vector2(1, 0)
 distance = -1.0
 
-[node name="Winter1" type="Node2D" unique_id=1071220804]
+[node name="Winter2" type="Node2D" unique_id=1071220804]
 metadata/_edit_horizontal_guides_ = [336.0]
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=1165921524]
@@ -254,7 +253,7 @@ limit_bottom = 330
 
 [node name="LevelEnd" parent="." unique_id=793917536 instance=ExtResource("9_i46ef")]
 position = Vector2(604, 165)
-next_level = "spring_1"
+next_level = "winter_3"
 
 [node name="StageLimit" type="StaticBody2D" parent="." unique_id=1245937780]
 collision_mask = 6
@@ -267,10 +266,6 @@ shape = SubResource("WorldBoundaryShape2D_58nyd")
 
 [node name="PauseMenu" parent="." unique_id=2075938879 instance=ExtResource("11_unk66")]
 visible = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=692684975]
-stream = ExtResource("12_jh5k3")
-autoplay = true
 
 [node name="Coins" type="Node2D" parent="." unique_id=2135357066]
 
