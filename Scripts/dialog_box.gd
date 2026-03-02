@@ -16,6 +16,7 @@ signal text_display_finished()
 func display_text(text_to_display: String):
 	text = text_to_display
 	label.text = text_to_display
+	letter_index = 0
 	
 	await resized
 	

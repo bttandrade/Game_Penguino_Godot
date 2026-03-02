@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 
-var speed = 100
+var speed = 150
 var direction = 1
 
 func _process(delta: float) -> void:
@@ -15,7 +15,9 @@ func set_direction(percy_direction):
 func _on_self_destruct_timer_timeout() -> void:
 	queue_free()
 
-func _on_area_entered(_area: Area2D) -> void:
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("collectibles"):
+		return
 	queue_free()
 
 func _on_body_entered(_body: Node2D) -> void:

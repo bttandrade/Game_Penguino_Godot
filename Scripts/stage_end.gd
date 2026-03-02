@@ -2,9 +2,9 @@ extends Area2D
 
 @export var next_level = ""
 
-@onready var player: CharacterBody2D = get_parent().get_node("Player")
+@onready var stage_name: String = get_tree().current_scene.name
+@onready var player: CharacterBody2D = get_tree().current_scene.get_node("Player")
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
-@onready var stage_name = get_parent().name
 
 var stage_song = ""
 

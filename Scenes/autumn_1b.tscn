@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cs3oaxcrq8xph" path="res://Assets/Tilesets/TilesAutumn/Background/2 - Trees.png" id="8_a4m0h"]
 [ext_resource type="Texture2D" uid="uid://dilwd6cvi2yel" path="res://Assets/Tilesets/TilesAutumn/Background/1 - Leaf_top.png" id="9_pv05t"]
 [ext_resource type="PackedScene" uid="uid://ce8mkdc75dyr" path="res://Entities/camera.tscn" id="10_l3ebf"]
-[ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/level_end.tscn" id="11_itv73"]
+[ext_resource type="PackedScene" uid="uid://ixkd0ix4ffnl" path="res://Entities/stage_end.tscn" id="11_itv73"]
 [ext_resource type="PackedScene" uid="uid://dyeqq2vm7e5jy" path="res://Entities/moving_platform.tscn" id="13_h412o"]
 [ext_resource type="PackedScene" uid="uid://cme3i3gd33hsa" path="res://Entities/chest.tscn" id="14_5eeoq"]
 [ext_resource type="PackedScene" uid="uid://cj5bba1x11cwm" path="res://Entities/spikes.tscn" id="15_cuaua"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://div1gua7v5qxv" path="res://Entities/checkpoint.tscn" id="18_f6mv2"]
 [ext_resource type="PackedScene" uid="uid://egyipfsffttr" path="res://Scenes/pause_menu.tscn" id="19_6bmy7"]
 [ext_resource type="PackedScene" uid="uid://b7555b5fwsryo" path="res://Entities/percy.tscn" id="20_yaahx"]
-[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin_collect.tscn" id="21_sja7k"]
+[ext_resource type="PackedScene" uid="uid://dmgg76ux1amb3" path="res://Entities/coin.tscn" id="21_sja7k"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kh4ky"]
 normal = Vector2(1, 0)

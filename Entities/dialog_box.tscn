@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dx4dbuk0rrfp8" path="res://Assets/Fonts/RevMiniPixel.ttf" id="2_ydwb0"]
 
 [node name="DialogBox" type="MarginContainer" unique_id=1291638370]
+z_index = 1
 offset_right = 32.0
 offset_bottom = 24.0
 script = ExtResource("1_ydwb0")

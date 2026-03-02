@@ -84,10 +84,12 @@ autoplay = "walk"
 frame_progress = 0.04261135
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=866672575]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_j1om3")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1615748848 groups=["enemy_hitbox"]]
+visible = false
 collision_layer = 32
 collision_mask = 4
 

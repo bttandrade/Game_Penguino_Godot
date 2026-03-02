@@ -9,13 +9,31 @@ var dialog_box_position = Vector2.ZERO
 var is_message_active = false
 var can_advance_message = false
 
+signal game_has_ended()
+
+func _process(_delta: float) -> void:
+	if (Input.is_action_just_pressed("interact") and is_message_active and can_advance_message):
+		if is_instance_valid(dialog_box):
+			dialog_box.queue_free()
+		current_line += 1
+		if current_line >= message_lines.size() and Globals.finished_the_game:
+			current_line = 0
+			emit_signal("game_has_ended")
+			return
+		elif current_line >= message_lines.size():
+			is_message_active = false
+			current_line = 0
+			return
+		show_text()
+
 func start_message(position: Vector2, lines: Array[String]):
-	if is_message_active:
+	if is_message_active or lines.is_empty():
 		return
+	current_line = 0
 	message_lines = lines
 	dialog_box_position = position
-	show_text()
 	is_message_active = true
+	show_text()
 
 func show_text():
 	dialog_box = dialog_box_scene.instantiate()
@@ -28,17 +46,8 @@ func show_text():
 func _on_all_text_displayed():
 	can_advance_message = true
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if (Input.is_action_just_pressed("interact") and is_message_active and can_advance_message) and !get_parent().has_node("GameOver"):
-		if is_instance_valid(dialog_box):
-			dialog_box.queue_free()
-		current_line += 1
-		if current_line >= message_lines.size() and Globals.finished_the_game:
-			await get_tree().create_timer(1.0).timeout
-			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
-			return
-		elif current_line >= message_lines.size():
-			is_message_active = false
-			current_line = 0
-			return
-		show_text()
+func end_message():
+	if is_instance_valid(dialog_box):
+		dialog_box.queue_free()
+	is_message_active = false
+	current_line = 0

@@ -17,7 +17,7 @@ enum PlayerState{
 @export var acceleration: float = 400.0
 @export var deceleration: float = 400.0
 @export var slide_deceleration: float = 100.0
-@export var max_jump_count: int = 2
+#@export var max_jump_count: int = 1
 @export var wall_acceleration: float = 40.0
 @export var wall_jump_velocity: float = 250.0
 @export var water_max_speed: float = 100.0
@@ -53,7 +53,7 @@ var status: PlayerState
 func _ready() -> void:
 	if get_parent().has_node("HUD"):
 		var hud_manager: Control = $"../HUD/HUDManager"
-		hud_manager.time_is_up.connect(go_to_dead_state)	
+		hud_manager.time_is_up.connect(go_to_dead_state)
 	Globals.current_checkpoint = self.global_position
 	go_to_idle_state()
 
@@ -171,7 +171,7 @@ func fall_state(delta):
 			go_to_walk_state()
 		return
 	
-	if (left_wall_detector.is_colliding() or right_wall_detector.is_colliding()) and is_on_wall():
+	if (left_wall_detector.is_colliding() or right_wall_detector.is_colliding()) and is_on_wall() and Globals.can_wall:
 		go_to_wall_state()
 
 func go_to_duck_state():
@@ -305,7 +305,7 @@ func update_direction():
 		anima.flip_h = false
 
 func can_jump() -> bool:
-	return jump_count < max_jump_count
+	return jump_count < Globals.max_jump_count
 
 func set_collision_duck():
 	collision_shape.shape.radius = 5

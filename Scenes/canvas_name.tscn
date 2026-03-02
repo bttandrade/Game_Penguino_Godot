@@ -6,7 +6,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27m5j"]
 
-[node name="StageName" type="CanvasLayer" unique_id=546803335]
+[node name="CanvasName" type="CanvasLayer" unique_id=546803335]
 script = ExtResource("1_ian7a")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1266638394]

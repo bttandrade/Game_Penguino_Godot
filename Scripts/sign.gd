@@ -4,44 +4,41 @@ extends Node2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var sign_area: Area2D = $SignArea
-@onready var spawn_other_place: Marker2D = $SpawnText
+@onready var spawn_place: Marker2D = $SpawnText
 
 var player_inside = false
 var success_line: String = ""
 var success_line2: String = ""
 var success_line3: String = ""
 var success_line4: String = ""
-var where_to_start = global_position
 
-func _unhandled_input(event: InputEvent) -> void:
-	if player_inside:
-		if event.is_action_pressed("interact") and !DialogManager.is_message_active:
-			if get_parent().name == "TheEnd":
-				Globals.finished_the_game = true
-				success_rate()
-				lines = [
-				"Bem-vindo de volta Penguino!",
-				"Sei que teve uma aventura e tanto.",
-				"Viajar por todas as estações, enfrentando seus perigos.",
-				"Em busca de moedas para comprarmos comida . . .",
-				success_line, success_line2, success_line3, success_line4]
-				where_to_start = spawn_other_place.global_position
-				DialogManager.start_message(where_to_start, lines)
-			else:
-				DialogManager.start_message(global_position, lines)
-	else:
-		sprite.hide()
-		if DialogManager.dialog_box != null:
-			DialogManager.dialog_box.queue_free()
-			DialogManager.is_message_active = false
+func _ready() -> void:
+	sprite.hide()
 
-func _on_sign_area_body_entered(_body: Node2D) -> void:
-	player_inside = true
-	sprite.show()
+func _process(_delta: float) -> void:
+	if player_inside and Input.is_action_just_pressed("interact") and !DialogManager.is_message_active:
+		if get_tree().current_scene.name == "TheEnd":
+			Globals.finished_the_game = true
+			success_rate()
+			lines = [
+			"Bem-vindo de volta Penguino!",
+			"Sei que teve uma aventura e tanto.",
+			"Viajar por todas as estações, enfrentando seus perigos.",
+			"Em busca de moedas para comprarmos comida . . .",
+			success_line, success_line2, success_line3, success_line4]
+		DialogManager.start_message(spawn_place.global_position, lines)
+
+func _on_sign_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_body"):
+		player_inside = true
+		sprite.show()
 
 func _on_sign_area_body_exited(_body: Node2D) -> void:
 	player_inside = false
 	sprite.hide()
+	
+	if DialogManager.is_message_active:
+		DialogManager.end_message()
 
 func success_rate():
 	if Globals.player_coins <= 0:
