@@ -326,7 +326,7 @@ func set_collision_back():
 	hurt_box_collision.position.y = 0
 
 func respawn():
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	control_lock = false
 	set_collision_back()
 	Globals.player = $"."
@@ -360,7 +360,7 @@ func be_invincible():
 	hurt_box.set_collision_mask_value(6, false)
 	stomp_box.set_collision_mask_value(5, false)
 	stomp_box.set_collision_mask_value(7, false)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	hurt_box.set_collision_mask_value(6, true)
 	stomp_box.set_collision_mask_value(5, true)
 	stomp_box.set_collision_mask_value(7, true)
@@ -374,9 +374,9 @@ func lose_coins():
 		get_parent().call_deferred("add_child", coin)
 		coin.global_position = global_position
 		coin.apply_impulse(Vector2(randi_range(-100, 100), -250))
-		await  get_tree().create_timer(0.03).timeout
+		await  get_tree().create_timer(0.03, false).timeout
 		coin_spawn_sound.play()
-	await  get_tree().create_timer(1.5).timeout
+	await  get_tree().create_timer(1.5, false).timeout
 	set_collision_layer_value(2, true)
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:

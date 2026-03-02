@@ -19,7 +19,6 @@ var current_point = 0
 var patrol_positions: Array[Vector2] = []
 
 func _ready() -> void:
-	#anima.flip_h = initial_direction == -1
 	for p in patrol_points:
 		patrol_positions.append(p.global_position)
 	

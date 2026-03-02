@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://dhwdmxvpoxdec"]
 
 [ext_resource type="Texture2D" uid="uid://cu4kv6nf0bbcp" path="res://Assets/Penguino/Victory_Dance (16 x 16).png" id="1_lj5tf"]
+[ext_resource type="Texture2D" uid="uid://c6upk0qfwlsq0" path="res://Assets/Penguino/Looking_Off (16 x 16).png" id="1_rake3"]
 [ext_resource type="Texture2D" uid="uid://bd5c7itdkixp1" path="res://Assets/Penguino/Idle (16 x 16).png" id="2_lj5tf"]
+[ext_resource type="Texture2D" uid="uid://dyw3mf06a5re0" path="res://Assets/Penguino/Sitting (16 x 16).png" id="4_oyf0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha546"]
+atlas = ExtResource("1_rake3")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rake3"]
 atlas = ExtResource("1_lj5tf")
@@ -39,8 +45,24 @@ region = Rect2(48, 0, 16, 16)
 atlas = ExtResource("2_lj5tf")
 region = Rect2(64, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdqii"]
+atlas = ExtResource("4_oyf0o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kfgr"]
+atlas = ExtResource("4_oyf0o")
+region = Rect2(16, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_irf0b"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha546")
+}],
+"loop": false,
+"name": &"back",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rake3")
@@ -76,7 +98,18 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_jdqii")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4kfgr")
+}],
+"loop": true,
+"name": &"siting",
+"speed": 1.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wl0b"]
@@ -89,7 +122,7 @@ collision_mask = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=812703516]
 sprite_frames = SubResource("SpriteFrames_irf0b")
-animation = &"idle"
+animation = &"siting"
 autoplay = "dancing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=221470997]

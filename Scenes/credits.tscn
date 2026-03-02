@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://cqij4plb5w4ip"]
+
+[ext_resource type="Script" uid="uid://chu062c1u0lww" path="res://Scripts/credits.gd" id="1_ccovl"]
+[ext_resource type="Texture2D" uid="uid://ddqo2iq2t7wcl" path="res://Assets/Universal/Dialog_Box(16 x 16).png" id="1_gryuy"]
+[ext_resource type="FontFile" uid="uid://dx4dbuk0rrfp8" path="res://Assets/Fonts/RevMiniPixel.ttf" id="2_ccovl"]
+[ext_resource type="Texture2D" uid="uid://da08vg075qi3b" path="res://Assets/Others/Mini UI/esc.png" id="4_1bamb"]
+
+[node name="Credits" type="CanvasLayer" unique_id=1583732572]
+script = ExtResource("1_ccovl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1894960863]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2015232254]
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 275.0
+offset_bottom = 195.0
+texture = ExtResource("1_gryuy")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="DialogBox" type="MarginContainer" parent="." unique_id=1291638370]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 273.0
+offset_bottom = 192.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DialogBox" unique_id=488260243]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogBox/ScrollContainer" unique_id=502280270]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="DialogBox/ScrollContainer/VBoxContainer" unique_id=977722894]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ccovl")
+theme_override_font_sizes/font_size = 6
+text = " 
+ Desenvolvido por BRENO ANDRADE
+ 
+
+ AGRADECIMENTO AOS CANAIS
+ https://www.youtube.com/@clecioespindolagamedev
+ https://www.youtube.com/@rafaelforbeck-game-dev
+
+
+ ARTE PIXELADA
+ https://grafxkid.itch.io/
+ https://kenney-assets.itch.io/ 
+
+
+ ÁUDIOS:
+ Placeful Song Loop.wav by Mrthenoronha -- 
+ https://freesound.org/s/522297/ -- License: Attribution NonCommercial 4.0
+
+ Upbeat Theme Loop.wav by Mrthenoronha -- 
+ https://freesound.org/s/506893/ -- License: Attribution NonCommercial 4.0
+
+ Platform Game Theme Loop 2 by Mrthenoronha -- 
+ https://freesound.org/s/476546/ -- License: Attribution NonCommercial 4.0
+
+ Placeful Beat Theme Loop.wav by Mrthenoronha -- 
+ https://freesound.org/s/529290/ -- License: Attribution NonCommercial 4.0
+
+ Placeful Song Loop 3.wav by Mrthenoronha -- 
+ https://freesound.org/s/528717/ -- License: Attribution NonCommercial 4.0
+
+ Bass Line Theme Loop 2.wav by Mrthenoronha -- 
+ https://freesound.org/s/512381/ -- License: Attribution NonCommercial 4.0
+
+ Pacter Pop Music Thought 1b (loop).wav by SkibkaMusic -- 
+ https://freesound.org/s/541772/ -- License: Attribution NonCommercial 4.0
+
+ Cartoon Game Theme Loop 4.wav by Mrthenoronha -- 
+ https://freesound.org/s/513667/ -- License: Attribution NonCommercial 4.0
+
+ Platform Game Theme Loop 4.wav by Mrthenoronha -- 
+ https://freesound.org/s/476548/ -- License: Attribution NonCommercial 4.0
+
+ Easter Theme Loop 1.wav by Mrthenoronha -- 
+ https://freesound.org/s/509857/ -- License: Attribution NonCommercial 4.0
+
+ Pacter Skibka H&A - Music Hip Hop 9d (loop).wav by SkibkaMusic -- 
+ https://freesound.org/s/541765/ -- License: Attribution NonCommercial 4.0
+
+ H&A - Pop Music Hip Hop Style 1d (loop).wav by SkibkaMusic -- 
+ https://freesound.org/s/541768/ -- License: Attribution NonCommercial 4.0
+
+ 50 Cent Music Hip Hop 4a (loop).wav by SkibkaMusic -- 
+ https://freesound.org/s/541642/ -- License: Attribution NonCommercial 4.0
+
+ Detective Game Theme Loop.wav by Mrthenoronha -- 
+ https://freesound.org/s/515946/ -- License: Attribution NonCommercial 4.0
+
+ Easter Theme Loop 3.wav by Mrthenoronha -- 
+ https://freesound.org/s/509855/ -- License: Attribution NonCommercial 4.0
+
+ Easter Theme Loop 2.wav by Mrthenoronha -- 
+ https://freesound.org/s/509856/ -- License: Attribution NonCommercial 4.0
+
+ mario's way.mp3 by xsgianni -- 
+ https://freesound.org/s/388079/ -- License: Attribution NonCommercial 4.0
+
+ Army Game Theme Loop.wav by Mrthenoronha -- 
+ https://freesound.org/s/516216/ -- License: Attribution NonCommercial 4.0
+
+ Level win.wav by Tuudurt -- 
+ https://freesound.org/s/258142/ -- License: Creative Commons 0
+
+ SFXWoodenObjectOpen.wav by WakuWakuWakuWaku -- 
+ https://freesound.org/s/422975/ -- License: Creative Commons 0
+
+ water-splash-07.wav by junggle -- 
+ https://freesound.org/s/274058/ -- License: Attribution NonCommercial 4.0
+
+ water splash 2.wav by VacekH -- 
+ https://freesound.org/s/189499/ -- License: Creative Commons 0
+
+ 8 Bit Slam by Jofae -- 
+ https://freesound.org/s/361636/ -- License: Creative Commons 0
+
+ Silver Coin by Seidhepriest -- 
+ https://freesound.org/s/329742/ -- License: Attribution NonCommercial 4.0
+
+ Hit 3 8 Bit.wav by Mrthenoronha -- 
+ https://freesound.org/s/507703/ -- License: Attribution NonCommercial 4.0
+
+ CollectCoin.wav by bradwesson -- 
+ https://freesound.org/s/135936/ -- License: Attribution NonCommercial 4.0
+
+ Box Falling.wav by al-whit -- 
+ https://freesound.org/s/678861/ -- License: Creative Commons 0
+
+ falling.wav by Wagna -- 
+ https://freesound.org/s/326133/ -- License: Creative Commons 0
+
+ Game_over.wav by deleted_user_877451 -- 
+ https://freesound.org/s/76376/ -- License: Attribution 3.0
+
+ Heal - Rpg by colorsCrimsonTears -- 
+ https://freesound.org/s/562292/ -- License: Creative Commons 0
+
+ Retro game heal sound by lulyc -- 
+ https://freesound.org/s/346116/ -- License: Creative Commons 0
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogBox/ScrollContainer/VBoxContainer" unique_id=638378131]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="DialogBox/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=2117976933]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ccovl")
+theme_override_font_sizes/font_size = 8
+text = "RETORNAR"
+
+[node name="TextureRect" type="TextureRect" parent="DialogBox/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=2145727768]
+layout_mode = 2
+texture = ExtResource("4_1bamb")
+expand_mode = 2

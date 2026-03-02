@@ -1,0 +1,227 @@
+[gd_scene format=4 uid="uid://bqki4ceqatvcw"]
+
+[ext_resource type="Script" uid="uid://tjvn86cd8fb0" path="res://Scripts/bg_menu.gd" id="1_fevoj"]
+[ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://Themes/terrain.tres" id="2_7emb1"]
+[ext_resource type="TileSet" uid="uid://bhk6l7csfm861" path="res://Themes/decoration.tres" id="3_4gtbj"]
+[ext_resource type="Texture2D" uid="uid://c6upk0qfwlsq0" path="res://Assets/Penguino/Looking_Off (16 x 16).png" id="4_wwxgv"]
+[ext_resource type="Texture2D" uid="uid://dyw3mf06a5re0" path="res://Assets/Penguino/Sitting (16 x 16).png" id="5_amyhb"]
+[ext_resource type="Texture2D" uid="uid://cp1c2raowogix" path="res://Assets/Penguino/Standing (16 x 16).png" id="6_w4jui"]
+[ext_resource type="Texture2D" uid="uid://dhm0vc4hwdl3u" path="res://Assets/Penguino/Surprised (16 x 16).png" id="7_6a863"]
+[ext_resource type="Texture2D" uid="uid://cu4kv6nf0bbcp" path="res://Assets/Penguino/Victory_Dance (16 x 16).png" id="8_8hg27"]
+[ext_resource type="Texture2D" uid="uid://ik6hij3y237f" path="res://Assets/Tilesets/TilesWinter/Background/3 - Big_mountain_BG.png" id="9_jpivc"]
+[ext_resource type="Texture2D" uid="uid://4hgjlivrcl24" path="res://Assets/Tilesets/TilesWinter/Background/2 - Smaller_mountains.png" id="10_1buff"]
+[ext_resource type="Texture2D" uid="uid://cl3p5hjtohrfi" path="res://Assets/Tilesets/TilesWinter/Background/1 - Snowy_foreground_area.png" id="11_hdist"]
+[ext_resource type="PackedScene" uid="uid://dhwdmxvpoxdec" path="res://Entities/penguino.tscn" id="12_ho3km"]
+[ext_resource type="Texture2D" uid="uid://b7rpdvq4u5fse" path="res://Assets/Others/Mini UI/Speech_Emotes (16 x 16).png" id="13_7emb1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmfat"]
+texture = ExtResource("4_wwxgv")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mgyfp"]
+texture = ExtResource("5_amyhb")
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/z_index = 1
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shnee"]
+texture = ExtResource("6_w4jui")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71tud"]
+texture = ExtResource("7_6a863")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpkfc"]
+texture = ExtResource("8_8hg27")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hrrsx"]
+sources/0 = SubResource("TileSetAtlasSource_pmfat")
+sources/3 = SubResource("TileSetAtlasSource_mgyfp")
+sources/4 = SubResource("TileSetAtlasSource_shnee")
+sources/5 = SubResource("TileSetAtlasSource_71tud")
+sources/6 = SubResource("TileSetAtlasSource_qpkfc")
+
+[sub_resource type="Animation" id="Animation_7emb1"]
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpeechEmotes(16X16):visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpeechEmotes(16X16)2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_4gtbj"]
+resource_name = "talk"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpeechEmotes(16X16):visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpeechEmotes(16X16)2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wwxgv"]
+_data = {
+&"RESET": SubResource("Animation_7emb1"),
+&"talk": SubResource("Animation_4gtbj")
+}
+
+[node name="BgMenu" type="Node2D" unique_id=813078412]
+script = ExtResource("1_fevoj")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2135161151]
+position = Vector2(-128, -24)
+tile_map_data = PackedByteArray("AAAAAA0AAwACAAMAAAABAA0AAwACAAMAAAACAA0AAwACAAMAAAADAA0AAwACAAMAAAAEAA0AAwACAAMAAAAFAA0AAwACAAMAAAAGAA0AAwACAAMAAAAHAA0AAwACAAMAAAAIAA0AAwACAAMAAAAJAA0AAwACAAMAAAAKAA0AAwACAAMAAAALAA0AAwACAAMAAAAMAA0AAwACAAMAAAANAA0AAwACAAMAAAAOAA0AAwADAAMAAAAPAA0AAwAEAAMAAAAQAA0AAwAEAAMAAAARAA0AAwAEAAMAAAASAA0AAwAEAAMAAAATAA0AAwAEAAMAAAAUAA0AAwAEAAMAAAAUAA4AAwAEAAMAAAAVAA4AAwAEAAMAAAAVAA0AAwAEAAMAAAAWAA0AAwAEAAMAAAAXAA0AAwAEAAMAAAAYAA0AAwAEAAMAAAAZAA0AAwAEAAMAAAAcAAwAAwAEAAMAAAAdAAwAAwAEAAMAAAAeAAwAAwAEAAMAAAAfAAwAAwAEAAMAAAAgAAwAAwAEAAMAAAAfAA0AAwAEAAMAAAAeAA0AAwAEAAMAAAAdAA0AAwAEAAMAAAAcAA0AAwAEAAMAAAAbAA0AAwAEAAMAAAAaAA0AAwAEAAMAAAAgAA0AAwAEAAMAAAAhAA0AAwAEAAMAAAAbAAoAAwACAAMAAAAcAAoAAwACAAMAAAAdAAoAAwACAAMAAAAeAAsAAwAEAAMAAAAfAAsAAwAFAAMAAAAgAAsAAwACAAMAAAAhAAsAAwAHAAMAAAAiAAwAAwAHAAMAAAAiAA0AAwAFAAMAAAAhAAwAAwAFAAMAAAASAAwAAwACAAMAAAARAAwAAwACAAMAAAATAAwAAwADAAMAAAAUAAwAAwAEAAMAAAAWAAsAAwADAAMAAAAWAAoAAwABAAMAAAAXAAoAAwACAAMAAAAYAAoAAwACAAMAAAAZAAoAAwACAAMAAAAeAAoAAwACAAMAAAAfAAoAAwAHAAMAAAAUAAsAAwACAAMAAAAaAAoAAwACAAMAAAATAAsAAwABAAMAAAAQAAwAAwACAAMAAAAPAAwAAwACAAMAAAAOAAwAAwABAAMAAAAYAAwAAwAEAAMAAAAYAAsAAwAEAAMAAAAXAAsAAwAEAAMAAAAXAAwAAwAEAAMAAAAWAAwAAwAEAAMAAAAVAAwAAwAEAAMAAAAZAAsAAwAEAAMAAAAZAAwAAwAEAAMAAAAaAAwAAwAEAAMAAAAaAAsAAwAEAAMAAAAbAAsAAwAEAAMAAAAbAAwAAwAEAAMAAAAcAAsAAwAEAAMAAAAdAAsAAwAEAAMAAAAWAA4AAwAEAAMAAAATAA4AAwAEAAMAAAAAAA4AAwAEAAQAAAABAA4AAwAEAAMAAAACAA4AAwAEAAMAAAADAA4AAwAEAAMAAAAEAA4AAwAEAAMAAAAFAA4AAwAEAAMAAAAGAA4AAwAEAAMAAAAHAA4AAwAEAAMAAAAIAA4AAwAEAAMAAAAJAA4AAwAEAAMAAAAKAA4AAwAEAAMAAAALAA4AAwAEAAMAAAAMAA4AAwAEAAMAAAANAA4AAwAEAAMAAAAOAA4AAwAEAAMAAAAPAA4AAwAEAAMAAAAQAA4AAwAEAAMAAAARAA4AAwAEAAMAAAASAA4AAwAEAAMAAAAXAA4AAwAEAAMAAAAYAA4AAwAEAAMAAAAZAA4AAwAEAAMAAAAaAA4AAwAEAAMAAAAbAA4AAwAEAAMAAAAcAA4AAwAEAAMAAAAdAA4AAwAEAAMAAAAeAA4AAwAEAAMAAAAfAA4AAwAEAAMAAAAgAA4AAwAEAAMAAAAhAA4AAwAEAAMAAAAiAA4AAwAEAAQAAAAiAA8AAwAEAAQAAAAhAA8AAwAEAAMAAAAgAA8AAwAEAAMAAAAfAA8AAwAEAAMAAAAeAA8AAwAEAAMAAAAdAA8AAwAEAAMAAAAcAA8AAwAEAAMAAAAbAA8AAwAEAAMAAAAaAA8AAwAEAAMAAAAZAA8AAwAEAAMAAAAYAA8AAwAEAAMAAAAXAA8AAwAEAAMAAAAWAA8AAwAEAAMAAAAVAA8AAwAEAAMAAAAUAA8AAwAEAAMAAAATAA8AAwAEAAMAAAASAA8AAwAEAAMAAAARAA8AAwAEAAMAAAAQAA8AAwAEAAMAAAAPAA8AAwAEAAMAAAAOAA8AAwAEAAMAAAANAA8AAwAEAAMAAAAMAA8AAwAEAAMAAAALAA8AAwAEAAMAAAAKAA8AAwAEAAMAAAAJAA8AAwAEAAMAAAAIAA8AAwAEAAMAAAAHAA8AAwAEAAMAAAAGAA8AAwAEAAMAAAAFAA8AAwAEAAMAAAAEAA8AAwAEAAMAAAADAA8AAwAEAAMAAAACAA8AAwAEAAMAAAABAA8AAwAEAAMAAAAAAA8AAwAEAAQAAAAjAA0AAwACAAMAAAAkAA0AAwACAAMAAAAlAA0AAwAHAAMAAAAjAA4AAwAEAAQAAAAkAA4AAwAEAAQAAAAlAA8AAwAFAAUAAAAkAA8AAwAEAAQAAAAjAA8AAwAEAAQAAAAlAA4AAwAFAAUAAAAVAAsAAwACAAMAAAD//w0AAwACAAMAAAD+/w0AAwACAAMAAAD9/w0AAwACAAMAAAD8/w0AAwACAAMAAAD7/w0AAwABAAMAAAD//w4AAwAEAAQAAAD+/w4AAwAEAAQAAAD9/w4AAwAEAAQAAAD8/w4AAwAEAAQAAAD7/w4AAwADAAUAAAD7/w8AAwADAAUAAAD8/w8AAwAEAAQAAAD9/w8AAwAEAAQAAAD+/w8AAwAEAAQAAAD//w8AAwAEAAQAAAA=")
+tile_set = ExtResource("2_7emb1")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=788004858]
+position = Vector2(-128, -24)
+tile_map_data = PackedByteArray("AAAAAA0AAQAMAAUAAAABAA0AAQAMAAUAAAACAA0AAQAMAAUAAAADAA0AAQAMAAUAAAAEAA0AAQAMAAUAAAAFAA0AAQAMAAUAAAAGAA0AAQAMAAUAAAAHAA0AAQAMAAUAAAAIAA0AAQAMAAUAAAAJAA0AAQAMAAUAAAAKAA0AAQAMAAUAAAALAA0AAQAMAAUAAAAMAA0AAQAMAAUAAAANAA0AAQAMAAUAAAAOAA0AAQAMAAUAAAAPAA0AAQAMAAUAAAAQAA0AAQAMAAUAAAARAA0AAQAMAAUAAAASAA0AAQAMAAUAAAATAA0AAQAMAAUAAAAUAA0AAQAMAAUAAAAUAA4AAQAMAAYAAAAVAA4AAQAMAAYAAAAVAA0AAQAMAAUAAAAWAA0AAQAMAAUAAAAXAA0AAQAMAAUAAAAYAA0AAQAMAAUAAAAZAA0AAQAMAAUAAAAcAAwAAwACAAMAAAAdAAwAAwACAAMAAAAeAAwAAwACAAMAAAAfAAwAAwACAAMAAAAgAAwAAwACAAMAAAAfAA0AAQAMAAUAAAAeAA0AAQAMAAUAAAAdAA0AAQAMAAUAAAAcAA0AAQAMAAUAAAAbAA0AAQAMAAUAAAAaAA0AAQAMAAUAAAAgAA0AAQAMAAUAAAAhAA0AAQAMAAUAAAAbAAoAAwACAAMAAAAcAAoAAwACAAMAAAAdAAoAAwACAAMAAAAeAAsAAwACAAMAAAAfAAsAAwACAAMAAAAgAAsAAwACAAMAAAAhAAsAAwACAAMAAAAiAA0AAQAMAAUAAAAhAAwAAwACAAMAAAASAAwAAwACAAMAAAARAAwAAwACAAMAAAATAAwAAwACAAMAAAAUAAwAAwACAAMAAAAVAAsAAwACAAMAAAAWAAsAAwACAAMAAAAWAAoAAwACAAMAAAAXAAoAAwACAAMAAAAYAAoAAwACAAMAAAAZAAoAAwACAAMAAAAeAAoAAwACAAMAAAAfAAoAAwACAAMAAAAUAAsAAwACAAMAAAAaAAoAAwACAAMAAAAbAAcABAAIAAAAAAAXAAgAAgABAAEAAAAhAAkAAgAFAAEAAAAbAAkAAgAJAAEAAAAcAAkAAgAKAAEAAAAdAAkAAgALAAEAAAAEAAwAAgABAAUAAAALAAwAAgADAAUAAAAMAAwAAgAEAAUAAAAUAAoAAgADAAUAAAAVAAoAAgAEAAUAAAAgAAoAAgABAAUAAAAiAA4AAQAMAAYAAAAjAA4AAQAMAAYAAAAkAA4AAQAMAAYAAAAkAA8AAQAMAAYAAAAlAA4AAQAMAAYAAAAmAA4AAQAMAAYAAAAnAA4AAQAMAAYAAAAiAA8AAQAMAAYAAAAjAA8AAQAMAAYAAAAlAA8AAQAMAAYAAAAmAA8AAQAMAAYAAAAnAA8AAQAMAAYAAAAjAA0AAQAMAAUAAAAnAA0AAQAMAAUAAAAmAA0AAQAMAAUAAAAlAA0AAQAMAAUAAAAkAA0AAQAMAAUAAAAAAA4AAQAMAAYAAAABAA4AAQAMAAYAAAACAA4AAQAMAAYAAAADAA4AAQAMAAYAAAAEAA4AAQAMAAYAAAAFAA4AAQAMAAYAAAAGAA4AAQAMAAYAAAAHAA4AAQAMAAYAAAAIAA4AAQAMAAYAAAAJAA4AAQAMAAYAAAAKAA4AAQAMAAYAAAALAA4AAQAMAAYAAAAMAA4AAQAMAAYAAAANAA4AAQAMAAYAAAAOAA4AAQAMAAYAAAAPAA4AAQAMAAYAAAAQAA4AAQAMAAYAAAARAA4AAQAMAAYAAAASAA4AAQAMAAYAAAATAA4AAQAMAAYAAAAWAA4AAQAMAAYAAAAXAA4AAQAMAAYAAAAYAA4AAQAMAAYAAAAZAA4AAQAMAAYAAAAaAA4AAQAMAAYAAAAbAA4AAQAMAAYAAAAcAA4AAQAMAAYAAAAdAA4AAQAMAAYAAAAeAA4AAQAMAAYAAAAfAA4AAQAMAAYAAAAgAA4AAQAMAAYAAAAhAA4AAQAMAAYAAAAhAA8AAQAMAAYAAAAgAA8AAQAMAAYAAAAfAA8AAQAMAAYAAAAeAA8AAQAMAAYAAAAdAA8AAQAMAAYAAAAcAA8AAQAMAAYAAAAbAA8AAQAMAAYAAAAaAA8AAQAMAAYAAAAZAA8AAQAMAAYAAAAYAA8AAQAMAAYAAAAXAA8AAQAMAAYAAAAWAA8AAQAMAAYAAAAVAA8AAQAMAAYAAAAUAA8AAQAMAAYAAAATAA8AAQAMAAYAAAASAA8AAQAMAAYAAAARAA8AAQAMAAYAAAAQAA8AAQAMAAYAAAAPAA8AAQAMAAYAAAAOAA8AAQAMAAYAAAANAA8AAQAMAAYAAAAMAA8AAQAMAAYAAAALAA8AAQAMAAYAAAAKAA8AAQAMAAYAAAAJAA8AAQAMAAYAAAAIAA8AAQAMAAYAAAAHAA8AAQAMAAYAAAAGAA8AAQAMAAYAAAAFAA8AAQAMAAYAAAAEAA8AAQAMAAYAAAADAA8AAQAMAAYAAAACAA8AAQAMAAYAAAABAA8AAQAMAAYAAAAAAA8AAQAMAAYAAAAPAAoAAgABAAEAAAASAAsAAgABAAUAAAAQAAsAAgABAAUAAAAKAAsAAgABAAEAAAAIAAwAAgABAAUAAAA=")
+tile_set = ExtResource("3_4gtbj")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=568245496]
+position = Vector2(0, -24)
+tile_set = SubResource("TileSet_hrrsx")
+
+[node name="Parallax" type="Node2D" parent="." unique_id=123921197]
+z_index = -10
+
+[node name="3" type="Parallax2D" parent="Parallax" unique_id=1926493760]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(288, 208)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/3" unique_id=1634991582]
+texture = ExtResource("9_jpivc")
+centered = false
+
+[node name="2" type="Parallax2D" parent="Parallax" unique_id=1692494933]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/2" unique_id=1126948146]
+texture = ExtResource("10_1buff")
+centered = false
+
+[node name="1" type="Parallax2D" parent="Parallax" unique_id=2074494476]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/1" unique_id=1091132905]
+texture = ExtResource("11_hdist")
+centered = false
+
+[node name="Penguinos" type="Node2D" parent="." unique_id=1577863937]
+z_index = 2
+
+[node name="Penguino" parent="Penguinos" unique_id=339245273 instance=ExtResource("12_ho3km")]
+position = Vector2(264, 128)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino2" parent="Penguinos" unique_id=1621383647 instance=ExtResource("12_ho3km")]
+position = Vector2(240, 128)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino3" parent="Penguinos" unique_id=1852915634 instance=ExtResource("12_ho3km")]
+position = Vector2(216, 144)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino4" parent="Penguinos" unique_id=59313930 instance=ExtResource("12_ho3km")]
+position = Vector2(192, 144)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Penguino5" parent="Penguinos" unique_id=1912952765 instance=ExtResource("12_ho3km")]
+position = Vector2(152, 160)
+rotation = 3.1415927
+scale = Vector2(-1, -1)
+
+[node name="Penguino6" parent="Penguinos" unique_id=1684915040 instance=ExtResource("12_ho3km")]
+position = Vector2(16, 176)
+rotation = 3.1415927
+scale = Vector2(-1, -1)
+
+[node name="Penguino7" parent="Penguinos" unique_id=1555707232 instance=ExtResource("12_ho3km")]
+position = Vector2(112, 160)
+rotation = 3.1415927
+scale = Vector2(-1, -1)
+
+[node name="Penguino8" parent="Penguinos" unique_id=1188619979 instance=ExtResource("12_ho3km")]
+position = Vector2(88, 176)
+rotation = 3.1415927
+scale = Vector2(-1, -1)
+
+[node name="Penguino9" parent="Penguinos" unique_id=1011789858 instance=ExtResource("12_ho3km")]
+position = Vector2(48, 176)
+rotation = 3.1415927
+scale = Vector2(-1, -1)
+
+[node name="Penguino10" parent="Penguinos" unique_id=1441767959 instance=ExtResource("12_ho3km")]
+position = Vector2(72, 176)
+rotation = 3.1415927
+scale = Vector2(-1, -1)
+
+[node name="SpeechEmotes(16X16)" type="Sprite2D" parent="." unique_id=766889885]
+visible = false
+z_index = 2
+position = Vector2(239, 112)
+texture = ExtResource("13_7emb1")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="SpeechEmotes(16X16)2" type="Sprite2D" parent="." unique_id=1608060483]
+visible = false
+position = Vector2(153, 144)
+texture = ExtResource("13_7emb1")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=40893313]
+libraries/ = SubResource("AnimationLibrary_wwxgv")
+autoplay = &"talk"

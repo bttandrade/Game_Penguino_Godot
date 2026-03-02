@@ -22,7 +22,7 @@ func _on_quit_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and Globals.can_pause:
 		visible = true
 		get_tree().paused = true
 		on_menu = true

@@ -62,9 +62,9 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Labels" unique_id=1258524821]
 layout_mode = 0
-offset_left = 142.0
+offset_left = 118.0
 offset_top = 68.0
-offset_right = 334.0
+offset_right = 310.0
 offset_bottom = 76.0
 theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
 theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
@@ -76,23 +76,23 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Labels" unique_id=323958755]
 layout_mode = 0
-offset_left = 151.0
+offset_left = 135.0
 offset_top = 92.0
-offset_right = 343.0
+offset_right = 327.0
 offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
 theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_lsb8r")
 theme_override_font_sizes/font_size = 8
-text = "   : PULAR"
+text = "   : PULAR / NADAR"
 vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="Labels" unique_id=73376874]
 layout_mode = 0
-offset_left = 94.0
+offset_left = 86.0
 offset_top = 116.0
-offset_right = 286.0
+offset_right = 278.0
 offset_bottom = 124.0
 theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
 theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
@@ -113,15 +113,15 @@ theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_lsb8r")
 theme_override_font_sizes/font_size = 8
-text = "   : PAUSAR / SAIR DO PAUSE"
+text = "   : RETORNAR / PAUSAR"
 vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="Labels" unique_id=1324663208]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 123.0
-offset_right = 380.0
-offset_bottom = 131.0
+offset_left = 183.0
+offset_top = 150.0
+offset_right = 375.0
+offset_bottom = 158.0
 theme_override_colors/font_color = Color(0, 0.54509807, 0.81960785, 1)
 theme_override_colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 theme_override_constants/outline_size = 3
@@ -141,7 +141,7 @@ position = Vector2(64, 72)
 texture = ExtResource("5_2nb4t")
 
 [node name="D" type="Sprite2D" parent="Keys" unique_id=760768906]
-position = Vector2(88, 72)
+position = Vector2(80, 72)
 texture = ExtResource("6_jb51l")
 
 [node name="Down" type="Sprite2D" parent="Keys" unique_id=485688534]
@@ -153,7 +153,7 @@ position = Vector2(64, 48)
 texture = ExtResource("12_djl3p")
 
 [node name="Enter" type="Sprite2D" parent="Keys" unique_id=1513827825]
-position = Vector2(214, 104)
+position = Vector2(208, 131)
 texture = ExtResource("7_lsb8r")
 
 [node name="Esc" type="Sprite2D" parent="Keys" unique_id=850571662]
@@ -161,23 +161,23 @@ position = Vector2(64, 144)
 texture = ExtResource("13_73805")
 
 [node name="Left" type="Sprite2D" parent="Keys" unique_id=1694447966]
-position = Vector2(112, 72)
+position = Vector2(96, 72)
 texture = ExtResource("3_ap3ea")
 
 [node name="Right" type="Sprite2D" parent="Keys" unique_id=710849716]
-position = Vector2(136, 72)
+position = Vector2(112, 72)
 texture = ExtResource("4_t6ver")
 
 [node name="S" type="Sprite2D" parent="Keys" unique_id=1871902816]
-position = Vector2(88, 120)
+position = Vector2(80, 120)
 texture = ExtResource("11_1cu4j")
 
 [node name="Space" type="Sprite2D" parent="Keys" unique_id=872374554]
-position = Vector2(128, 96)
+position = Vector2(112, 96)
 texture = ExtResource("9_pkgwa")
 
 [node name="Up" type="Sprite2D" parent="Keys" unique_id=1786774540]
-position = Vector2(88, 96)
+position = Vector2(80, 96)
 texture = ExtResource("7_dxsep")
 
 [node name="W" type="Sprite2D" parent="Keys" unique_id=1164630658]

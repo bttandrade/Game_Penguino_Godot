@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://c6khnlsbgv70a" path="res://Sounds/hit.mp3" id="14_25cb4"]
 [ext_resource type="AudioStream" uid="uid://drbquj6u27x17" path="res://Sounds/hurt.wav" id="14_uck12"]
 [ext_resource type="AudioStream" uid="uid://fbjht3ord34o" path="res://Sounds/swimming.wav" id="15_25cb4"]
-[ext_resource type="AudioStream" uid="uid://dmqqra1251qjl" path="res://Sounds/enter_water.wav" id="16_uck12"]
+[ext_resource type="AudioStream" uid="uid://dmqqra1251qjl" path="res://Sounds/splash_water.wav" id="16_uck12"]
 [ext_resource type="AudioStream" uid="uid://dtf3403tfed7x" path="res://Sounds/coin_spawn.wav" id="17_uck12"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irn06"]
@@ -310,9 +310,8 @@ script = ExtResource("1_b0kkn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=964873476 groups=["player_body"]]
 position = Vector2(0, 0.2)
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"dancing"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.052961335
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=51162149]
 visible = false

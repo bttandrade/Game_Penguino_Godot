@@ -5,6 +5,7 @@ var player_coins = 0
 var player_score = 0
 var player_life = 3
 var player = null
+var can_pause = true
 var current_checkpoint: Vector2 = Vector2.ZERO
 
 func _ready() -> void:

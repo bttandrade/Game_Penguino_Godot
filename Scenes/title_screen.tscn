@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://bjimkprrlxhhf" path="res://Scripts/style_btn.gd" id="7_w5sh6"]
 [ext_resource type="StyleBox" uid="uid://co7ce7wvhqtff" path="res://Themes/btn_hover.tres" id="9_vqgqr"]
 [ext_resource type="PackedScene" uid="uid://bdwhpi6xh2nw7" path="res://Scenes/tutorial.tscn" id="10_8mikk"]
+[ext_resource type="PackedScene" uid="uid://cqij4plb5w4ip" path="res://Scenes/credits.tscn" id="11_sqelc"]
 [ext_resource type="AudioStream" uid="uid://bv77j2c64b0kk" path="res://Sounds/title.mp3" id="12_2ia2x"]
+[ext_resource type="PackedScene" uid="uid://bqki4ceqatvcw" path="res://Scenes/bg_menu.tscn" id="12_w5sh6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gni0"]
 
@@ -30,12 +32,15 @@ script = ExtResource("1_w5sh6")
 metadata/_edit_vertical_guides_ = [1151.0]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1991931463]
+visible = false
 texture_repeat = 2
 layout_mode = 0
 offset_right = 288.0
 offset_bottom = 208.0
 texture = ExtResource("2_o1e67")
 expand_mode = 2
+
+[node name="BgMenu" parent="." unique_id=813078412 instance=ExtResource("12_w5sh6")]
 
 [node name="LogoRect" type="TextureRect" parent="." unique_id=400490795]
 layout_mode = 0
@@ -151,6 +156,11 @@ autoplay = true
 [node name="Tutorial" parent="." unique_id=1583732572 instance=ExtResource("10_8mikk")]
 visible = false
 
+[node name="Credits" parent="." unique_id=1188882008 instance=ExtResource("11_sqelc")]
+visible = false
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TutorialBtn" to="." method="_on_tutorial_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsBtn" to="." method="_on_credits_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="finished" from="TitleSound" to="." method="_on_title_sound_finished"]
