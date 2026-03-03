@@ -125,7 +125,7 @@ shape = SubResource("WorldBoundaryShape2D_58nyd")
 
 [node name="Sign" parent="StageStuff" unique_id=788242226 instance=ExtResource("15_bdrxr")]
 position = Vector2(104, 168)
-lines = Array[String](["Bem-vindo a primavera!", "Curiosidade sobre os Penguinos:", "Eles vivem no inverno e coletam moedas para comprar comida!"])
+lines = Array[String](["Bem-vindo a Primavera!", "Curiosidade sobre os Penguinos:", "Eles vivem no inverno e coletam moedas para comprar comida!"])
 
 [node name="Sign2" parent="StageStuff" unique_id=132689608 instance=ExtResource("15_bdrxr")]
 position = Vector2(1464, 168)

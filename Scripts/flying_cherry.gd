@@ -1,3 +1,6 @@
+
+
+
 extends CharacterBody2D
 
 enum CherryState{
@@ -10,8 +13,8 @@ enum CherryState{
 @export var arrive_distance = 5
 @export var initial_direction = 1
 
-@onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var spawn_position: Marker2D = $SpawnPosition
+@onready var anima: AnimatedSprite2D = $AnimatedSprite2D
 @onready var patrol_points = $PatrolPoints.get_children()
 @onready var hit_box: Area2D = $HitBox
 
@@ -22,8 +25,6 @@ var current_point = 0
 var patrol_positions: Array[Vector2] = []
 
 func _ready() -> void:
-	if initial_direction == -1:
-		scale.x *= -1
 	for p in patrol_points:
 		patrol_positions.append(p.global_position)
 	
@@ -46,9 +47,12 @@ func go_to_patrol_state():
 func patrol_state(_delta):
 	var target = patrol_positions[current_point]
 	var direction = (target - global_position).normalized()
-	
+
 	velocity = direction * speed_of_patrol
-	
+
+	if abs(direction.x) > 0.01:
+		anima.flip_h = direction.x > 0
+
 	if global_position.distance_to(target) < arrive_distance:
 		current_point = (current_point + 1) % patrol_positions.size()
 

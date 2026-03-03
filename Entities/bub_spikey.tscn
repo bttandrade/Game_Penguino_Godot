@@ -76,6 +76,7 @@ height = 14.0
 [node name="BubSpikey" type="CharacterBody2D" unique_id=1670272699 groups=["enemy_body"]]
 collision_layer = 16
 script = ExtResource("1_drsmb")
+mob_speed = 25.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1048508538]
 position = Vector2(0, 0.2)

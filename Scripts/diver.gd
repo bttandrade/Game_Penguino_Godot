@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-enum CherryState{
+enum DiverState{
 	patrol,
 	dead
 }
@@ -14,7 +14,7 @@ enum CherryState{
 @onready var patrol_points = $PatrolPoints.get_children()
 @onready var hit_box: Area2D = $HitBox
 
-var status: CherryState
+var status: DiverState
 var current_point = 0
 var patrol_positions: Array[Vector2] = []
 
@@ -27,15 +27,15 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	match status:
-		CherryState.patrol:
+		DiverState.patrol:
 			patrol_state(delta)
-		CherryState.dead:
+		DiverState.dead:
 			dead_state(delta)
 	
 	move_and_slide()
 
 func go_to_patrol_state():
-	status = CherryState.patrol
+	status = DiverState.patrol
 	anima.play("patrol")
 
 func patrol_state(_delta):
@@ -56,7 +56,7 @@ func go_to_dead_state():
 	velocity.y = -200
 	anima.queue_free()
 	Globals.player_score += mob_value
-	status = CherryState.dead
+	status = DiverState.dead
 
 func dead_state(_delta):
 	queue_free()

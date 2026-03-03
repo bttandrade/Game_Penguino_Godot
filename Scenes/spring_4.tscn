@@ -135,7 +135,7 @@ shape = SubResource("WorldBoundaryShape2D_58nyd")
 
 [node name="Sign" parent="StageStuff" unique_id=788242226 instance=ExtResource("15_bkgwf")]
 position = Vector2(1464, 168)
-lines = Array[String](["> Verão >"])
+lines = Array[String](["> Estação verão >"])
 
 [node name="Checkpoint" parent="StageStuff" unique_id=1619582870 instance=ExtResource("16_v25sf")]
 position = Vector2(698, 179)

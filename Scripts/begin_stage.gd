@@ -11,3 +11,5 @@ func _ready() -> void:
 	player.control_lock = false
 	if get_tree().current_scene.name == "Summer1":
 		Globals.max_jump_count = 2
+	if get_tree().current_scene.name == "Autumn1":
+		Globals.can_wall = true
