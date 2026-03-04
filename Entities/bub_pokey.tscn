@@ -63,7 +63,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1om3"]
@@ -79,9 +79,9 @@ script = ExtResource("1_wpx4q")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1048508538]
 position = Vector2(0, 0.2)
 sprite_frames = SubResource("SpriteFrames_6j750")
-animation = &"dead"
+animation = &"walk"
 autoplay = "walk"
-frame_progress = 1.0
+frame_progress = 0.25592688
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=866672575]
 position = Vector2(0, 2)

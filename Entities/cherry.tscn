@@ -79,7 +79,7 @@ shape = SubResource("CircleShape2D_maoi3")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=149533414 groups=["enemy_hitbox"]]
 collision_layer = 32
-collision_mask = 4
+collision_mask = 69
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1560561459]
 position = Vector2(0, 5)
@@ -94,3 +94,6 @@ target_position = Vector2(-12, 0)
 [node name="GroundDetector" type="RayCast2D" parent="." unique_id=1634330661]
 position = Vector2(-11, 6)
 target_position = Vector2(0, 7)
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

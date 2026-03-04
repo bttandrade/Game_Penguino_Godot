@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnr0c"]
 size = Vector2(9, 8)
 
-[node name="Spikes" type="Area2D" unique_id=1702467889 groups=["enemy_hitbox"]]
+[node name="Spikes" type="Area2D" unique_id=1702467889 groups=["enemy_hitbox", "lethal_body"]]
 z_index = -2
 collision_layer = 32
 collision_mask = 4

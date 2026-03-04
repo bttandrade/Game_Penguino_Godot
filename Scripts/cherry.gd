@@ -73,3 +73,11 @@ func apply_gravity(delta):
 
 func take_damage():
 	go_to_dead_state()
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("lethal_body") or body.is_in_group("water_body"):
+		take_damage()
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("lethal_body") and area.is_in_group("enemy_hitbox"):
+		take_damage()

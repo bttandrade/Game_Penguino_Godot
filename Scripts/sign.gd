@@ -25,7 +25,8 @@ func _process(_delta: float) -> void:
 			"Sei que teve uma aventura e tanto.",
 			"Viajar por todas as estações, enfrentando seus perigos.",
 			"Em busca de moedas para comprarmos comida . . .",
-			success_line, success_line2, success_line3, success_line4]
+			success_line, success_line2, success_line3, success_line4, 
+			". . . E que tal começar nos contando tudo sobre sua aventura?"]
 		DialogManager.start_message(spawn_place.global_position, lines)
 
 func _on_sign_area_body_entered(body: Node2D) -> void:
