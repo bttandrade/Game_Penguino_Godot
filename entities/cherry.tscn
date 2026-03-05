@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cvao6ixkwsamh"]
+
+[ext_resource type="Script" uid="uid://hvt6s6d4foll" path="res://scripts/cherry.gd" id="1_t1t5s"]
+[ext_resource type="Texture2D" uid="uid://cr3rl7umndmag" path="res://assets/mobs/cherry/Cherry.png" id="2_c727j"]
+[ext_resource type="Texture2D" uid="uid://dk1lq4pjbxpdw" path="res://assets/mobs/cherry/Flying (16 x 32).png" id="3_spduq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq38b"]
+atlas = ExtResource("2_c727j")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maoi3"]
+atlas = ExtResource("3_spduq")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idcgq"]
+atlas = ExtResource("3_spduq")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52tyy"]
+atlas = ExtResource("2_c727j")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dcj4"]
+atlas = ExtResource("2_c727j")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spduq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq38b")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maoi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idcgq")
+}],
+"loop": true,
+"name": &"patrol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52tyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dcj4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maoi3"]
+radius = 6.0827627
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spduq"]
+radius = 7.0
+
+[node name="Cherry" type="CharacterBody2D" unique_id=1967996673 groups=["enemy_body"]]
+collision_layer = 16
+script = ExtResource("1_t1t5s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=694633382]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_spduq")
+animation = &"dead"
+autoplay = "patrol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521059575]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_maoi3")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=149533414 groups=["enemy_hitbox"]]
+collision_layer = 32
+collision_mask = 69
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1560561459]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_spduq")
+debug_color = Color(1, 0, 0, 0.39215687)
+
+[node name="WallDetector" type="RayCast2D" parent="." unique_id=789601160]
+position = Vector2(0, 6)
+target_position = Vector2(-12, 0)
+
+[node name="GroundDetector" type="RayCast2D" parent="." unique_id=1634330661]
+position = Vector2(-11, 6)
+target_position = Vector2(0, 7)
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

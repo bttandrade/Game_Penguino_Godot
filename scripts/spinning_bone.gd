@@ -1,0 +1,24 @@
+extends Area2D
+
+@onready var anima: AnimatedSprite2D = $AnimatedSprite2D
+
+var speed = 150
+var direction = 1
+
+func _process(delta: float) -> void:
+	position.x += speed * delta * direction
+
+func set_direction(percy_direction):
+	direction = percy_direction
+	anima.flip_h = direction < 0
+
+func _on_self_destruct_timer_timeout() -> void:
+	queue_free()
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("collectibles"):
+		return
+	queue_free()
+
+func _on_body_entered(_body: Node2D) -> void:
+	queue_free()
