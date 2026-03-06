@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://assets/tilesets/tiles_spring/Background/5 - Sky_color.png" id="5_gbjhm"]
 [ext_resource type="PackedScene" uid="uid://ds4xunsav6qtf" path="res://scenes/canvas_end.tscn" id="5_rcidx"]
 [ext_resource type="Texture2D" uid="uid://bybdcaxlanrx" path="res://assets/tilesets/tiles_spring/Background/4 - Cloud_cover_2.png" id="6_ax4x2"]
-[ext_resource type="Script" uid="uid://cumg0ryomvg5" path="res://scripts/canvas_end.gd" id="6_i0mp4"]
 [ext_resource type="Script" uid="uid://dc4kep7bytbpt" path="res://scripts/clouds.gd" id="7_15y8n"]
 [ext_resource type="Texture2D" uid="uid://dfeop5kpefprg" path="res://assets/tilesets/tiles_spring/Background/3 - Cloud_cover_1.png" id="7_qexjc"]
 [ext_resource type="Texture2D" uid="uid://bkhqhxtl3qtn1" path="res://assets/tilesets/tiles_spring/Background/2 - Hills.png" id="8_rcidx"]
@@ -49,7 +48,6 @@ stage_number = "1 - 2"
 [node name="CanvasEnd" parent="HUDs" unique_id=348293224 instance=ExtResource("5_rcidx")]
 process_mode = 3
 visible = false
-script = ExtResource("6_i0mp4")
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10
@@ -225,10 +223,6 @@ initial_direction = -1
 position = Vector2(744, -88)
 
 [node name="Bub9" parent="Mobs" unique_id=888691147 instance=ExtResource("15_7o84e")]
-position = Vector2(840, -88)
-initial_direction = -1
-
-[node name="Bub10" parent="Mobs" unique_id=1782523073 instance=ExtResource("15_7o84e")]
 position = Vector2(840, -88)
 initial_direction = -1
 

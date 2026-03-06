@@ -3,7 +3,7 @@ extends Node
 var finished_the_game = false
 var player_coins = 0
 var player_score: int = 0
-var player_life = 5
+var player_life = 6
 var player = null
 var max_jump_count = 1
 var can_wall = false
@@ -29,6 +29,6 @@ func restart():
 	finished_the_game = false
 	player_score = 0
 	player_coins = 0
-	player_life = 5
+	player_life = 6
 	max_jump_count = 1
 	can_wall = false

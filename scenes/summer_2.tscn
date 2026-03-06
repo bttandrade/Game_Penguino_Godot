@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b6ys34nusqhcu" path="res://scenes/canvas_name.tscn" id="4_11f2h"]
 [ext_resource type="PackedScene" uid="uid://ds4xunsav6qtf" path="res://scenes/canvas_end.tscn" id="5_0timw"]
 [ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://assets/tilesets/tiles_spring/Background/5 - Sky_color.png" id="5_aad4g"]
-[ext_resource type="Script" uid="uid://cumg0ryomvg5" path="res://scripts/canvas_end.gd" id="6_03gni"]
 [ext_resource type="Texture2D" uid="uid://bscxegee57ucj" path="res://assets/tilesets/tiles_summer/Background/4 - Background_clouds.png" id="6_juvru"]
 [ext_resource type="Script" uid="uid://dc4kep7bytbpt" path="res://scripts/clouds.gd" id="7_j5vg1"]
 [ext_resource type="Texture2D" uid="uid://dguctl2vjd4yi" path="res://assets/tilesets/tiles_summer/Background/3 - Floating_clouds.png" id="8_0timw"]
@@ -108,7 +107,6 @@ stage_number = "2 - 2"
 [node name="CanvasEnd" parent="HUDs" unique_id=348293224 instance=ExtResource("5_0timw")]
 process_mode = 3
 visible = false
-script = ExtResource("6_03gni")
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10
@@ -269,29 +267,17 @@ position = Vector2(360, -80)
 
 [node name="Mobs" type="Node2D" parent="." unique_id=22566393]
 
-[node name="BubSpikey" parent="Mobs" unique_id=1670272699 instance=ExtResource("22_juvru")]
-position = Vector2(648, 40)
-
 [node name="BubSpikey2" parent="Mobs" unique_id=756020132 instance=ExtResource("22_juvru")]
 position = Vector2(696, -56)
 initial_direction = -1
-
-[node name="BubSpikey3" parent="Mobs" unique_id=558137163 instance=ExtResource("22_juvru")]
-position = Vector2(824, -40)
 
 [node name="BubSpikey4" parent="Mobs" unique_id=93528013 instance=ExtResource("22_juvru")]
 position = Vector2(936, -8)
 initial_direction = -1
 
-[node name="BubSpikey5" parent="Mobs" unique_id=630210062 instance=ExtResource("22_juvru")]
-position = Vector2(1048, 24)
-
 [node name="BubSpikey6" parent="Mobs" unique_id=1156728777 instance=ExtResource("22_juvru")]
 position = Vector2(1160, 56)
 initial_direction = -1
-
-[node name="BubSpikey7" parent="Mobs" unique_id=1519993109 instance=ExtResource("22_juvru")]
-position = Vector2(1272, 88)
 
 [node name="BubSpikey8" parent="Mobs" unique_id=796983161 instance=ExtResource("22_juvru")]
 position = Vector2(248, -104)

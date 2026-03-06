@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b6ys34nusqhcu" path="res://scenes/canvas_name.tscn" id="4_7kmlk"]
 [ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://assets/tilesets/tiles_spring/Background/5 - Sky_color.png" id="5_0nwsa"]
 [ext_resource type="PackedScene" uid="uid://ds4xunsav6qtf" path="res://scenes/canvas_end.tscn" id="5_nk565"]
-[ext_resource type="Script" uid="uid://cumg0ryomvg5" path="res://scripts/canvas_end.gd" id="6_2rqhc"]
 [ext_resource type="Texture2D" uid="uid://bybdcaxlanrx" path="res://assets/tilesets/tiles_spring/Background/4 - Cloud_cover_2.png" id="6_x026p"]
 [ext_resource type="Script" uid="uid://dc4kep7bytbpt" path="res://scripts/clouds.gd" id="7_nrv4f"]
 [ext_resource type="Texture2D" uid="uid://dfeop5kpefprg" path="res://assets/tilesets/tiles_spring/Background/3 - Cloud_cover_1.png" id="8_nk565"]
@@ -49,7 +48,6 @@ stage_number = "1 - 3"
 [node name="CanvasEnd" parent="HUDs" unique_id=348293224 instance=ExtResource("5_nk565")]
 process_mode = 3
 visible = false
-script = ExtResource("6_2rqhc")
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10

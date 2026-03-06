@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://30jwv2yg63r2" path="res://assets/tilesets/tiles_spring/Background/5 - Sky_color.png" id="5_jg7tl"]
 [ext_resource type="PackedScene" uid="uid://ds4xunsav6qtf" path="res://scenes/canvas_end.tscn" id="5_wfsjv"]
 [ext_resource type="Texture2D" uid="uid://bscxegee57ucj" path="res://assets/tilesets/tiles_summer/Background/4 - Background_clouds.png" id="6_4g833"]
-[ext_resource type="Script" uid="uid://cumg0ryomvg5" path="res://scripts/canvas_end.gd" id="6_a2ah2"]
 [ext_resource type="Script" uid="uid://dc4kep7bytbpt" path="res://scripts/clouds.gd" id="7_1fvp8"]
 [ext_resource type="Texture2D" uid="uid://dguctl2vjd4yi" path="res://assets/tilesets/tiles_summer/Background/3 - Floating_clouds.png" id="8_55si2"]
 [ext_resource type="Texture2D" uid="uid://fip6itl03y6y" path="res://assets/tilesets/tiles_summer/Background/2 - Waters_version_2.png" id="9_wfsjv"]
@@ -109,7 +108,6 @@ stage_number = "2 - 4"
 [node name="CanvasEnd" parent="HUDs" unique_id=348293224 instance=ExtResource("5_wfsjv")]
 process_mode = 3
 visible = false
-script = ExtResource("6_a2ah2")
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10

@@ -200,18 +200,11 @@ position = Vector2(1256, 64)
 [node name="Mobs" type="Node2D" parent="." unique_id=1868050228]
 
 [node name="Bub" parent="Mobs" unique_id=1670272699 instance=ExtResource("21_2s38o")]
-position = Vector2(288, 120)
-
-[node name="Bub2" parent="Mobs" unique_id=1219175795 instance=ExtResource("21_2s38o")]
-position = Vector2(304, 120)
-initial_direction = -1
+position = Vector2(296, 120)
 
 [node name="Bub3" parent="Mobs" unique_id=1737205455 instance=ExtResource("21_2s38o")]
-position = Vector2(384, 104)
+position = Vector2(392, 104)
 initial_direction = -1
-
-[node name="Bub4" parent="Mobs" unique_id=2037498953 instance=ExtResource("21_2s38o")]
-position = Vector2(400, 104)
 
 [node name="Bub5" parent="Mobs" unique_id=1907769512 instance=ExtResource("21_2s38o")]
 position = Vector2(480, 136)

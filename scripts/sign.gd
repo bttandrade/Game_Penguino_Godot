@@ -45,7 +45,7 @@ func success_rate():
 	if Globals.player_score <= 0:
 		score_line = "Hmmm . . . Um pouco decepcionante."
 	if Globals.player_score >= 2000 and Globals.player_score <= 4999:
-		score_line = "Hmmm . . . Me parece quee foi uma boa aventura."
+		score_line = "Hmmm . . . Me parece que foi uma boa aventura."
 	if Globals.player_score >= 5000 and Globals.player_score <= 9999:
 		score_line = "Hmmm . . . Me parece que teve uma excelente aventura."
 	if Globals.player_score >= 10000:

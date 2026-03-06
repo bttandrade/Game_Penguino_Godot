@@ -41,6 +41,8 @@ enum PlayerState{
 @onready var water_splash_sound: AudioStreamPlayer = $Sounds/WaterSplashSound
 
 const JUMP_VELOCITY = -300.0
+const JUMP_CUT_MULTIPLIER = 0.4
+const STOMP_JUMP_VELOCITY = -220.0
 const RIGID_COIN = preload("res://entities/rigid_coin.tscn")
 
 var last_direction = 0
@@ -143,6 +145,9 @@ func jump_state(delta):
 	apply_gravity(delta)
 	move(delta)
 	
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= JUMP_CUT_MULTIPLIER
+	
 	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
 		return
@@ -151,6 +156,12 @@ func jump_state(delta):
 		go_to_fall_state()
 		return
 
+func go_to_stomp_jump():
+	status = PlayerState.jump
+	anima.play("jump")
+	velocity.y = STOMP_JUMP_VELOCITY
+	jump_count = 1
+
 func go_to_fall_state():
 	status = PlayerState.fall
 	anima.play("fall")
@@ -158,9 +169,13 @@ func go_to_fall_state():
 func fall_state(delta):
 	apply_gravity(delta)
 	move(delta)
-	if Input.is_action_just_pressed("jump") && can_jump():
+	
+	if Input.is_action_just_pressed("jump") and can_jump():
 		go_to_jump_state()
 		return
+	
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= JUMP_CUT_MULTIPLIER
 	
 	if is_on_floor():
 		jump_count = 0
@@ -335,7 +350,7 @@ func respawn():
 func hit_enemy(area: Area2D):
 	if velocity.y > 0 and area.is_in_group("enemy_body"):
 		area.get_parent().take_damage()
-		go_to_jump_state()
+		go_to_stomp_jump()
 
 func took_a_hit(area):
 	if Globals.player_life <= 0:
@@ -399,7 +414,7 @@ func _on_stomp_box_body_entered(body: Node2D) -> void:
 	if velocity.y > 0 and body.is_in_group("enemy_body"):
 		body.take_damage()
 		hit_sound.play()
-		go_to_jump_state()
+		go_to_stomp_jump()
 
 func _on_stomp_box_body_exited(body: Node2D) -> void:
 	if control_lock or status == PlayerState.hurt:
