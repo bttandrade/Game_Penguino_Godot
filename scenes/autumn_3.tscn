@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b6ys34nusqhcu" path="res://scenes/canvas_name.tscn" id="4_23rij"]
 [ext_resource type="PackedScene" uid="uid://ds4xunsav6qtf" path="res://scenes/canvas_end.tscn" id="5_g03xt"]
 [ext_resource type="Texture2D" uid="uid://drb6s3bnonndi" path="res://assets/tilesets/tiles_autumn/Background/6 - Distant_trees.png" id="5_uygko"]
-[ext_resource type="Script" uid="uid://cumg0ryomvg5" path="res://scripts/canvas_end.gd" id="6_c00l3"]
 [ext_resource type="Texture2D" uid="uid://dr82fotshqxou" path="res://assets/tilesets/tiles_autumn/Background/5 - Tree_row_BG_2.png" id="6_hcioc"]
 [ext_resource type="Texture2D" uid="uid://dtng2h8wpihd" path="res://assets/tilesets/tiles_autumn/Background/4 - Tree_row_BG_1.png" id="7_6cf8g"]
 [ext_resource type="Texture2D" uid="uid://cx4ne4vw7wvj8" path="res://assets/tilesets/tiles_autumn/Background/3 - Bottom_leaf_piles.png" id="8_5m63d"]
@@ -53,7 +52,6 @@ stage_number = "3 - 3"
 [node name="CanvasEnd" parent="HUDs" unique_id=348293224 instance=ExtResource("5_g03xt")]
 process_mode = 3
 visible = false
-script = ExtResource("6_c00l3")
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10
@@ -126,7 +124,8 @@ collision_layer = 0
 next_level = "autumn_4"
 
 [node name="StageLimit" type="StaticBody2D" parent="StageStuff" unique_id=1245937780]
-collision_mask = 6
+collision_layer = 128
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StageStuff/StageLimit" unique_id=1917195831]
 position = Vector2(2, 0)

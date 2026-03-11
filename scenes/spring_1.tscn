@@ -122,7 +122,8 @@ collision_layer = 0
 next_level = "spring_2"
 
 [node name="StageLimit" type="StaticBody2D" parent="StageStuff" unique_id=1245937780]
-collision_mask = 6
+collision_layer = 128
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StageStuff/StageLimit" unique_id=1917195831]
 position = Vector2(2, 0)
@@ -211,6 +212,10 @@ position = Vector2(768, 160)
 
 [node name="Bub6" parent="Mobs" unique_id=165710667 instance=ExtResource("19_r1r68")]
 position = Vector2(816, 160)
+initial_direction = -1
+
+[node name="Bub10" parent="Mobs" unique_id=1484527077 instance=ExtResource("19_r1r68")]
+position = Vector2(1144, 120)
 initial_direction = -1
 
 [node name="Bub3" parent="Mobs" unique_id=2018210655 instance=ExtResource("19_r1r68")]

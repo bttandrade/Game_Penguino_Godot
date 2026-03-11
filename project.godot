@@ -81,6 +81,7 @@ interact={
 2d_physics/layer_5="ENEMY_BODY"
 2d_physics/layer_6="ENEMY_HITBOX"
 2d_physics/layer_7="WATER_BODY"
+2d_physics/layer_8="BOUNDARY"
 
 [physics]
 

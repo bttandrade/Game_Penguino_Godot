@@ -305,6 +305,7 @@ size = Vector2(10, 2)
 [node name="Player" type="CharacterBody2D" unique_id=976081242 groups=["player_body"]]
 z_index = 1
 collision_layer = 2
+collision_mask = 129
 script = ExtResource("1_cgp7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=964873476]
@@ -320,11 +321,9 @@ shape = SubResource("CapsuleShape2D_x08pd")
 
 [node name="LeftWallDetector" type="RayCast2D" parent="." unique_id=483422272]
 target_position = Vector2(-7, 0)
-collision_mask = 5
 
 [node name="RightWallDetector" type="RayCast2D" parent="." unique_id=417649668]
 target_position = Vector2(7, 0)
-collision_mask = 5
 
 [node name="HitBoxes" type="Node2D" parent="." unique_id=792074376]
 

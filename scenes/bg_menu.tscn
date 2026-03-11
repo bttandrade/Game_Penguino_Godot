@@ -158,12 +158,12 @@ centered = false
 z_index = 2
 
 [node name="Penguino" parent="Penguinos" unique_id=339245273 instance=ExtResource("12_ho3km")]
-position = Vector2(264, 128)
+position = Vector2(240, 128)
 rotation = 3.1415927
 scale = Vector2(1, -1)
 
 [node name="Penguino2" parent="Penguinos" unique_id=1621383647 instance=ExtResource("12_ho3km")]
-position = Vector2(240, 128)
+position = Vector2(264, 128)
 rotation = 3.1415927
 scale = Vector2(1, -1)
 

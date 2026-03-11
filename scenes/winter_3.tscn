@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b6ys34nusqhcu" path="res://scenes/canvas_name.tscn" id="4_8qpfk"]
 [ext_resource type="Texture2D" uid="uid://ik6hij3y237f" path="res://assets/tilesets/tiles_winter/Background/3 - Big_mountain_BG.png" id="5_2g1c5"]
 [ext_resource type="PackedScene" uid="uid://ds4xunsav6qtf" path="res://scenes/canvas_end.tscn" id="5_xtqv0"]
-[ext_resource type="Script" uid="uid://cumg0ryomvg5" path="res://scripts/canvas_end.gd" id="6_6s227"]
 [ext_resource type="Texture2D" uid="uid://4hgjlivrcl24" path="res://assets/tilesets/tiles_winter/Background/2 - Smaller_mountains.png" id="6_xtqv0"]
 [ext_resource type="Texture2D" uid="uid://cl3p5hjtohrfi" path="res://assets/tilesets/tiles_winter/Background/1 - Snowy_foreground_area.png" id="7_6s227"]
 [ext_resource type="TileSet" uid="uid://cayf158ysm7dm" path="res://themes/terrain.tres" id="8_r0lr2"]
@@ -50,7 +49,6 @@ stage_number = "4 - 3"
 [node name="CanvasEnd" parent="HUDs" unique_id=348293224 instance=ExtResource("5_xtqv0")]
 process_mode = 3
 visible = false
-script = ExtResource("6_6s227")
 
 [node name="Parallax" type="Node2D" parent="." unique_id=185106661]
 z_index = -10
@@ -115,7 +113,8 @@ collision_layer = 0
 next_level = "winter_4"
 
 [node name="StageLimit" type="StaticBody2D" parent="StageStuff" unique_id=1245937780]
-collision_mask = 6
+collision_layer = 128
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StageStuff/StageLimit" unique_id=1917195831]
 position = Vector2(2, 0)
