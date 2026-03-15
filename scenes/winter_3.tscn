@@ -54,7 +54,7 @@ visible = false
 z_index = -10
 
 [node name="3" type="Parallax2D" parent="Parallax" unique_id=763285853]
-scroll_scale = Vector2(0.2, 0.1)
+scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax/3" unique_id=1363470958]
@@ -207,6 +207,7 @@ initial_direction = -1
 [node name="BubPokey" parent="Mobs" unique_id=234188481 instance=ExtResource("18_8qpfk")]
 position = Vector2(1088, 88)
 initial_direction = 3
+mob_speed = 40.0
 
 [node name="BubSpikey" parent="Mobs" unique_id=1320981110 instance=ExtResource("19_2g1c5")]
 position = Vector2(984, 168)

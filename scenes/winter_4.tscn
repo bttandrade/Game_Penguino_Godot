@@ -54,7 +54,7 @@ visible = false
 z_index = -10
 
 [node name="3" type="Parallax2D" parent="Parallax" unique_id=763285853]
-scroll_scale = Vector2(0.2, 0.1)
+scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax/3" unique_id=1363470958]

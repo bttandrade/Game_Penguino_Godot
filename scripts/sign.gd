@@ -55,15 +55,15 @@ func success_rate():
 		coin_line = "Hmmm . . . Parece que não conseguiu nenhuma moeda dessa vez."
 		coin_line2 = "Mas pelo menos retornou em segurança, ficamos felizes."
 		coin_line3 = "Não se preocupe, iremos enviar outro Penguino na próxima estação."
-	elif Globals.player_coins >= 1 and Globals.player_coins <= 39:
+	elif Globals.player_coins >= 1 and Globals.player_coins <= 59:
 		coin_line = "Hmmm . . . Parece que conseguiu algumas moedas dessa vez."
 		coin_line2 = "Que bom, com elas vamos aguentar mais uma estação!"
 		coin_line3 = "Não se preocupe, na próxima iremos enviar outro Penguino, venha e descanse!"
-	elif Globals.player_coins >= 40 and Globals.player_coins <= 99:
+	elif Globals.player_coins >= 60 and Globals.player_coins <= 139:
 		coin_line = "Hmmm . . . Parece que conseguiu bastante moedas dessa vez!"
 		coin_line2 = "Que ótimo! Agora não precisaremos enviar outro Penguino por duas ou três estações!"
 		coin_line3 = "Venha e descanse Penguino, vamos comemorar!"
-	elif Globals.player_coins >= 100:
+	elif Globals.player_coins >= 140:
 		coin_line = "Uaaauu!! Parece que conseguiu um MONTE de moedas dessa vez!"
 		coin_line2 = "Você é um héroi!! Agora não precisaremos enviar outro Penguino por várias estações!"
-		coin_line3 = "Venha e descanse Penguino, vamos comemorar como nunca antes!"
+		coin_line3 = "Venha e descanse Penguino, vamos comemorar!"
