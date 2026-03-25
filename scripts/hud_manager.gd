@@ -11,6 +11,7 @@ var default_minutes = 1
 var default_seconds = 0
 var minutes = 0
 var seconds = 0
+var time_up_emitted = false
 
 signal time_is_up()
 
@@ -27,7 +28,8 @@ func _process(_delta: float) -> void:
 	coin_amount.text = str("%04d" % Globals.player_coins)
 	score_amount.text = str("%06d" % Globals.player_score)
 	life_amount.text = str("%02d" % Globals.player_life)
-	if minutes == 0 and seconds == 0:
+	if minutes == 0 and seconds == 0 and not time_up_emitted:
+		time_up_emitted = true
 		emit_signal("time_is_up")
 
 func _on_clock_timer_timeout() -> void:

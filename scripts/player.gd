@@ -52,8 +52,8 @@ var control_lock = false
 var status: PlayerState
 
 func _ready() -> void:
-	if get_parent().has_node("HUD"):
-		var hud_manager: Control = $"../HUD/HUDManager"
+	if get_parent().has_node("HUDs"):
+		var hud_manager = $"../HUDs/HUD/HUDManager"
 		hud_manager.time_is_up.connect(go_to_dead_state)
 	Globals.current_checkpoint = self.global_position
 	go_to_idle_state()
@@ -275,6 +275,7 @@ func go_to_hurt_state():
 	velocity.y = JUMP_VELOCITY
 	hurt_sound.play()
 	anima.play("dead")
+	Globals.player_life -= 1
 	jump_count = 0
 	respawn()
 
@@ -285,11 +286,11 @@ func go_to_dead_state():
 	if status == PlayerState.dead:
 		return
 	status = PlayerState.dead
-	Globals.player_life = 0
 	control_lock = true
 	velocity = Vector2.ZERO
 	anima.play("dead")
 	hurt_sound.play()
+	Globals.player_life = 0
 	respawn()
 
 func dead_state(_delta):

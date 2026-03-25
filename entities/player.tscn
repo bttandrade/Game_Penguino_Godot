@@ -300,7 +300,7 @@ height = 14.0
 size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k47j4"]
-size = Vector2(10, 2)
+size = Vector2(12, 2)
 
 [node name="Player" type="CharacterBody2D" unique_id=976081242 groups=["player_body"]]
 z_index = 1

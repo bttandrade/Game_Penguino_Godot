@@ -14,8 +14,6 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func respawn_player():
-	player_life -= 1
-	
 	if player_life <= 0:
 		restart()
 		var canvas_end = get_tree().current_scene.get_node("HUDs").get_node("CanvasEnd")
